@@ -21,12 +21,48 @@
         }
 
         .header {
-            background-color: gray;
             height: 10%;
-            min-height: 20px;
+            min-height: 75px;
             width: calc(100% - 24px);
+            padding: 0;
+            margin: 10px 10px 15px 10px;
+        }
+
+        .half_header{
+            background-color: #CCC;
             border: 2px solid black;
-            margin: 10px 10px 0px;
+            height: calc(50% - 7.5px);
+            min-height: 35px;
+
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .header_btn{
+            margin: 5px;
+            background-color: #EEE;
+            border: 1px solid black;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 16px;
+            height: 30px;
+
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            flex-grow: 1;
+        }
+
+        #header_text{
+            position: absolute;
+            font-size: small;
+            top: 0;
+            margin-left: 5px;
+            white-space: nowrap;
         }
 
         .content {
@@ -34,7 +70,9 @@
             height: calc(85% - 58px);
             width: calc(100% - 40px);
             border: 10px solid black;
-            margin: 5px 10px 0px;
+            margin: 15px 10px 0px;
+            display: flex;
+            margin-top: 15px
         }
 
         .footer {
@@ -62,8 +100,7 @@
             padding: 0;
             background-color: whitesmoke;
             border: 2px black solid;
-            overflow: hidden;
-            position: relative;
+            float: left;
         }
 
         .main_most_content {
@@ -392,12 +429,46 @@
             white-space: nowrap;
             text-overflow: ellipsis;
         }
+    /*----------platform pannel-----------*/
+        .platform_panel{
+            background-color: white;
+            float: right;
+            writing-mode: vertical-rl;
+            text-align:center;
+            width: 30px;
+            border-left: 1px solid black;
+            overflow: hidden;
+        }
+         #platform_panel_p{
+            margin-right: 5px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <div class="header">
+        <div style="padding-top: 12px;" class="half_header">
+            <p id="header_text">xXess 360 Museum Portaal > Secure Museum Home </p>
+            <button class="header_btn">Home</button>
+            <button class="header_btn">Beheer Kennis Test</button>
+            <button class="header_btn">Beheer Kunst Objecten</button>
+            <button class="header_btn">Beheer Tours</button>
+            <button class="header_btn">Beheer Gebruikers</button>
+            <button class="header_btn">Statestieken</button>
+            <button class="header_btn">Mijn Museum</button>
+            <button class="header_btn">Sign out</button>
+        </div>
+        <div style="margin-top: 5px;" class="half_header">
+            <button class="header_btn">Kennis Vragen Beheren</button>
+            <button class="header_btn">Kennis Antwoorden Beheren</button>
+            <button class="header_btn">Kennis Test Beheren</button>
+            <button class="header_btn">Kennis test Detail</button>
+            <button class="header_btn">Doe de Kennis Test</button>
+        </div>
 
     </div>
     <div class="content">
@@ -660,6 +731,9 @@
                 </div>
             </div>
             <button id="zoeken_plus_btn">+</button>
+        </div>
+        <div class="platform_panel">
+            <p id="platform_panel_p">Open beschikbare platformen panel</p>
         </div>
     </div>
     <div class="footer">
