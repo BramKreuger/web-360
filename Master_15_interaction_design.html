@@ -17,11 +17,13 @@
             width: 100%;
             margin: 0;
             padding: 0;
+            overflow: hidden;
         }
 
         .header {
             background-color: gray;
-            height: 10vh;
+            height: 10%;
+            min-height: 20px;
             width: calc(100% - 24px);
             border: 2px solid black;
             margin: 10px 10px 0px;
@@ -37,7 +39,8 @@
 
         .footer {
             background-color: gray;
-            height: 5vh;
+            min-height: 20px;
+            height: 5%;
             width: calc(100% - 24px);
             border: 2px solid black;
             margin: 5px 10px 10px;
@@ -53,12 +56,14 @@
 
         /*---Content-classes--*/
         .main {
-            height: 95%;
+            height: calc(100% - 25px);
             width: 80%;
-            margin: 2.5% 10% 2.5%;
+            margin: 10px 10% 10px 10%;
             padding: 0;
             background-color: whitesmoke;
             border: 2px black solid;
+            overflow: hidden;
+            position: relative;
         }
 
         .main_most_content {
@@ -66,7 +71,7 @@
             height: 100%;
             float: left;
             padding: 0;
-            background-color: aqua
+            margin: 0;
         }
 
         .zoeken {
@@ -75,38 +80,47 @@
         }
 
         .vragen_beheren_middle {
-            background-color: antiquewhite;
-            height: calc(60% - 20px);
+            height: calc(66.67% - 20px);
             width: calc(100% - 5px);
             margin: 2.5px 2.5px 2.5px 2.5px;
+            padding: 0;
         }
 
         .vragen_beheren_middle_left {
             width: 33.33%;
             height: 100%;
-            background-color: aliceblue;
             float: left;
+            position: relative;
+            overflow: hidden;
         }
 
         .vragen_beheren_middle_middle {
             width: 33.33%;
             height: 100%;
-            background-color: cadetblue;
             float: left;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #deze_vraag_is_geschikt{
+            padding: 0;
+            margin: 0px 0px 7.5px 0px;
         }
 
         .vragen_beheren_middle_right {
             width: 33.33%;
             height: 100%;
-            background-color: blue;
             float: left;
+            position: relative;
+            overflow: hidden;
         }
 
         .vragen_beheren_bottom {
-            background-color: beige;
-            height: calc(40% - 20px);
+            height: calc(33.33% - 20px);
             width: calc(100% - 5px);
             margin: 2.5px 2.5px 2.5px 2.5px;
+            overflow: hidden;
         }
 
         .vragen_beheren_bottom_zoeken {
@@ -158,6 +172,7 @@
             float: left;
         }
 
+        /*----VRAGENLIJST Bottom----*/
         #vragen_beheren_bottom_zoeken_inpt {
             width: calc(100% - 29px);
             height: 20px;
@@ -168,7 +183,7 @@
 
         #vragen_beheren_bottom_zoeken_btn {
             width: 25px;
-            height: 25px;
+            height: 24px;
             margin: 2.5px 0px 2.5px 0px;
             padding: 0;
             float: left;
@@ -182,34 +197,208 @@
             color: white;
         }
 
+        thead th.vragen_overzicht {
+            height: 26px;
+            border: 1px white solid;
+            border-left: 0;
+        }
         tbody.vragen_overzicht {
             display: block;
             overflow-y: scroll;
             min-height: 50px;
-            max-height: 200px;
+            max-height: 160px;
             width: 100%;
 
         }
 
-        thead th#vragen_overzicht,
-        tbody td#vragen_overzicht {
+        tbody td.vragen_overzicht {
             width: 250px;
-            height: 20px;
-            border: 1px black solid;
+            height: 26px;
+            border-bottom: 1px solid black;
+            border-left:   1px solid black
+
         }
         tbody tr:nth-child(even) {background: #CCC}
         tbody tr:nth-child(odd) {background: #FFF}
-        tbody td:nth-child(1)   {width: 10%;}
-        tbody td:nth-child(2)   {width: 35%;}
-        tbody td:nth-child(3)   {width: 25%;}
-        tbody td:nth-child(4)   {width: 25%;}
-        tbody td:nth-child(5)   {width: 10%;}
+        tbody td:nth-child(1)   {min-width: 100px; width:120px; text-align: center; }
+        tbody td:nth-child(2)   {width: 50%; text-align: center;                    }
+        tbody td:nth-child(3)   {width: 50%; text-align: center;                    }
+        tbody td:nth-child(4)   {min-width: 140px; width: 160px; text-align: center;}
+        tbody td:nth-child(5)   {min-width: 40px; width: 60px; text-align: center;  border-right: 1px solid black;}
+
+        /*-----vragenlijst links-----*/
+        ul.linker_vragen_lijst{
+            width: 100%;
+            height:100%;
+            float: left;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-y: scroll;
+            position: absolute;
+            top: 30px;
+            bottom: 100px;
+        }
+        li.linker_vragen_lijst{
+            list-style-type:none;
+            height: 50px;
+            border: 1px solid black;
+            border-bottom: 0px;
+        }
+        li.linker_vragen_lijst:nth-child(even) {background: #CCC}
+        li.linker_vragen_lijst:nth-child(odd) {background: #FFF}
+
+        .vraag_nomering{
+            float: right;
+            margin: 15px 0px 0px 0px;
+        }
+    /*-----Midden------*/
+        #niveau_checkboxes{
+            list-style-type: none;
+            text-align: left;
+            padding: 0px 5px 0px 5px;
+            margin: 0;
+        }
+        #vraag_midden{
+            display: flex;
+            width: calc(100% - 20px);
+            margin: 0px 10px 0px 10px;
+            height: calc(66.67% - 20px);
+            padding: 0;
+        }
+        #vraag_midden_links{
+            width: 75%;
+            min-height: 150px;
+            height: 100%;
+            border: 1px black solid;
+            margin: 0px 0px 0px 0px;
+            padding: 5px;
+            float: left;
+        }
+        #vraag_midden_links_vraag{
+            border: 1px black solid;
+            padding: 0;
+            margin: 0;
+            font-size: small;
+            width: 100%;
+            background-color: #CCC;
+
+        }
+        #vraag_midden_links_antw{
+            list-style-type: circle;
+            margin: 0;
+            padding: 2.5px 0px 2.5px 20px;
+            height: 50%;
+
+        }
+        .vraag_midden_links_antw_pnts{
+            background-color: white;
+            font-size: 10px;
+            margin: 0 5px 2.5px 0;
+            border: 1px black solid;
+            height: 5%;
+            min-height: 2px;
+        }
+        #vraag_midden_rechts{
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            float: left;
+        }
+        #vraag_midden_rechts_image{
+            object-fit: cover;
+            width: calc(100% - 10px);
+            height: 100%;
+            padding: 5px;
+            border: 1px black solid;
+            border-left: 0;
+            float: left;
+        }
+    /*------rechts----------*/
+        #alle_kunst_objecten_titel{
+            text-align: center;
+            background-color: white;
+            border: 1px black solid;
+            margin: 0px 0px 2.5px 0px;
+            padding: 0px 0px 0px 0px;
+            height: 30px;
+        }
+        #vragen_beheren_midden_right_input{
+            width: calc(100% - 29px);
+            height: 21px;
+            margin: 0px 0px 2.5px 0px;
+            padding: 0;
+            float: left;
+        }
+        #vragen_beheren_midden_right_btn{
+            width: 25px;
+            height: 25px;
+            margin: 0px 0px 2.5px 0px;
+            padding: 0;
+            float: left;
+        }
+        #search_icon{
+            background: url(images/vergrootglas.png) no-repeat;
+            float: left;
+            width: 10px;
+            height: 40px;
+        }
+        ul.right_objecten_lijst{
+             width: 100%;
+            height: 100%;
+            float: left;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-y: scroll;
+            position: absolute;
+            top: 60px;
+            border: 1px solid black;
+        }
+        li.right_objecten_lijst{
+            min-height: 70px;
+            height: 25%;
+            width: calc(100% - 1px);
+            border-bottom: 1px dashed black;
+            border-right: 1px solid black;
+            margin: 0;
+            float: left;
+        }
+        li.right_objecten_lijst:nth-child(even) {background: #CCC}
+        li.right_objecten_lijst:nth-child(odd) {background: #FFF}
+
+        .vraag_nomering_rechts{
+            float: left;
+        }
+        .images_rechter_vragen{
+            object-fit: cover;
+            width: 33%;
+            height: calc(100% - 20px);
+            float: left;
+            margin: 10px 10px 10px 5px;
+        }
+        .right_objects_data{
+            height: 90%;
+            margin: 10px;
+        }
+        .right_objects_data_p{
+            border: 1px solid black;
+            min-height: 15px;
+            height: 30%;
+            padding-left: 2px;
+            text-align: left;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <div class="header">
-        header
+
     </div>
     <div class="content">
         <div class="main">
@@ -219,55 +408,138 @@
                     <input type="text" id="zoeken_vraag_inpt">
                 </div>
                 <div class="vragen_beheren_middle">
-                    <div class="vragen_beheren_middle_left"></div>
-                    <div class="vragen_beheren_middle_middle"></div>
-                    <div class="vragen_beheren_middle_right"></div>
+                    <div class="vragen_beheren_middle_left">
+                        <button style="width: 100%; height: 30px;">Alle vragen bij dit KunstObject</button>
+                        <ul class="linker_vragen_lijst">
+                            <li class="linker_vragen_lijst">In welk jaar is het melk meisje geschilderd? <p class="vraag_nomering">7</p></li>
+                            <li class="linker_vragen_lijst">Van welke Schilder is het melk meisje?       <p class="vraag_nomering">4</p></li>
+                            <li class="linker_vragen_lijst">In welk jaar is het melk meisje geschilderd? <p class="vraag_nomering">3</p></li>
+                            <li class="linker_vragen_lijst">In welk museum hangt het het melk meisje?    <p class="vraag_nomering">5</p></li>
+                            <li class="linker_vragen_lijst">Door wie is het melk meisje geschilderd?     <p class="vraag_nomering">2</p></li>
+                            <li class="linker_vragen_lijst">Valt het melk meisje onder stil leven?       <p class="vraag_nomering">6</p></li>
+                            <li class="linker_vragen_lijst"></li>
+                            <li class="linker_vragen_lijst"></li>
+                            <li class="linker_vragen_lijst"></li>
+                            <li class="linker_vragen_lijst"></li>
+                        </ul>
+                    </div>
+                    <div class="vragen_beheren_middle_middle">
+                        <p id="deze_vraag_is_geschikt">Vraag is geschikt voor:</p>
+                        <ul id="niveau_checkboxes">
+                            <li><input type="checkbox"> Alle groepen</li>
+                            <li><input type="checkbox"> Groep 4 / 5 / 6</li>
+                            <li><input type="checkbox"> Groep 7 / 8    </li>
+                            <li><input type="checkbox"> Middelbaar onderwijs</li>
+                            <li><input type="checkbox"> Voortgezet onderwijs</li>
+                      </ul>
+                        <div id="vraag_midden">
+                            <div id="vraag_midden_links" >
+                                <p id="vraag_midden_links_vraag">Door wie is het melkmeisje geschilderd</p>
+                                <ul id="vraag_midden_links_antw">
+                                    <li class="vraag_midden_links_antw_pnts"></li>
+                                    <li class="vraag_midden_links_antw_pnts"></li>
+                                    <li class="vraag_midden_links_antw_pnts"></li>
+                                    <li class="vraag_midden_links_antw_pnts"></li>
+                                    <li class="vraag_midden_links_antw_pnts"></li>
+                                    <li class="vraag_midden_links_antw_pnts"></li>
+                                    <li class="vraag_midden_links_antw_pnts"></li>
+                                </ul>
+                            </div>
+                            <div id="vraag_midden_rechts">
+                                <img id="vraag_midden_rechts_image"
+                                 src="/images/melk_meisje.jpg" alt="Melk meisje">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vragen_beheren_middle_right">
+                        <p id="alle_kunst_objecten_titel">Alle kunst objecten</p>
+                        <div id="vragen_beheren_middle_right_zoek">
+                            <input id="vragen_beheren_midden_right_input" type="text">
+                            <button id="vragen_beheren_midden_right_btn">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                        <ul class="right_objecten_lijst">
+                            <li class="right_objecten_lijst">
+                                <p class="vraag_nomering_rechts">5</p>
+                                <img src="images/melk_meisje.jpg" alt="het melkmeisje" class="images_rechter_vragen">
+                                <div   class="right_objects_data">
+                                    <p class="right_objects_data_p" >Het melkmeisje</p>
+                                    <p class="right_objects_data_p">Johannes Vermeer</p>
+                                </div>
+                            </li>
+                            <li class="right_objecten_lijst">
+                                <p class="vraag_nomering_rechts">4</p>
+                                <img src="images/nachtwacht.jpg" alt="de nachtwacht" class="images_rechter_vragen">
+                                <div   class="right_objects_data">
+                                    <p class="right_objects_data_p" >De nachtwacht</p>
+                                    <p class="right_objects_data_p">rembrand van Rijn</p>
+                                </div>
+                            </li>
+                            <li class="right_objecten_lijst">
+                                <p class="vraag_nomering_rechts">7</p>
+                                <img src="images/meisje_aan_het_venster.jpg" alt="meisje_aan_het_venster" class="images_rechter_vragen">
+                                <div   class="right_objects_data">
+                                    <p class="right_objects_data_p" >Jong meisje aan het venster</p>
+                                    <p class="right_objects_data_p">rembrand van Rijn</p>
+                                </div>
+                            </li>
+                            <li class="right_objecten_lijst">item4</li>
+                            <li class="right_objecten_lijst">item5</li>
+                            <li class="right_objecten_lijst">item6</li>
+                            <li class="right_objecten_lijst">item7</li>
+                            <li class="right_objecten_lijst">item8</li>
+                            <li class="right_objecten_lijst">item9</li>
+                            <li class="right_objecten_lijst">item10</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="vragen_beheren_bottom">
                     <div class="vragen_beheren_bottom_zoeken">
-                        <input type="text" id="vragen_beheren_bottom_zoeken_inpt">
+                        <input type="text" id="vragen_beheren_bottom_zoeken_inpt"
+                        placeholder="Lijst met alle vragen." style="text-align: center;">
                         <button id="vragen_beheren_bottom_zoeken_btn">/</button>
                     </div>
                     <div class="vragen_beheren_bottom_overzicht">
                         <table cellspacing="0" style="width: 100%">
                             <thead class="vragen_overzicht">
                                 <tr class="vragen_overzicht">
-                                    <th class="vragen_overzicht" style="width: 10%;">VolgNummer</th>
-                                    <th class="vragen_overzicht" style="width: 35%;">Vraag</th>
-                                    <th class="vragen_overzicht" style="width: 25%;">KunstObjectNaam</th>
-                                    <th class="vragen_overzicht" style="width: 25%;">Aantal Antwoorden</th>
-                                    <th class="vragen_overzicht" style="width: 5%;">Id</th>
+                                    <th class="vragen_overzicht" style="min-width: 100px; width: 120px;">VolgNummer</th>
+                                    <th class="vragen_overzicht" style="width: 50%;">Vraag</th>
+                                    <th class="vragen_overzicht" style="width: 50%;">KunstObjectNaam</th>
+                                    <th class="vragen_overzicht" style="min-width: 140px; width: 160px;">Aantal Antwoorden</th>
+                                    <th class="vragen_overzicht" style="min-width: 40px; width: 60px;">Id</th>
                                     <th class="vragen_overzicht" style="width: 5%;color: black">....</th>
                                 </tr>
                             </thead>
                             <tbody class="vragen_overzicht">
                                 <tr class="vragen_overzicht">
-                                    <td class="vragen_overzicht">item 1</td>
-                                    <td class="vragen_overzicht">item 2</td>
-                                    <td class="vragen_overzicht">item 3</td>
-                                    <td class="vragen_overzicht">item 4</td>
-                                    <td class="vragen_overzicht">item 5</td>
+                                    <td class="vragen_overzicht">1</td>
+                                    <td class="vragen_overzicht">In welk jaar is het melkmeisje geschilderd?</td>
+                                    <td class="vragen_overzicht">Het melk meisje</td>
+                                    <td class="vragen_overzicht">4</td>
+                                    <td class="vragen_overzicht">1</td>
                                 </tr>
                                 <tr class="vragen_overzicht">
-                                    <td class="vragen_overzicht">item 1</td>
-                                    <td class="vragen_overzicht">item 2</td>
-                                    <td class="vragen_overzicht">item 3</td>
-                                    <td class="vragen_overzicht">item 4</td>
-                                    <td class="vragen_overzicht">item 5</td>
+                                    <td class="vragen_overzicht">2</td>
+                                    <td class="vragen_overzicht">In welk museum hangt het het melk meisje?</td>
+                                    <td class="vragen_overzicht">Het melk meisje</td>
+                                    <td class="vragen_overzicht">2</td>
+                                    <td class="vragen_overzicht">2</td>
                                 </tr>
                                 <tr class="vragen_overzicht">
-                                    <td class="vragen_overzicht">item 1</td>
-                                    <td class="vragen_overzicht">item 2</td>
-                                    <td class="vragen_overzicht">item 3</td>
-                                    <td class="vragen_overzicht">item 4</td>
-                                    <td class="vragen_overzicht">item 5</td>
+                                    <td class="vragen_overzicht">3</td>
+                                    <td class="vragen_overzicht">Door wie is het melk meisje geschilderd?</td>
+                                    <td class="vragen_overzicht">Het melk meisje</td>
+                                    <td class="vragen_overzicht">6</td>
+                                    <td class="vragen_overzicht">3</td>
                                 </tr>
                                 <tr class="vragen_overzicht">
-                                    <td class="vragen_overzicht">item 1</td>
-                                    <td class="vragen_overzicht">item 2</td>
-                                    <td class="vragen_overzicht">item 3</td>
-                                    <td class="vragen_overzicht">item 4</td>
-                                    <td class="vragen_overzicht">item 5</td>
+                                    <td class="vragen_overzicht">4</td>
+                                    <td class="vragen_overzicht">Valt het melk meisje onder stil leven?</td>
+                                    <td class="vragen_overzicht">Het melk meisje</td>
+                                    <td class="vragen_overzicht">7</td>
+                                    <td class="vragen_overzicht">4</td>
                                 </tr>
                                 <tr class="vragen_overzicht">
                                     <td class="vragen_overzicht">item 1</td>
