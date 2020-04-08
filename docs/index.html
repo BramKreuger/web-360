@@ -29,6 +29,18 @@
             margin: 10px 10px 15px 10px;
         }
 
+        button{
+            border: 1px solid black;
+            background-color: #fafafa;
+            box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+        }
+        button:hover{
+            background-color: white;
+        }
+        button:active{
+            background-color: #efd6ff;
+        }
+
         .half_header{
             /*background-color: #9f3aa6;
             border: 2px solid black;*/
@@ -44,7 +56,7 @@
         #half_header_upper{
             margin-top: 20px;
 
-            width: 100%;
+            width: calc(100% - 200px);
             display: flex;
             flex-direction: row;
         }
@@ -63,7 +75,7 @@
 
             overflow: hidden;
             white-space: nowrap;
-            flex-grow: 1;
+            flex-grow: 01;
         }
 
         .header_btn:hover{
@@ -78,8 +90,8 @@
             background-size: cover;
             margin-right: 5px;
 
-            flex: 0 0 auto;
-            width: 200px;
+            flex: 0 0 200px;
+            /*width: 200px;*/
             height: 45px;
         }
 
@@ -125,9 +137,8 @@
             height: calc(100% - 25px);
             width: 90%;
             margin: 10px 5% 10px 5%;
-            padding: 0;
+            padding: 5px 5px 0px 10px;
             background-color: #eeeeee;
-            /*border: 2px black solid;*/
             box-shadow: 10px 10px 5px #bdbdbd;
             float: left;
 
@@ -146,11 +157,22 @@
             height: 30px;
         }
 
+        #foldables{
+            width: 100%;
+            display: flex;
+        }
+
+        #fold_button{
+            flex: 1 0 auto;
+            margin: 0px 2px 0px 2px;
+        }
+
         .vragen_beheren_middle {
-            height: calc(66.67% - 20px);
+            height: calc(66.67% - 25px);
             width: calc(100% - 5px);
             margin: 2.5px 2.5px 2.5px 2.5px;
             padding: 0;
+            display: flex;
         }
 
         .vragen_beheren_middle_left {
@@ -298,7 +320,7 @@
             width: 100%;
             height:100%;
             float: left;
-            margin: 0;
+            margin: 5px 0px 0px 0px;
             padding: 0;
             text-align: center;
             overflow-y: scroll;
@@ -392,16 +414,16 @@
             height: 30px;
         }
         #vragen_beheren_midden_right_input{
-            width: calc(100% - 29px);
+            width: calc(100% - 31px);
             height: 21px;
-            margin: 0px 0px 2.5px 0px;
+            margin: 0px 2px 2.5px 0px;
             padding: 0;
             float: left;
         }
         #vragen_beheren_midden_right_btn{
             width: 25px;
             height: 25px;
-            margin: 0px 0px 2.5px 0px;
+            margin: px 0px 2.5px 0px;
             padding: 0;
             float: left;
         }
@@ -415,7 +437,7 @@
              width: 100%;
             height: 100%;
             float: left;
-            margin: 0;
+            margin: 5px 0px 0px 0px;
             padding: 0;
             text-align: center;
             overflow-y: scroll;
@@ -482,8 +504,8 @@
 <body>
     <div class="header">
         <div style="padding-top: 12px;" class="half_header">
-            <p id="header_text"><ixXess 360 Museum Portaal > Secure Museum Home </p>
-            <input id="home_button" type="image" src="../images/VRED-naamlogo.png" alt="home" class="header_btn">
+            <p id="header_text">Museum360° > Museum Home > Rijksmuseum</p>
+            <input id="home_button" type="image" src="images/VRED-naamlogo.png" alt="home" class="header_btn">
                <div id="half_header_upper">
                 <button class="header_btn">Beheer Tours</button><!--
                 --><button class="header_btn" id="active">Beheer Kunst Objecten</button><!--
@@ -509,6 +531,11 @@
                 <div class="zoeken">
                     <button id="zoeken_vraag_btn">Vraag</button>
                     <input type="text" id="zoeken_vraag_inpt">
+                </div>
+                <div id="foldables">
+                    <button id="fold_button">Klap In/Uit</button>
+                    <button id="fold_button">Klap In/Uit</button>
+                    <button id="fold_button">Klap In/Uit</button>
                 </div>
                 <div class="vragen_beheren_middle">
                     <div class="vragen_beheren_middle_left">
