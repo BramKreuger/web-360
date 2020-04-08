@@ -10,6 +10,7 @@
         html {
             height: 100%;
             width: 100%;
+            font-family: Ariel, sans-serif;
         }
 
         body {
@@ -29,10 +30,19 @@
         }
 
         .half_header{
-            background-color: #CCC;
-            border: 2px solid black;
+            /*background-color: #9f3aa6;
+            border: 2px solid black;*/
+
             height: calc(50% - 7.5px);
-            min-height: 35px;
+            min-height: 50px;
+
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+
+        #half_header_upper{
+            margin-top: 20px;
 
             width: 100%;
             display: flex;
@@ -40,48 +50,66 @@
         }
 
         .header_btn{
-            margin: 5px;
-            background-color: #EEE;
-            border: 1px solid black;
-            color: black;
+            color: white;
+            background-color: #72309d;
+            border: 0;
+            border-right: 1px solid white;
+            transition-duration: 0.4s;
+
             text-align: center;
-            text-decoration: none;
-            margin: 4px 2px;
+            margin: 5px 0px 5px 0px;
             cursor: pointer;
-            border-radius: 16px;
             height: 30px;
 
             overflow: hidden;
             white-space: nowrap;
-            text-overflow: ellipsis;
             flex-grow: 1;
+        }
+
+        .header_btn:hover{
+            background-color: #461d61;
+        }
+        .header_btn#active{
+            background-color: #7f02d1;
+        }
+
+        #home_button{
+            background-image: image("images/VRED-naamlogo.png");;
+            background-size: cover;
+            margin-right: 5px;
+
+            flex: 0 0 auto;
+            width: 200px;
+            height: 45px;
         }
 
         #header_text{
             position: absolute;
             font-size: small;
-            top: 0;
-            margin-left: 5px;
+            top: 15px;
+            margin-left: 207px;
             white-space: nowrap;
         }
 
         .content {
-            background-color: brown;
-            height: calc(85% - 58px);
-            width: calc(100% - 40px);
-            border: 10px solid black;
+            height: calc(87.5% - 40px);
+            width: calc(100% - 20px);
+
             margin: 15px 10px 0px;
             display: flex;
-            margin-top: 15px
+            margin-top: 15px;
+
+            background-image: image()
+
         }
 
         .footer {
-            background-color: gray;
             min-height: 20px;
-            height: 5%;
-            width: calc(100% - 24px);
-            border: 2px solid black;
-            margin: 5px 10px 10px;
+            height: 2.5%;
+            min-width: 350px;
+            width: 33%;
+            text-align: center;
+            margin: 5px 30%; 10px 30%;
             padding: 0;
         }
 
@@ -89,18 +117,20 @@
             height: 100%;
             padding: 0;
             margin: 0;
-            border: 2px black solid;
+            color: #72309d;
         }
 
         /*---Content-classes--*/
         .main {
             height: calc(100% - 25px);
-            width: 80%;
-            margin: 10px 10% 10px 10%;
+            width: 90%;
+            margin: 10px 5% 10px 5%;
             padding: 0;
-            background-color: whitesmoke;
-            border: 2px black solid;
+            background-color: #eeeeee;
+            /*border: 2px black solid;*/
+            box-shadow: 10px 10px 5px #bdbdbd;
             float: left;
+
         }
 
         .main_most_content {
@@ -436,7 +466,7 @@
             writing-mode: vertical-rl;
             text-align:center;
             width: 30px;
-            border-left: 1px solid black;
+            border: 1px solid black;
             overflow: hidden;
         }
          #platform_panel_p{
@@ -452,18 +482,20 @@
 <body>
     <div class="header">
         <div style="padding-top: 12px;" class="half_header">
-            <p id="header_text">xXess 360 Museum Portaal > Secure Museum Home </p>
-            <button class="header_btn">Home</button>
-            <button class="header_btn">Beheer Kennis Test</button>
-            <button class="header_btn">Beheer Kunst Objecten</button>
-            <button class="header_btn">Beheer Tours</button>
-            <button class="header_btn">Beheer Gebruikers</button>
-            <button class="header_btn">Statestieken</button>
-            <button class="header_btn">Mijn Museum</button>
-            <button class="header_btn">Sign out</button>
+            <p id="header_text"><ixXess 360 Museum Portaal > Secure Museum Home </p>
+            <input id="home_button" type="image" src="images/VRED-naamlogo.png" alt="home" class="header_btn">
+               <div id="half_header_upper">
+                <button class="header_btn">Beheer Tours</button><!--
+                --><button class="header_btn" id="active">Beheer Kunst Objecten</button><!--
+                --><button class="header_btn">Beheer Kennis Test</button><!--
+                --><button class="header_btn">Beheer Gebruikers</button><!--
+                --><button class="header_btn">Statestieken</button><!--
+                --><button class="header_btn">Mijn Museum</button><!--
+                --><button class="header_btn">Sign out</button>
+            </div>
         </div>
-        <div style="margin-top: 5px;" class="half_header">
-            <button class="header_btn">Kennis Vragen Beheren</button>
+        <div style="margin-top: 7px;" class="half_header">
+            <button class="header_btn" id="active">Kennis Vragen Beheren</button>
             <button class="header_btn">Kennis Antwoorden Beheren</button>
             <button class="header_btn">Kennis Test Beheren</button>
             <button class="header_btn">Kennis test Detail</button>
@@ -737,9 +769,9 @@
         </div>
     </div>
     <div class="footer">
-        <button class="ftr_btns" id="priv_btn">privacy</button><!--
-       --><button class="ftr_btns" id="disc_btn">disclaimer</button><!--
-       --><button class="ftr_btns" id="vorw_btn">voorwaarden</button><!--
-       --><button class="ftr_btns" id="cont_btn">contact</button>
+       <a  href="default.asp" target="_blank" class="ftr_btns">privacy</a> |
+       <a  href="default.asp" target="_blank" class="ftr_btns">disclaimer</a> |
+       <a  href="default.asp" target="_blank" class="ftr_btns">voorwaarden</a> |
+       <a  href="default.asp" target="_blank" class="ftr_btns">contact</a>
     </div>
 </body></html>
