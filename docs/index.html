@@ -343,6 +343,16 @@
             padding: 0px 5px 0px 5px;
             margin: 0;
         }
+        #all_checked{
+            display: none;
+        }
+        #all_box:checked ~ #all_checked{
+            display: block;
+        }
+        #all_box:checked ~ #all_unchecked{
+            display: none;
+        }
+
         #vraag_midden{
             display: flex;
             width: calc(100% - 20px);
@@ -547,11 +557,19 @@
                     <div class="vragen_beheren_middle_middle">
                         <p id="deze_vraag_is_geschikt">Vraag is geschikt voor:</p>
                         <ul id="niveau_checkboxes">
-                            <li><input type="checkbox"> Alle groepen</li>
-                            <li><input type="checkbox"> Groep 4 / 5 / 6</li>
-                            <li><input type="checkbox"> Groep 7 / 8    </li>
-                            <li><input type="checkbox"> Middelbaar onderwijs</li>
-                            <li><input type="checkbox"> Voortgezet onderwijs</li>
+                            <input type="checkbox" id="all_box"> Alle groepen
+                             <div id="all_unchecked">
+                                <li><input type="checkbox"> Groep 4 / 5 / 6</li>
+                                <li><input type="checkbox"> Groep 7 / 8    </li>
+                                <li><input type="checkbox"> Middelbaar onderwijs</li>
+                                <li><input type="checkbox"> Voortgezet onderwijs</li>
+                            </div>
+                            <div id="all_checked">
+                                <li><input type="checkbox" checked disabled> Groep 4 / 5 / 6</li>
+                                <li><input type="checkbox" checked disabled> Groep 7 / 8    </li>
+                                <li><input type="checkbox" checked disabled> Middelbaar onderwijs</li>
+                                <li><input type="checkbox" checked disabled> Voortgezet onderwijs</li>
+                            </div>
                       </ul>
                         <div id="vraag_midden">
                             <div id="vraag_midden_links" >
