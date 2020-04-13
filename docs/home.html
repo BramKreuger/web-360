@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage museum360</title>
+    <style>
+        html, body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Ariel, sans-serif;
+            overflow: hidden;
+        }
+
+        #embedded_site{
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        #overlay{
+          position:absolute;
+          left:0;top:0;
+          width:100%;
+          height:100%;
+          object-fit:cover;
+          pointer-events:none;
+          z-index:2;
+        }
+        .content{
+          position:absolute;
+          left:0;top:0;
+          width:100%;
+          height:100%;
+          z-index:3;
+        }
+        /*-----------vr-bril-----------------*/
+        .vr_bril_open{
+            position: absolute;
+            left: 10px;
+            bottom: 30px;
+        }
+        .vr_bril_open:target ~ #thuis_educatie{
+            display: none;
+        }
+
+        .vr_bril_open:target + .vr_bril_close {
+            display: inline;
+        }
+
+        .vr_bril_open:target{
+            display: none;
+        }
+
+        .vr_bril_close {
+            display: none;
+        }
+        .vr_bril_img{
+            width: 50%;
+        }
+        .vr_box {
+            position: absolute;
+            bottom: 50px;
+            height: 75%;
+            width: 33%;
+            background: rgba(255, 255, 255, 0.85);
+        }
+        .vr_box p{
+            margin: 10px;
+            color: black;
+        }
+        #slide {
+            position: absolute;
+            left: -200px;
+            -webkit-animation: slide 0.5s forwards;
+            animation: slide 0.5s forwards;
+        }
+
+        @-webkit-keyframes slide {
+            100% { left: 0; }
+        }
+
+        @keyframes slide {
+            100% { left: 0; }
+        }
+        #vr_box_title{
+            text-align: center;
+            color: purple;
+            font-size: x-large;
+            margin-bottom: 0;
+        }
+        #box_text{
+            height: calc(100% - 40px);
+            overflow-y: scroll;
+        }
+        /*-----------end-------------*/
+        #thuis_educatie{
+            font-size: 50px;
+            color: white;
+            font-family: "Times New Roman", Times, serif;
+            float: left;
+            top: calc(50% - 50px);
+            position: absolute;
+        }
+        #nav_bar{
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            font-size: xx-large;
+            color: white;
+            font-weight: bold;
+        }
+        .ftr_btns{
+            text-decoration: none;
+            color: white;
+        }
+        #vred_img{
+            margin: 10px;
+            width: 500px;
+        }
+        #bezoek{
+            position: absolute;
+            right: 10px;
+            bottom: -20px;
+            font-size: xx-large;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <embed src="http://rijksmuseum360.nl/" id="embedded_site">
+    <img id="overlay" src="images/home_cutout.png" alt="<jongen met vr bril">
+
+    <div class="content">
+        <img id="vred_img" src="images/VRED-naamlogo.png" alt="vred_logo">
+        <a id="vr_bril_open"  class="vr_bril_open" href="#vr_bril_open"><img class="vr_bril_img" src="images/Oculus_VR-box_transparant.png" alt="vr_bril"></a>
+        <a id="vr_bril_close" class="vr_bril_close" href="#vr_bril_close">
+            <div class="vr_box" id="slide">
+                <p id="vr_box_title">VR-Services</p>
+                <div id="box_text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam magna velit, commodo vel neque quis, vestibulum varius ipsum. Integer a augue ut nulla venenatis vulputate vel et risus. Donec dignissim consequat magna, a viverra tellus tempor ut. Mauris id efficitur lacus. Proin finibus facilisis bibendum. Curabitur at urna diam. Integer porta finibus ex sit amet pharetra. Etiam ultricies, massa non cursus ornare, lorem urna condimentum metus, sit amet ultrices elit orci et nisi. Quisque posuere imperdiet dui eu congue. Phasellus aliquet nulla velit, finibus congue justo faucibus vel. Nunc placerat mauris vitae ultrices accumsan. Sed id luctus mi, at ullamcorper ligula. Integer mollis posuere velit, quis luctus lacus eleifend ac. Proin sed dictum lectus.
+
+                    Ut augue turpis, tempor et auctor ac, euismod vitae nunc. In bibendum urna leo, at pulvinar nisl condimentum at. Quisque et mi ante. Phasellus augue quam, pellentesque ut neque consectetur, imperdiet hendrerit metus. Etiam laoreet quam dolor, sit amet sodales turpis cursus vitae. Duis ac blandit nulla, quis aliquam nisi. Aenean luctus, elit vitae hendrerit condimentum, nisi libero dignissim massa, sed viverra urna dolor sed elit. Pellentesque efficitur non ipsum non condimentum. Praesent a rutrum massa. Mauris pellentesque odio efficitur interdum rhoncus. Praesent vitae luctus metus.
+
+                    Mauris consequat porttitor mauris, sed mattis tellus tempor ac. Nullam ut rutrum nulla, in pharetra purus. Morbi gravida placerat enim in ullamcorper. Phasellus dignissim justo nisi, id viverra mauris tincidunt ut. Nullam pretium euismod ipsum, vel dignissim massa feugiat ac. Nunc vel mauris ante. Aliquam arcu purus, consectetur eget placerat ac, pulvinar sed lacus. Phasellus quis augue eu ante luctus auctor. Donec accumsan ante quam, a gravida magna lacinia at. Nulla consectetur sit amet tellus in tempor. Curabitur neque mi, viverra eget augue vel, maximus ullamcorper eros. Vestibulum fringilla est dui, at egestas ex pharetra sed. Duis lacinia nisi sed risus sagittis, eu cursus justo rutrum. Quisque mattis lectus vitae lectus feugiat, eget pulvinar nulla varius.
+
+                    Curabitur euismod viverra metus aliquam eleifend. Etiam ornare gravida pellentesque. Duis nec posuere ex. Mauris ut ornare dui. Vestibulum in lectus et velit sagittis ornare et lobortis erat. Suspendisse lobortis velit sed tellus volutpat, vel elementum metus pellentesque. Sed eu tincidunt ante, ut scelerisque sem. Maecenas id pharetra orci. Suspendisse feugiat, erat sit amet tristique venenatis, enim justo dignissim lacus, et vehicula arcu mauris eu nisi. Aliquam ultricies enim non ipsum rhoncus tincidunt.
+
+                    In tincidunt eu erat id aliquet. Etiam at tristique nunc. Mauris auctor mollis commodo. Donec nibh ante, scelerisque sed commodo non, bibendum quis arcu. Etiam mauris elit, tristique ac facilisis vitae, feugiat quis quam. Aliquam eu magna mi. Quisque sagittis molestie urna, at tempor quam lobortis at. Fusce congue tempus lorem, dictum mollis est dapibus aliquam. Nulla quis libero ultricies, vulputate massa sed, accumsan dolor. Etiam sodales metus quis diam egestas mollis. Aliquam porta tortor et mi finibus, eget tempus mi iaculis. Vivamus gravida, turpis eu facilisis tristique, magna velit tempor neque, vitae luctus arcu neque vel est.</p>
+                </div>
+            </div>
+        </a>
+        <p id="thuis_educatie">Thuis educatie</p>
+        <div id=nav_bar>
+            <a  href="default.asp" target="_blank" class="ftr_btns">over ons</a> |
+            <a  href="default.asp" target="_blank" class="ftr_btns">contact</a> |
+            <a  href="default.asp" target="_blank" class="ftr_btns">VRED</a>
+        </div>
+        <p id="bezoek">bezoek: <a href="www.museum360.nl">museum360°</a></p>
+    </div>
+</body>
+</html>
