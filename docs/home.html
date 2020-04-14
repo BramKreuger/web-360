@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Homepage museum360</title>
-    <script src="scripts/homepage.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         html, body{
             width: 100%;
@@ -118,30 +118,41 @@
         }
         #vred_img{
             margin: 10px;
-            width: 500px;
+            width: 400px;
             background: rgba(255, 255, 255, 0.85);
         }
         #bezoek{
             position: absolute;
             right: 10px;
-            bottom: -20px;
-            font-size: 35px;
+            bottom: -13px;
+            font-size: 25px;
             color: white;
+            font-weight: bold;
         }
         /*------------share-------------*/
         #share{
             position: absolute;
-            width: 100px;
-            top: calc(50% - 20px);
+            bottom: 45px;
             float: right;
+            right: -400px;
+            font-size: 25px;
+
+            display: flex;
+            flex-direction: row;
+            transition: 1s;
+            color: white;
+        }
+
+        #share:hover{
             right: 0;
+            color: black;
             background: rgba(255, 255, 255, 0.85);
         }
 
         #share p{
             text-align: center;
             padding: 0;
-            margin: 5px;
+            margin: 7px 32px 5px 5px;
             font-weight: bold
         }
 
@@ -153,13 +164,12 @@
           padding: 2px 1px;
           outline: none;
           text-align: center;
-          font-size: 15px;
           margin: 5px;
+          text-decoration: none;
         }
 
         .share-btn:focus,
         .share-btn:hover {
-          text-decoration: none;
           opacity: 0.8;
         }
 
@@ -202,14 +212,14 @@
         </a>
         <p id="thuis_educatie">Thuis educatie</p>
         <div id=nav_bar>
-            <a  href="default.asp" target="_blank" class="ftr_btns">Over ons</a> |
+            <a  href="default.asp" target="_blank" class="ftr_btns">Over VRED</a> |
             <a  href="default.asp" target="_blank" class="ftr_btns">Contact</a> |
-            <a  href="default.asp" target="_blank" class="ftr_btns">VRED</a>
+            <a  href="default.asp" target="_blank" class="ftr_btns">VRED-Services</a>
         </div>
-        <p id="bezoek">Bezoek: <a href="www.museum360.nl">museum360°</a></p>
+        <p id="bezoek">Bezoek: <a style="text-decoration: none; color: white;" href="www.museum360.nl">museum360°</a></p>
         <div id="share">
            <p>
-               SHARE
+               <i class="fa fa-share"></i> Share
            </p>
             <!-- Twitter (url, text, @mention) -->
             <a class="share-btn twitter" href="https://twitter.com/share?url=<URL>&text=<TEXT>via=<USERNAME>">
