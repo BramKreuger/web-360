@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Homepage museum360</title>
+    <script src="scripts/homepage.js"></script>
     <style>
         html, body{
             width: 100%;
@@ -36,7 +37,7 @@
           z-index:3;
         }
         /*-----------vr-bril-----------------*/
-        .vr_bril_open{
+        #vr_bril_open{
             position: absolute;
             left: 10px;
             bottom: 30px;
@@ -61,9 +62,9 @@
         }
         .vr_box {
             position: absolute;
-            bottom: 50px;
-            height: 75%;
-            width: 33%;
+            top: 150px;
+            height: calc(100% - 200px);
+            width: 25%;
             background: rgba(255, 255, 255, 0.85);
         }
         .vr_box p{
@@ -72,9 +73,9 @@
         }
         #slide {
             position: absolute;
-            left: -200px;
-            -webkit-animation: slide 0.5s forwards;
-            animation: slide 0.5s forwards;
+            left: -25%;
+            -webkit-animation: slide 1.5s forwards;
+            animation: slide 1.5s forwards;
         }
 
         @-webkit-keyframes slide {
@@ -107,7 +108,7 @@
             position: absolute;
             left: 10px;
             bottom: 10px;
-            font-size: xx-large;
+            font-size: 25px;
             color: white;
             font-weight: bold;
         }
@@ -123,14 +124,14 @@
             position: absolute;
             right: 10px;
             bottom: -20px;
-            font-size: xx-large;
+            font-size: 35px;
             color: white;
         }
     </style>
 </head>
 <body>
     <embed src="http://rijksmuseum360.nl/" id="embedded_site">
-    <img id="overlay" src="images/home_cutout.png" alt="<jongen met vr bril">
+    <img id="overlay" src="images/Website_VRED_boy.png" alt="<jongen met vr bril">
 
     <div class="content">
         <img id="vred_img" src="images/VRED-naamlogo.png" alt="vred_logo">
@@ -153,11 +154,11 @@
         </a>
         <p id="thuis_educatie">Thuis educatie</p>
         <div id=nav_bar>
-            <a  href="default.asp" target="_blank" class="ftr_btns">over ons</a> |
-            <a  href="default.asp" target="_blank" class="ftr_btns">contact</a> |
+            <a  href="default.asp" target="_blank" class="ftr_btns">Over ons</a> |
+            <a  href="default.asp" target="_blank" class="ftr_btns">Contact</a> |
             <a  href="default.asp" target="_blank" class="ftr_btns">VRED</a>
         </div>
-        <p id="bezoek">bezoek: <a href="www.museum360.nl">museum360°</a></p>
+        <p id="bezoek">Bezoek: <a href="www.museum360.nl">museum360°</a></p>
     </div>
 </body>
 </html>
