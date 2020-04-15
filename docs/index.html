@@ -49,6 +49,9 @@
             display: flex;
             flex-direction: row;
         }
+        #half_header_top{
+            padding-top: 12px;
+        }
 
         #half_header_upper{
             margin-top: 20px;
@@ -56,6 +59,9 @@
             width: calc(100% - 200px);
             display: flex;
             flex-direction: row;
+        }
+        #half_header_bottom{
+            margin-top: 7px;
         }
 
         .header_btn{
@@ -271,6 +277,7 @@
             margin: 2.5px 0px 2.5px 0px;
             padding: 0;
             flex-direction: row;
+            text-align: center;
         }
 
         .foldable_hide, .foldable_show {
@@ -311,6 +318,10 @@
             display: none;
         }
 
+        #bottom_table{
+            width: 100%;
+        }
+
         thead.vragen_overzicht {
             display: block;
             width: 100%;
@@ -324,6 +335,13 @@
             border: 1px white solid;
             border-left: 0;
         }
+        thead th:nth-child(1){min-width: 100px; width: 120px;}
+        thead th:nth-child(2){width: 51%; }
+        thead th:nth-child(3){width: 49%;  }
+        thead th:nth-child(4){min-width: 120px; width: 140px;}
+        thead th:nth-child(5){min-width: 40px; width: 60px; }
+        thead th:nth-child(6){width: 5%; color: black ;}
+
         tbody.vragen_overzicht {
             display: block;
             overflow-y: scroll;
@@ -383,13 +401,16 @@
         li.linker_vragen_lijst{
             list-style-type:none;
             height: 55px;
-            padding: 10px 5px 0px 5px;;
+            padding: 10px 5px 0px 5px;
             border-bottom: 1px solid black;
-            /*border-right: 1px solid black;*/
             overflow: hidden;
         }
         li.linker_vragen_lijst:nth-child(even) {background: #CCC}
         li.linker_vragen_lijst:nth-child(odd) {background: #FFF}
+
+        li.linker_vragen_lijst:last-child{
+            border-bottom: 1px dashed black;
+        }
 
         .vraag_nomering{
             position: relative;
@@ -407,7 +428,8 @@
             display: none;
         }
         #all_box:checked ~ #all_checked{
-            display: block;
+            display: flex;
+            flex-direction: column;
         }
         #all_box:checked ~ #all_unchecked{
             display: none;
@@ -543,15 +565,14 @@
         .right_objects_data{
             height: 90%;
             margin: 10px;
+            display: flex;
+            flex-direction: column;
         }
         .right_objects_data_p{
             border: 1px solid black;
-            min-height: 15px;
-            height: 30%;
-            padding-left: 2px;
-            text-align: left;
-            overflow: hidden;
+            margin: 10px 0px 0px 0px;
             white-space: nowrap;
+            overflow: hidden;
             text-overflow: ellipsis;
         }
     /*----------platform pannel-----------*/
@@ -577,7 +598,7 @@
 
 <body>
     <div class="header">
-        <div style="padding-top: 12px;" class="half_header">
+        <div id="half_header_top" class="half_header">
             <label id="header_text">Museum360° > Museum Home > Rijksmuseum</label>
             <input id="home_button" type="image" src="images/VRED-naamlogo.png" alt="home" class="header_btn">
                <div id="half_header_upper">
@@ -590,7 +611,7 @@
                 --><button class="header_btn">Sign out</button>
             </div>
         </div>
-        <div style="margin-top: 7px;" class="half_header">
+        <div id="half_header_bottom" class="half_header">
             <button class="header_btn" id="active">Kennisvragen Beheren</button>
             <button class="header_btn">Kennis Antwoorden Beheren</button>
             <button class="header_btn">Kennistest Beheren</button>
@@ -602,10 +623,10 @@
     <div class="content">
         <div class="main">
             <div class="main_most_content">
-                <div class="zoeken">
-                    <button id="zoeken_vraag_btn">Vraag</button>
-                    <input type="text" id="zoeken_vraag_inpt">
-                </div>
+                <form class="zoeken">
+                    <button type="submit" id="zoeken_vraag_btn">Vraag</button>
+                    <input name="zoeken_vraag" value="" type="text" id="zoeken_vraag_inpt">
+                </form>
                 <div class="vragen_beheren_middle">
                     <div class="vragen_beheren_middle_left">
                        <div>
@@ -615,39 +636,41 @@
                             </button>
                         </div>
                         <ul class="linker_vragen_lijst">
-                            <li style="border-top: 0;" class="linker_vragen_lijst">In welk jaar is het melk meisje geschilderd? <p class="vraag_nomering">7</p></li>
-                            <li class="linker_vragen_lijst">Van welke Schilder is het melk meisje?       <p class="vraag_nomering">4</p></li>
-                            <li class="linker_vragen_lijst">In welk jaar is het melk meisje geschilderd? <p class="vraag_nomering">3</p></li>
-                            <li class="linker_vragen_lijst">In welk museum hangt het het melk meisje?    <p class="vraag_nomering">5</p></li>
-                            <li class="linker_vragen_lijst">Door wie is het melk meisje geschilderd?     <p class="vraag_nomering">2</p></li>
-                            <li class="linker_vragen_lijst">Valt het melk meisje onder stil leven?       <p class="vraag_nomering">6</p></li>
-                            <li class="linker_vragen_lijst">                                             <p class="vraag_nomering">6</p></li>
-                            <li class="linker_vragen_lijst">                                             <p class="vraag_nomering">6</p></li>
-                            <li class="linker_vragen_lijst">                                             <p class="vraag_nomering">6</p></li>
-                            <li style="border-bottom: 1px dashed black;" class="linker_vragen_lijst">     <p class="vraag_nomering">6</p></li>
+                            <li class="linker_vragen_lijst">In welk jaar is het melk meisje geschilderd? <p class="vraag_nomering">7</p></li>
+                            <li class="linker_vragen_lijst">Van welke Schilder is het melk meisje?       <label class="vraag_nomering">4</label></li>
+                            <li class="linker_vragen_lijst">In welk jaar is het melk meisje geschilderd? <label class="vraag_nomering">3</label></li>
+                            <li class="linker_vragen_lijst">In welk museum hangt het het melk meisje?    <label class="vraag_nomering">5</label></li>
+                            <li class="linker_vragen_lijst">Door wie is het melk meisje geschilderd?     <label class="vraag_nomering">2</label></li>
+                            <li class="linker_vragen_lijst">Valt het melk meisje onder stil leven?       <label class="vraag_nomering">6</label></li>
+                            <li class="linker_vragen_lijst">                                             <label class="vraag_nomering">6</label></li>
+                            <li class="linker_vragen_lijst">                                             <label class="vraag_nomering">6</label></li>
+                            <li class="linker_vragen_lijst">                                             <label class="vraag_nomering">6</label></li>
+                            <li class="linker_vragen_lijst">    <label class="vraag_nomering">6</label></li>
                         </ul>
                     </div>
                     <div class="vragen_beheren_middle_middle">
                         <p id="deze_vraag_is_geschikt">Vraag is geschikt voor</p>
-                        <ul id="niveau_checkboxes"> <!--- Niet nodig. Maak hier een div/oid van -->
-                            <input type="checkbox" id="all_box"> Alle groepen
+                        <form id="niveau_checkboxes">
+                            <input type="checkbox" id="all_box" name="alle_groepen" value="1"><label for="alle_groepen"> Alle groepen</label>
                              <div id="all_unchecked">
-                                <li><input type="checkbox"> Groep 4 / 5 / 6</li>
-                                <li><input type="checkbox"> Groep 7 / 8    </li>
-                                <li><input type="checkbox"> Middelbaar onderwijs</li>
-                                <li><input type="checkbox"> Voortgezet onderwijs</li>
+                                <div><input type="checkbox" name="groep_4_5_6" value="1"><label for="groep_4_5_6"> Groep 4 / 5 / 6    </label></div>
+                                <div><input type="checkbox" name="groep_7_8" value="1"><label for="groep_7_8">  Groep 7 / 8            </label></div>
+                                <div><input type="checkbox" name="middelbaar" value="1"><label for="middelbaar">  Middelbaar onderwijs </label></div>
+                                <div><input type="checkbox" name="voortgezet" value="1"><label for="voortgezet">  Voortgezet onderwijs </label></div>
                             </div>
                             <div id="all_checked">
-                                <li><input type="checkbox" checked disabled> Groep 4 / 5 / 6</li>
-                                <li><input type="checkbox" checked disabled> Groep 7 / 8    </li>
-                                <li><input type="checkbox" checked disabled> Middelbaar onderwijs</li>
-                                <li><input type="checkbox" checked disabled> Voortgezet onderwijs</li>
+                                <div><input type="checkbox" checked disabled> Groep 4 / 5 / 6     </div>
+                                <div><input type="checkbox" checked disabled> Groep 7 / 8         </div>
+                                <div><input type="checkbox" checked disabled> Middelbaar onderwijs</div>
+                                <div><input type="checkbox" checked disabled> Voortgezet onderwijs</div>
                             </div>
-                      </ul>
+                        </form>
                        <p><b>Voorbeeld van de vraag</b></p>
                         <div id="vraag_midden">
                             <div id="vraag_midden_links" >
-                                <p id="vraag_midden_links_vraag">Door wie is het melkmeisje geschilderd</p>
+                                <div id="vraag_midden_links_vraag">
+                                    <label>Door wie is het melkmeisje geschilderd</label>
+                                </div>
                                 <ul id="vraag_midden_links_antw">
                                     <li class="vraag_midden_links_antw_pnts"></li>
                                     <li class="vraag_midden_links_antw_pnts"></li>
@@ -666,35 +689,35 @@
                     </div>
                     <div class="vragen_beheren_middle_right">
                         <p id="alle_kunst_objecten_titel">Alle kunstobjecten</p>
-                        <div id="vragen_beheren_middle_right_zoek">
-                            <input id="vragen_beheren_midden_right_input" type="text">
-                            <button id="vragen_beheren_midden_right_btn">
+                        <form id="vragen_beheren_middle_right_zoek">
+                            <input id="vragen_beheren_midden_right_input" type="text" name="zoeken_kunstobjecten" value="">
+                            <button type="submit" id="vragen_beheren_midden_right_btn">
                                 <i class="fa fa-search"></i>
                             </button>
-                        </div>
+                        </form>
                         <ul class="right_objecten_lijst">
                             <li class="right_objecten_lijst">
-                                <p class="vraag_nomering_rechts">5</p>
+                                <label class="vraag_nomering_rechts">5</label>
                                 <img src="images/melk_meisje.jpg" alt="het melkmeisje" class="images_rechter_vragen">
                                 <div   class="right_objects_data">
-                                    <p class="right_objects_data_p" >Het melkmeisje</p>
-                                    <p class="right_objects_data_p">Johannes Vermeer</p>
+                                    <label class="right_objects_data_p" >Het melkmeisje </label>
+                                    <label class="right_objects_data_p">Johannes Vermeer</label>
                                 </div>
                             </li>
                             <li class="right_objecten_lijst">
-                                <p class="vraag_nomering_rechts">4</p>
+                                <label class="vraag_nomering_rechts">4</label>
                                 <img src="images/nachtwacht.jpg" alt="de nachtwacht" class="images_rechter_vragen">
                                 <div   class="right_objects_data">
-                                    <p class="right_objects_data_p" >De nachtwacht</p>
-                                    <p class="right_objects_data_p">rembrand van Rijn</p>
+                                    <label class="right_objects_data_p" >De nachtwacht   </label>
+                                    <label class="right_objects_data_p">rembrand van Rijn</label>
                                 </div>
                             </li>
                             <li class="right_objecten_lijst">
-                                <p class="vraag_nomering_rechts">7</p>
+                                <label class="vraag_nomering_rechts">7</label>
                                 <img src="images/meisje_aan_het_venster.jpg" alt="meisje_aan_het_venster" class="images_rechter_vragen">
                                 <div   class="right_objects_data">
-                                    <p class="right_objects_data_p" >Jong meisje aan het venster</p>
-                                    <p class="right_objects_data_p">rembrand van Rijn</p>
+                                    <label class="right_objects_data_p" >Jong meisje aan het venster</label>
+                                    <label class="right_objects_data_p"> rembrand van Rijn          </label>
                                 </div>
                             </li>
                             <li class="right_objecten_lijst">item4</li>
@@ -708,18 +731,20 @@
                 <a href="#hide1" class="foldable_hide" id="hide1">▽</a>
                 <a href="#show1" class="foldable_show" id="show1">△</a>
                 <div class="vragen_beheren_bottom">
+                  <form action="">
                    <input type="text" id="vragen_beheren_bottom_zoeken_inpt"
-                    placeholder="Lijst met alle vragen." style="text-align: center;">
+                    placeholder="Lijst met alle vragen." name="alle_vragen_zoeken">
+                    </form>
                     <div class="vragen_beheren_bottom_overzicht">
-                        <table cellspacing="0" style="width: 100%">
+                        <table cellspacing="0" id=bottom_table>
                             <thead class="vragen_overzicht">
                                 <tr class="vragen_overzicht">
-                                    <th class="vragen_overzicht" style="min-width: 100px; width: 120px;">Volgnummer</th>
-                                    <th class="vragen_overzicht" style="width: 51%;">Vraag</th>
-                                    <th class="vragen_overzicht" style="width: 49%;">Object naam</th>
-                                    <th class="vragen_overzicht" style="min-width: 120px; width: 140px;"># Antwoorden</th>
-                                    <th class="vragen_overzicht" style="min-width: 40px; width: 60px;">Id</th>
-                                    <th class="vragen_overzicht" style="width: 5%;color: black">....</th>
+                                    <th class="vragen_overzicht">Volgnummer</th>
+                                    <th class="vragen_overzicht">Vraag</th>
+                                    <th class="vragen_overzicht">Object naam</th>
+                                    <th class="vragen_overzicht"># Antwoorden</th>
+                                    <th class="vragen_overzicht">Id</th>
+                                    <th class="vragen_overzicht">....</th>
                                 </tr>
                             </thead>
                             <tbody class="vragen_overzicht">
@@ -870,9 +895,6 @@
                 </div>
             </div>
             <button id="zoeken_plus_btn">+</button>
-        </div>
-        <div class="platform_panel">
-            <p id="platform_panel_p">Open beschikbare platformen panel</p>
         </div>
     </div>
     <div class="footer">
