@@ -1,0 +1,169 @@
+html {
+    height: 100%;
+    width: 100%;
+    font-family: Ariel, sans-serif;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.header {
+    height: 10%;
+    min-height: 75px;
+    width: calc(100% - 24px);
+    padding: 0;
+    margin: 0px 10px 15px 10px;
+}
+
+button {
+    border: 1px solid black;
+    background-color: #fafafa;
+    box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+}
+
+button:hover {
+    background-color: white;
+}
+
+button:active {
+    background-color: #efd6ff;
+}
+
+.half_header {
+    height: calc(50% - 7.5px);
+    min-height: 50px;
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#half_header_top {
+    padding-top: 12px;
+}
+
+#half_header_upper {
+    margin-top: 20px;
+
+    width: calc(100% - 200px);
+    display: flex;
+    flex-direction: row;
+}
+
+#half_header_bottom {
+    margin-top: 7px;
+}
+
+.header_btn {
+    color: white;
+    background-color: #72309d;
+    border: 0;
+    border-right: 1px solid white;
+    transition-duration: 0.4s;
+
+    text-align: center;
+    margin: 5px 0px 5px 0px;
+    cursor: pointer;
+    height: 30px;
+
+    text-overflow: ellipsis;
+    flex-grow: 1;
+    min-width: 10px;
+}
+
+.header_btn:hover {
+    background-color: #461d61;
+}
+
+.header_btn#active {
+    background-color: #7f02d1;
+}
+
+#home_button {
+    background-image: image("images/VRED-naamlogo.png");
+    ;
+    background-size: cover;
+    margin-right: 5px;
+    background-color: white;
+
+    flex: 0 0 200px;
+    /*width: 200px;*/
+    height: 45px;
+}
+
+#header_text {
+    position: absolute;
+    font-size: small;
+    top: 17px;
+    margin-left: 207px;
+    white-space: nowrap;
+}
+
+.content {
+    height: calc(87.5% - 50px);
+    width: calc(100% - 20px);
+
+    margin: 10px 10px 10px 10px;
+    display: flex;
+    position: absolute;
+    top: 108px;
+
+
+    background-image: url("../images/VR-mascotte_logo.png");
+    background-size: 150px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.footer {
+    z-index: -1;
+    position: absolute;
+    bottom: 2.5px;
+    min-height: 20px;
+    height: 2.5%;
+    min-width: 350px;
+    width: 33%;
+    text-align: center;
+    margin: 5px 30%;
+    10px 30%;
+    padding: 0;
+}
+
+.ftr_btns {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    color: #72309d;
+}
+
+/*---Content-classes--*/
+.main {
+    height: calc(100% - 25px);
+    width: 95%;
+    margin: 10px 2.5% 10px 2.5%;
+    padding: 5px 5px 0px 10px;
+    background-color: #eeeeee;
+    box-shadow: 10px 10px 5px #bdbdbd;
+    float: left;
+
+}
+input[type=text],
+        input[type=password],
+        input[type=number],
+        input[type=email],
+        select,
+        textarea,
+        option {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 1px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: medium;
+        }
