@@ -5,19 +5,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="style/main_style.css">
     <style>
-
         .main {
             height: calc(100% - 300px);
         }
-
         input[type=text],
         input[type=password] {
-            width: 100%;
-            padding: 12px 20px;
             margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
         }
 
         .container button {
@@ -63,37 +56,33 @@
             height: calc(100% - 100px);
             overflow-y: auto;
         }
+        #middle_cont{
+            text-align: center;
+        }
+        #submit_button{
+            margin-top: 40px;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
     <div class="header">
         <div id="half_header_top" class="half_header">
-            <label id="header_text">Inloggen</label>
+            <label id="header_text">Registratie</label>
             <input id="home_button" type="image" src="images/VRED-naamlogo.png" alt="home" class="header_btn">
         </div>
     </div>
     <div class="content">
         <div class="main">
-           <h2 id="title">Login</h2>
-            <form action="/action_page.php" method="post">
-                <div class="container" id="middle_cont">
-                    <label for="uname"><b>Gebruikersnaam</b></label>
-                    <input type="text" placeholder="Voer gebruikersnaam in" name="uname" required>
-
-                    <label for="psw"><b>Wachtwoord</b></label>
-                    <input type="password" placeholder="Voer wachtwoord in" name="psw" required>
-
-                    <button type="submit">Login</button>
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember"> Herinner mij
-                    </label>
+           <h2 id="title">Registratie verzonden</h2>
+            <form action="login.html">
+                <div id="middle_cont" class="container">
+                    <label><b>Bedankt voor uw registratie. <br>
+                                          Volg de instructie in de verzonden email om uw account te activeren</b></label>
+                    <button id="submit_button" type="submit">Keer terug naar het home scherm</button>
                 </div>
 
-                <div class="container" id="lower_cont">
-                    <span class="reg"><a href="registratie.html">Registreren</a></span>
-                    <span class="psw"><a href="vergeten.html">Wachtwoord vergeten?</a></span>
-                </div>
             </form>
         </div>
     </div>

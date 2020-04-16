@@ -152,18 +152,24 @@ button:active {
     float: left;
 
 }
+
 input[type=text],
-        input[type=password],
-        input[type=number],
-        input[type=email],
-        select,
-        textarea,
-        option {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 1px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-            font-size: medium;
-        }
+input[type=password],
+input[type=number],
+input[type=email],
+select,
+textarea,
+option {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 1px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: medium;
+}
+
+form {
+    margin: 0 10% 0 10%;
+    width: 80%;
+}

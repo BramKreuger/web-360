@@ -6,6 +6,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="style/main_style.css">
     <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
 
         input[type=text],
         input[type=password],
@@ -21,22 +27,28 @@
             border: 1px solid #ccc;
             box-sizing: border-box;
             font-size: medium;
+            -moz-appearance: textfield;
         }
-        textarea{
+
+        textarea {
             font-family: Ariel, sans-serif;
             resize: none;
         }
-        select{
+
+        select {
             padding: 12px 15px;
         }
-        #geslacht{
+
+        #geslacht {
             padding-left: 20px;
             display: flex;
         }
-        #geslacht label{
+
+        #geslacht label {
             padding-top: 6px;
         }
-        .geslacht_check{
+
+        .geslacht_check {
             margin: 5px 20px 5px 60px;
         }
 
@@ -82,14 +94,17 @@
             font-size: xx-large;
             margin-bottom: 0;
         }
-        #bio{
+
+        #bio {
             height: 70px;
         }
-        form{
+
+        form {
             height: calc(100% - 75px);
             overflow-y: auto;
         }
-        #lower_cont{
+
+        #lower_cont {
             margin-top: -20px;
         }
     </style>
@@ -106,7 +121,7 @@
     <div class="content">
         <div class="main">
             <h2 id="title">Registreren</h2>
-            <form action="/action_page.php" method="post">
+            <form action="registratie_klaar.html">
                 <div class="container" id="middle_cont">
                     <select name="slct_registratie">
                         <option selected disabled>Soort registratie</option>
@@ -396,6 +411,4 @@
         <a href="default.asp" target="_blank" class="ftr_btns">voorwaarden</a> |
         <a href="default.asp" target="_blank" class="ftr_btns">contact</a>
     </div>
-</body>
-
-</html>
+</body></html>
