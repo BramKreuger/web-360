@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+
+<body>
+    <div id="test" style="display: none;">
+        <p>
+            test123
+        </p>
+    </div>
+    <button onclick="myFunction()" style="height: 500px; width: 500px;"> PRESS MEEE</button>
+</body>
+<script>
+    function myFunction() {
+        var x = document.getElementById("test");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
+
+</html>
+
+

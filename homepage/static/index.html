@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <title>Homepage museum360</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <style>
-        html, body{
+        html,
+        body {
             width: 100%;
             height: 100%;
             margin: 0;
@@ -14,63 +16,70 @@
             overflow: hidden;
         }
 
-        #embedded_site{
+        #embedded_site {
             width: 100%;
             height: 100%;
             z-index: -1;
         }
 
-        #overlay{
-          position:absolute;
-          left:0;top:0;
-          width:100%;
-          height:100%;
-          object-fit:cover;
-          pointer-events:none;
-          z-index:2;
+        #overlay {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            z-index: 2;
         }
-        .content{
-          position:absolute;
-          left:0;top:0;
-          width:100%;
-          height:100%;
-          z-index:3;
+
+        .content {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
         }
+
         /*-----------vr-bril-----------------*/
-        #vr_bril_open{
+        #vr_bril_open {
             position: absolute;
             left: 10px;
-            bottom: 30px;
+            bottom: 40px;
+            width: 30%;
+            max-width: 300px;
+
+            background-color: Transparent;
+            background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
         }
-        .vr_bril_open:target ~ #thuis_educatie{
-            display: none;
+        #vr_bril_open:hover{
+            opacity: 80%;
         }
 
-        .vr_bril_open:target + .vr_bril_close {
-            display: inline;
+        .vr_bril_img {
+            width: 100%;
         }
 
-        .vr_bril_open:target{
-            display: none;
-        }
-
-        .vr_bril_close {
-            display: none;
-        }
-        .vr_bril_img{
-            width: 50%;
-        }
         .vr_box {
+            display: none;
             position: absolute;
             top: 150px;
             height: calc(100% - 200px);
-            width: 25%;
+            width: 33%;
+            max-width: 660px;
             background: rgba(255, 255, 255, 0.85);
+            overflow: hidden
         }
-        .vr_box p{
+
+        .vr_box p {
             margin: 10px;
             color: black;
         }
+
         #slide {
             position: absolute;
             left: -25%;
@@ -79,32 +88,73 @@
         }
 
         @-webkit-keyframes slide {
-            100% { left: 0; }
+            100% {
+                left: 0;
+            }
         }
 
         @keyframes slide {
-            100% { left: 0; }
+            100% {
+                left: 0;
+            }
         }
-        #vr_box_title{
+
+        #vr_box_title {
             text-align: center;
             color: purple;
             font-size: x-large;
             margin-bottom: 0;
         }
-        #box_text{
+
+        #box_text {
             height: calc(100% - 40px);
-            overflow-y: scroll;
+            overflow-y: auto;
+            line-height: 23px;
         }
+        #box_text b{
+            color: purple;
+        }
+        #box_text h3{
+            margin-left: 10px;
+        }
+        #vr_box_exit{
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 30px;
+            width: 30px;;
+            font-size: 32px;
+
+            background-color: Transparent;
+            background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+        }
+        #close_icon{
+            position: absolute;
+            top: -1px;
+            left: -3px;
+        }
+        #close_icon:hover{
+            opacity: 50%;
+        }
+
         /*-----------end-------------*/
-        #thuis_educatie{
-            font-size: 50px;
+        #thuis_educatie {
+            font-size: 80px;
             color: white;
             font-family: "Times New Roman", Times, serif;
             float: left;
-            top: calc(50% - 50px);
+            top: calc(50% - 100px);
             position: absolute;
+            cursor: pointer;
         }
-        #nav_bar{
+
+        #thuis_educatie:hover{
+            opacity: 80%;
+        }
+
+        #nav_bar {
             position: absolute;
             left: 10px;
             bottom: 10px;
@@ -112,15 +162,30 @@
             color: white;
             font-weight: bold;
         }
-        .ftr_btns{
+
+        .ftr_btns {
             text-decoration: none;
             color: white;
+            font-size: 25px;
+            font-weight: bold;
+
+            background-color: Transparent;
+            background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
         }
-        #vred_img{
+
+        .ftr_btns:hover{
+            opacity: 80%;
+        }
+
+        #vred_img {
             margin: 10px;
             width: 400px;
         }
-        #bezoek{
+
+        #bezoek {
             position: absolute;
             right: 10px;
             bottom: -13px;
@@ -128,8 +193,13 @@
             color: white;
             font-weight: bold;
         }
+
+        #bezoek a:hover{
+            opacity: 80%;
+        }
+
         /*------------share-------------*/
-        #share{
+        #share {
             position: absolute;
             bottom: 45px;
             float: right;
@@ -142,13 +212,11 @@
             color: white;
         }
 
-        #share:hover{
+        #share:hover {
             right: 0;
-            /*color: black;
-            background: rgba(255, 255, 255, 0.85);*/
         }
 
-        #share p{
+        #share p {
             text-align: center;
             padding: 0;
             margin: 7px 32px 5px 5px;
@@ -156,70 +224,80 @@
         }
 
         .share-btn {
-          display: flex;
-          flex-direction: column;
-          color: #ffffff;
-          border: none;
-          padding: 2px 1px;
-          outline: none;
-          text-align: center;
-          margin: 5px;
-          text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            color: #ffffff;
+            border: none;
+            padding: 2px 1px;
+            outline: none;
+            text-align: center;
+            margin: 5px;
+            text-decoration: none;
         }
 
         .share-btn:focus,
         .share-btn:hover {
-          opacity: 0.8;
+            opacity: 0.8;
         }
 
         .share-btn:active {
-          color: #e2e2e2;
+            color: #e2e2e2;
         }
 
-        .share-btn.twitter { background: #55acee; }
-        .share-btn.google-plus { background: #dd4b39; }
-        .share-btn.facebook { background: #3B5998; }
-        .share-btn.stumbleupon { background: #EB4823; }
-        .share-btn.reddit { background: #ff5700; }
-        .share-btn.hackernews { background: #ff6600; }
-        .share-btn.linkedin    { background: #4875B4; }
-        .share-btn.email { background: #444444; }
+        .share-btn.twitter {
+            background: #55acee;
+        }
+
+        .share-btn.google-plus {
+            background: #dd4b39;
+        }
+
+        .share-btn.facebook {
+            background: #3B5998;
+        }
+
+        .share-btn.linkedin {
+            background: #4875B4;
+        }
+
+        .share-btn.email {
+            background: #444444;
+        }
     </style>
 </head>
+
 <body>
     <embed src="http://rijksmuseum360.nl/" id="embedded_site">
     <img id="overlay" src="../images/Website_VRED_boy_S.png" alt="<jongen met vr bril">
 
     <div class="content">
         <img id="vred_img" src="../images/VRED-naamlogo_trans.png" alt="vred_logo">
-        <a id="vr_bril_open"  class="vr_bril_open" href="#vr_bril_open"><img class="vr_bril_img" src="../images/Oculus_VR-box_transparant.png" alt="vr_bril"></a>
-        <a id="vr_bril_close" class="vr_bril_close" href="#vr_bril_close">
-            <div class="vr_box" id="slide">
+
+        <div class="vr_box" id="slide">
+            <div id="vr_box_header">
                 <p id="vr_box_title">VR-Services</p>
-                <div id="box_text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam magna velit, commodo vel neque quis, vestibulum varius ipsum. Integer a augue ut nulla venenatis vulputate vel et risus. Donec dignissim consequat magna, a viverra tellus tempor ut. Mauris id efficitur lacus. Proin finibus facilisis bibendum. Curabitur at urna diam. Integer porta finibus ex sit amet pharetra. Etiam ultricies, massa non cursus ornare, lorem urna condimentum metus, sit amet ultrices elit orci et nisi. Quisque posuere imperdiet dui eu congue. Phasellus aliquet nulla velit, finibus congue justo faucibus vel. Nunc placerat mauris vitae ultrices accumsan. Sed id luctus mi, at ullamcorper ligula. Integer mollis posuere velit, quis luctus lacus eleifend ac. Proin sed dictum lectus.
-
-                    Ut augue turpis, tempor et auctor ac, euismod vitae nunc. In bibendum urna leo, at pulvinar nisl condimentum at. Quisque et mi ante. Phasellus augue quam, pellentesque ut neque consectetur, imperdiet hendrerit metus. Etiam laoreet quam dolor, sit amet sodales turpis cursus vitae. Duis ac blandit nulla, quis aliquam nisi. Aenean luctus, elit vitae hendrerit condimentum, nisi libero dignissim massa, sed viverra urna dolor sed elit. Pellentesque efficitur non ipsum non condimentum. Praesent a rutrum massa. Mauris pellentesque odio efficitur interdum rhoncus. Praesent vitae luctus metus.
-
-                    Mauris consequat porttitor mauris, sed mattis tellus tempor ac. Nullam ut rutrum nulla, in pharetra purus. Morbi gravida placerat enim in ullamcorper. Phasellus dignissim justo nisi, id viverra mauris tincidunt ut. Nullam pretium euismod ipsum, vel dignissim massa feugiat ac. Nunc vel mauris ante. Aliquam arcu purus, consectetur eget placerat ac, pulvinar sed lacus. Phasellus quis augue eu ante luctus auctor. Donec accumsan ante quam, a gravida magna lacinia at. Nulla consectetur sit amet tellus in tempor. Curabitur neque mi, viverra eget augue vel, maximus ullamcorper eros. Vestibulum fringilla est dui, at egestas ex pharetra sed. Duis lacinia nisi sed risus sagittis, eu cursus justo rutrum. Quisque mattis lectus vitae lectus feugiat, eget pulvinar nulla varius.
-
-                    Curabitur euismod viverra metus aliquam eleifend. Etiam ornare gravida pellentesque. Duis nec posuere ex. Mauris ut ornare dui. Vestibulum in lectus et velit sagittis ornare et lobortis erat. Suspendisse lobortis velit sed tellus volutpat, vel elementum metus pellentesque. Sed eu tincidunt ante, ut scelerisque sem. Maecenas id pharetra orci. Suspendisse feugiat, erat sit amet tristique venenatis, enim justo dignissim lacus, et vehicula arcu mauris eu nisi. Aliquam ultricies enim non ipsum rhoncus tincidunt.
-
-                    In tincidunt eu erat id aliquet. Etiam at tristique nunc. Mauris auctor mollis commodo. Donec nibh ante, scelerisque sed commodo non, bibendum quis arcu. Etiam mauris elit, tristique ac facilisis vitae, feugiat quis quam. Aliquam eu magna mi. Quisque sagittis molestie urna, at tempor quam lobortis at. Fusce congue tempus lorem, dictum mollis est dapibus aliquam. Nulla quis libero ultricies, vulputate massa sed, accumsan dolor. Etiam sodales metus quis diam egestas mollis. Aliquam porta tortor et mi finibus, eget tempus mi iaculis. Vivamus gravida, turpis eu facilisis tristique, magna velit tempor neque, vitae luctus arcu neque vel est.</p>
-                </div>
+                <button id="vr_box_exit" onclick="closeTextBox()">
+                    <i id="close_icon" class="fa fa-window-close"></i>
+                </button>
             </div>
-        </a>
-        <p id="thuis_educatie">Thuis educatie</p>
+            <div id="box_text">
+
+            </div>
+        </div>
+        <button id="vr_bril_open" class="vr_bril_open" onclick="openTextBox(1)">
+            <img class="vr_bril_img" src="../images/Oculus_VR-box_transparant.png" alt="vr_bril">
+        </button>
+        <p id="thuis_educatie" onclick="openTextBox(4)">Thuis <br> educatie</p>
         <div id=nav_bar>
-            <a  href="default.asp" target="_blank" class="ftr_btns">Over VRED</a> |
-            <a  href="default.asp" target="_blank" class="ftr_btns">Contact</a> |
-            <a  href="default.asp" target="_blank" class="ftr_btns">VRED-Services</a>
+            <button onclick="openTextBox(2)" class="ftr_btns">Over VRED    </button> |
+            <button onclick="openTextBox(3)" class="ftr_btns">Contact      </button> |
+            <button onclick="openTextBox(1)" class="ftr_btns">VRED-Services</button>
         </div>
         <p id="bezoek">Bezoek: <a style="text-decoration: none; color: white;" href="www.museum360.nl">museum360°</a></p>
         <div id="share">
-           <p>
-               <i class="fa fa-share"></i> Share
-           </p>
+            <p>
+                <i class="fa fa-share"></i> Share
+            </p>
             <!-- Twitter (url, text, @mention) -->
             <a class="share-btn twitter" href="https://twitter.com/share?url=<URL>&text=<TEXT>via=<USERNAME>">
                 Twitter
@@ -242,4 +320,4 @@
         </div>
     </div>
 </body>
-</html>
+<script type="text/javascript" src="../scripts/script.js"></script></html>
