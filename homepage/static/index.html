@@ -42,13 +42,41 @@
             z-index: 3;
         }
 
-        /*-----------vr-bril-----------------*/
-        #vr_bril_open {
+        /*-----------end-------------*/
+        #thuis_educatie {
+            font-size: 80px;
+            color: white;
+            font-family: "Times New Roman", Times, serif;
+            float: left;
+            top: calc(50% - 100px);
+            position: absolute;
+            cursor: pointer;
+        }
+
+        #thuis_educatie:hover {
+            opacity: 80%;
+        }
+        @media all and (max-height: 450px)
+        {
+            #thuis_educatie br{
+                display: none;
+            }
+        }
+
+        #nav_bar {
             position: absolute;
             left: 10px;
-            bottom: 40px;
-            width: 30%;
-            max-width: 300px;
+            bottom: 10px;
+            font-size: 25px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .ftr_btns {
+            text-decoration: none;
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
 
             background-color: Transparent;
             background-repeat: no-repeat;
@@ -56,7 +84,50 @@
             cursor: pointer;
             overflow: hidden;
         }
-        #vr_bril_open:hover{
+
+        .ftr_btns:hover {
+            opacity: 80%;
+        }
+
+        #vred_img {
+            margin: 10px;
+            width: 400px;
+        }
+
+        #bezoek {
+            position: absolute;
+            right: 10px;
+            bottom: -13px;
+            font-size: 25px;
+            color: white;
+            font-weight: bold;
+        }
+
+        #bezoek a:hover {
+            opacity: 80%;
+        }
+
+        @media (max-width: 780px) {
+            #bezoek {
+                display: none;
+            }
+        }
+    </style>
+    <style namespace="vr_box_bril">
+        #vr_bril_open {
+            position: absolute;
+            left: 10px;
+            bottom: 40px;
+            width: 300px;
+
+            background-color: Transparent;
+            background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        #vr_bril_open:hover {
             opacity: 80%;
         }
 
@@ -64,12 +135,13 @@
             width: 100%;
         }
 
+
         .vr_box {
             display: none;
             position: absolute;
             top: 150px;
             height: calc(100% - 200px);
-            width: 33%;
+            width: 70%;
             max-width: 660px;
             background: rgba(255, 255, 255, 0.85);
             overflow: hidden
@@ -111,18 +183,22 @@
             overflow-y: auto;
             line-height: 23px;
         }
-        #box_text b{
+
+        #box_text b {
             color: purple;
         }
-        #box_text h3{
+
+        #box_text h3 {
             margin-left: 10px;
         }
-        #vr_box_exit{
+
+        #vr_box_exit {
             position: absolute;
             top: 0;
             right: 0;
             height: 30px;
-            width: 30px;;
+            width: 30px;
+            ;
             font-size: 32px;
 
             background-color: Transparent;
@@ -130,111 +206,18 @@
             border: none;
             cursor: pointer;
         }
-        #close_icon{
+
+        #close_icon {
             position: absolute;
             top: -1px;
             left: -3px;
         }
-        #close_icon:hover{
+
+        #close_icon:hover {
             opacity: 50%;
         }
-
-        /*-----------end-------------*/
-        #thuis_educatie {
-            font-size: 80px;
-            color: white;
-            font-family: "Times New Roman", Times, serif;
-            float: left;
-            top: calc(50% - 100px);
-            position: absolute;
-            cursor: pointer;
-        }
-
-        #thuis_educatie:hover{
-            opacity: 80%;
-        }
-
-        #nav_bar {
-            position: absolute;
-            left: 10px;
-            bottom: 10px;
-            font-size: 25px;
-            color: white;
-            font-weight: bold;
-        }
-
-        .ftr_btns {
-            text-decoration: none;
-            color: white;
-            font-size: 25px;
-            font-weight: bold;
-
-            background-color: Transparent;
-            background-repeat: no-repeat;
-            border: none;
-            cursor: pointer;
-            overflow: hidden;
-        }
-
-        .ftr_btns:hover{
-            opacity: 80%;
-        }
-
-        #vred_img {
-            margin: 10px;
-            width: 400px;
-        }
-
-        #bezoek {
-            position: absolute;
-            right: 10px;
-            bottom: -13px;
-            font-size: 25px;
-            color: white;
-            font-weight: bold;
-        }
-
-        #bezoek a:hover{
-            opacity: 80%;
-        }
-
-        /*------------share-------------*/
-        #share {
-            position: absolute;
-            bottom: 45px;
-            float: right;
-            right: -400px;
-            font-size: 25px;
-
-            display: flex;
-            flex-direction: row;
-            transition: 1s;
-            color: white;
-        }
-
-        #share:hover {
-            right: 0;
-        }
-
-        #share p {
-            text-align: center;
-            padding: 0;
-            margin: 7px 32px 5px 5px;
-            font-weight: bold
-        }
-
-        .share-btn {
-            display: flex;
-            flex-direction: column;
-            color: #ffffff;
-            border: none;
-            padding: 2px 1px;
-            outline: none;
-            text-align: center;
-            margin: 5px;
-            text-decoration: none;
-        }
-
+    </style>
+    <style namespace="share">
         .share-btn:focus,
         .share-btn:hover {
             opacity: 0.8;
@@ -263,6 +246,78 @@
         .share-btn.email {
             background: #444444;
         }
+
+        #share {
+            position: absolute;
+            bottom: 45px;
+            float: right;
+            right: -400px;
+            font-size: 25px;
+
+            display: flex;
+            flex-direction: row;
+            transition: 1s;
+            color: white;
+        }
+        #inner_share{
+            display: flex;
+            flex-direction: row;
+        }
+
+        #share:hover {
+            right: 0;
+        }
+
+        #share p {
+            text-align: center;
+            padding: 0;
+            margin: 7px 32px 5px 5px;
+            font-weight: bold
+        }
+
+        .share-btn {
+            display: flex;
+            flex-direction: column;
+            color: #ffffff;
+            border: none;
+            padding: 2px 1px;
+            outline: none;
+            text-align: center;
+            margin: 5px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 1200px) {
+            #share {
+                flex-direction: column-reverse;
+                right: 0px;
+                width: 150px;
+            }
+            #inner_share{
+                flex-direction: column-reverse;
+            }
+        }
+    </style>
+    <style namespace="text_box_images">
+        #confucius {
+            float: right;
+        }
+
+        #ministerie {
+            float: left;
+        }
+
+        #vred {
+            float: left;
+            height: 150px;
+            margin-right: 5px;
+        }
+
+        @media (max-width: 600px) {
+            #box_text img {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -289,8 +344,8 @@
         </button>
         <p id="thuis_educatie" onclick="openTextBox(4)">Thuis <br> educatie</p>
         <div id=nav_bar>
-            <button onclick="openTextBox(2)" class="ftr_btns">Over VRED    </button> |
-            <button onclick="openTextBox(3)" class="ftr_btns">Contact      </button> |
+            <button onclick="openTextBox(2)" class="ftr_btns">Over VRED </button> |
+            <button onclick="openTextBox(3)" class="ftr_btns">Contact </button> |
             <button onclick="openTextBox(1)" class="ftr_btns">VRED-Services</button>
         </div>
         <p id="bezoek">Bezoek: <a style="text-decoration: none; color: white;" href="www.museum360.nl">museum360°</a></p>
@@ -298,25 +353,27 @@
             <p>
                 <i class="fa fa-share"></i> Share
             </p>
-            <!-- Twitter (url, text, @mention) -->
-            <a class="share-btn twitter" href="https://twitter.com/share?url=<URL>&text=<TEXT>via=<USERNAME>">
-                Twitter
-            </a>
+            <div id="inner_share">
+                <!-- Twitter (url, text, @mention) -->
+                <a class="share-btn twitter" href="https://twitter.com/share?url=<URL>&text=<TEXT>via=<USERNAME>">
+                    Twitter
+                </a>
 
-            <!-- Facebook (url) -->
-            <a class="share-btn facebook" href="https://www.facebook.com/sharer/sharer.php?u=<URL>">
-                Facebook
-            </a>
+                <!-- Facebook (url) -->
+                <a class="share-btn facebook" href="https://www.facebook.com/sharer/sharer.php?u=<URL>">
+                    Facebook
+                </a>
 
-            <!-- LinkedIn (url, title, summary, source url) -->
-            <a class="share-btn linkedin" href="https://www.linkedin.com/shareArticle?url=<URL>&title=<TITLE>&summary=<SUMMARY>&source=<SOURCE_URL>">
-                LinkedIn
-            </a>
+                <!-- LinkedIn (url, title, summary, source url) -->
+                <a class="share-btn linkedin" href="https://www.linkedin.com/shareArticle?url=<URL>&title=<TITLE>&summary=<SUMMARY>&source=<SOURCE_URL>">
+                    LinkedIn
+                </a>
 
-            <!-- Email (subject, body) -->
-            <a class="share-btn email" href="mailto:?subject=<SUBJECT>&body=<BODY>">
-                Email
-            </a>
+                <!-- Email (subject, body) -->
+                <a class="share-btn email" href="mailto:?subject=<SUBJECT>&body=<BODY>">
+                    Email
+                </a>
+            </div>
         </div>
     </div>
 </body>
