@@ -1,9 +1,11 @@
 var open = false;
+var waiting = false;
 
 /* exported openTextBox */
 /* exported closeTextBox */
 /*eslint-env browser*/
 window.onload = function () {
+    waiting = false;
     var divToHide = document.getElementsByClassName('vr_box')[0];
     document.onclick = function (e) {
         if (e.target.className !== 'vr_box' &&
@@ -25,13 +27,11 @@ function openTextBox(x) {
     var vr_box_title = document.getElementById("vr_box_title");
     var vr_box_text = document.getElementById("box_text");
 
-    //text_box.style.display = "block"; //Open de textbox
-    text_box.style.width = "70%";
-    open = true;
     vr_box.style.display = "none"; //close de vr box
     thuis_educatie.style.display = "none"; //close thuis educ
 
-    if (open == true) {
+    if (open == false) {
+        open = true;
         //text_box.style.display = "block"; //Open de textbox
         text_box.style.width = "70%";
     }
@@ -156,20 +156,24 @@ window.onresize = function () {
 };
 
 function closeTextBox() {
+    console.log(open + " : " + waiting);
     var text_box = document.getElementsByClassName("vr_box")[0];
     var thuis_educatie = document.getElementById("thuis_educatie");
     var vr_box = document.getElementsByClassName("vr_bril_open")[0];
-    if(open == true){
-        open = false;
+    if (open == true && waiting == false) {
+        waiting = true;
         setTimeout(function () {
-            thuis_educatie.style.display = "block";
+            if (open == true && waiting == true) {
+                open = false;
+                waiting = false;
+                thuis_educatie.style.display = "block";
+                 if (window.innerHeight > 800)
+                     {
+                         vr_box.style.display = "block";
+                     }
+            }
         }, 2000); //open thuis educ
 
-        if (window.innerHeight > 800) {
-            setTimeout(function () {
-                vr_box.style.display = "block";
-            }, 2000); //open de vr box
-        }
 
         //text_box.style.display = "none"; //close de textbox
         text_box.style.width = "0px";
