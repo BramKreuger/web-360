@@ -132,11 +132,11 @@ function onResize() {
         vr_box.style.display = "none";
     }
 }
-// Attaching the event listener function to window's resize event
-window.addEventListener("resize", onResize);
-
-// Calling the function for the first time
-onResize();
+var doit;
+window.onresize = function () {
+    clearTimeout(doit);
+    doit = setTimeout(onResize, 100);
+};
 
 function closeTextBox() {
     var text_box = document.getElementsByClassName("vr_box")[0];
