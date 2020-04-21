@@ -124,10 +124,11 @@ function openTextBox(x) {
 }
 
 function onResize() {
-    vr_box = document.getElementsByClassName("vr_bril_open")[0];
     if (window.innerHeight > 800 && open == false) {
+        vr_box = document.getElementsByClassName("vr_bril_open")[0];
         vr_box.style.display = "block";
     } else {
+        vr_box = document.getElementsByClassName("vr_bril_open")[0];
         vr_box.style.display = "none";
     }
 }
