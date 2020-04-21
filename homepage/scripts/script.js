@@ -3,6 +3,21 @@ var open = false;
 /* exported openTextBox */
 /* exported closeTextBox */
 /*eslint-env browser*/
+window.onload = function () {
+    var divToHide = document.getElementsByClassName('vr_box')[0];
+    document.onclick = function (e) {
+        if (e.target.className !== 'vr_box' &&
+            !divToHide.contains(e.target) &&
+            e.target.className !== 'ftr_btns' &&
+            e.target.id !== 'thuis_educatie' &&
+            e.target.id !== 'vr_bril_open' &&
+            e.target.className !== 'vr_bril_img') {
+            //element clicked wasn't the div; hide the div
+            closeTextBox();
+        }
+    };
+};
+
 function openTextBox(x) {
     var text_box = document.getElementsByClassName("vr_box")[0];
     var vr_box = document.getElementsByClassName("vr_bril_open")[0];
@@ -10,13 +25,15 @@ function openTextBox(x) {
     var vr_box_title = document.getElementById("vr_box_title");
     var vr_box_text = document.getElementById("box_text");
 
-    text_box.style.display = "block"; //Open de textbox
+    //text_box.style.display = "block"; //Open de textbox
+    text_box.style.width = "70%";
     open = true;
     vr_box.style.display = "none"; //close de vr box
     thuis_educatie.style.display = "none"; //close thuis educ
 
-    if (text_box.style.display === "none") {
-        text_box.style.display = "block"; //Open de textbox
+    if (open == true) {
+        //text_box.style.display = "block"; //Open de textbox
+        text_box.style.width = "70%";
     }
     if (x === 1) { // vr-box text
         vr_box_title.textContent = "VRED-services"
@@ -142,15 +159,19 @@ function closeTextBox() {
     var text_box = document.getElementsByClassName("vr_box")[0];
     var thuis_educatie = document.getElementById("thuis_educatie");
     var vr_box = document.getElementsByClassName("vr_bril_open")[0];
-    open = false;
-    thuis_educatie.style.display = "block"; //open thuis educ
+    if(open == true){
+        open = false;
+        setTimeout(function () {
+            thuis_educatie.style.display = "block";
+        }, 2000); //open thuis educ
 
-    if (window.innerHeight > 800) {
-        console.log(screen.height);
-        vr_box.style.display = "block"; //open de vr box
-    }
+        if (window.innerHeight > 800) {
+            setTimeout(function () {
+                vr_box.style.display = "block";
+            }, 2000); //open de vr box
+        }
 
-    if (text_box.style.display == "block") {
-        text_box.style.display = "none"; //close de textbox
+        //text_box.style.display = "none"; //close de textbox
+        text_box.style.width = "0px";
     }
 }

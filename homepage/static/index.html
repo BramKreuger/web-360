@@ -137,14 +137,15 @@
 
 
         .vr_box {
-            display: none;
             position: absolute;
             top: 150px;
-            height: calc(100% - 200px);
-            width: 70%;
+            max-height: calc(100% - 200px);
+            width: 0px;
             max-width: 660px;
             background: rgba(255, 255, 255, 0.85);
-            overflow: hidden
+            overflow-y: auto;
+
+            transition: 2s;
         }
 
         .vr_box p {
@@ -152,36 +153,17 @@
             color: black;
         }
 
-        #slide {
-            position: absolute;
-            left: -25%;
-            -webkit-animation: slide 1.5s forwards;
-            animation: slide 1.5s forwards;
-        }
-
-        @-webkit-keyframes slide {
-            100% {
-                left: 0;
-            }
-        }
-
-        @keyframes slide {
-            100% {
-                left: 0;
-            }
-        }
-
         #vr_box_title {
-            text-align: center;
             color: purple;
             font-size: x-large;
             margin-bottom: 0;
+            font-weight: bold;
         }
 
         #box_text {
-            height: calc(100% - 40px);
-            overflow-y: auto;
+            /*height: calc(100% - 50px);*/
             line-height: 23px;
+            margin-bottom: 20px;
         }
 
         #box_text b {
@@ -328,7 +310,7 @@
     <div class="content">
         <img id="vred_img" src="../images/VRED-naamlogo_trans.png" alt="vred_logo">
 
-        <div class="vr_box" id="slide">
+        <div class="vr_box">
             <div id="vr_box_header">
                 <p id="vr_box_title">VR-Services</p>
                 <button id="vr_box_exit" onclick="closeTextBox()">
@@ -336,7 +318,6 @@
                 </button>
             </div>
             <div id="box_text">
-
             </div>
         </div>
         <button id="vr_bril_open" class="vr_bril_open" onclick="openTextBox(1)">
@@ -348,7 +329,7 @@
             <button onclick="openTextBox(3)" class="ftr_btns">Contact </button> |
             <button onclick="openTextBox(1)" class="ftr_btns">VRED-Services</button>
         </div>
-        <p id="bezoek">Bezoek: <a style="text-decoration: none; color: white;" href="www.museum360.nl">museum360°</a></p>
+        <p id="bezoek">Bezoek: <a style="text-decoration: none; color: white;" href="https://www.museum360.nl">museum360°</a></p>
         <div id="share">
             <p>
                 <i class="fa fa-share"></i> Share
