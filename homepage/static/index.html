@@ -138,12 +138,13 @@
 
         .vr_box {
             position: absolute;
-            top: 150px;
-            max-height: calc(100% - 200px);
+            top: 110px;
+            max-height: calc(100% - 160px);
             width: 0px;
             max-width: 660px;
             background: rgba(255, 255, 255, 0.85);
             overflow-y: auto;
+            overflow-x: hidden;
 
             transition: 2s;
         }
@@ -287,12 +288,39 @@
 
         #ministerie {
             float: left;
+            width: 200px;
+        }
+        #logos{
+            display: flex;
+            flex-direction: row;
+            float: left;
+            margin-left: 170px;
+        }
+        #logos img{
+            height: 120px;
+            margin-top: -5px;
+        }
+        #logos ol{
+            margin-top: -15px;
+            margin-left: -20px;
+        }
+        #logos li{
+            font-size: small;
+            list-style-type: none;
+            padding: 5px 0 7px 0;
         }
 
         #vred {
             float: left;
             height: 150px;
             margin-right: 5px;
+        }
+        #services{
+            width: 500px;
+        }
+        #vr_koffer{
+            width: 200px;
+            float: right;
         }
 
         @media (max-width: 600px) {

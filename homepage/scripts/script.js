@@ -42,7 +42,7 @@ function openTextBox(x) {
         <p>VRED is gespecialiseerd in VR én cultuur EDucatie. <br>
         Directeuren van lager, middelbaar of voortgezet onderwijs kunnen een <u>VRED-abonnement aanschaffen</u>, waardoor leerlingen met VR-headsets elke dag naar alle relevante Nederlandse musea kunnen. Het VR-abonnement geeft toegang tot 6-Oculus Go’s in de VR-box. De ICC-ers krijgt van ons team een training en elke leerling krijgt een login-account. Leerlingen zetten de bril op en zitten midden in hun persoonlijk lesprogramma. <i>Ideaal!</i></p>
 
-
+        <img id="services" src="../images/VRED_services.png" alt="services">
 
         <p><b>VRED abonnement voor de hele school</b><br>
         Eén abonnement voor de hele school om onbeperkt alle musea te bezoeken. Naast het abonnement, heeft de school natuurlijk ook de <u>VR-box</u> nodig. Deze VR-box bestaat uit 6-Oculus GO’s.
@@ -61,6 +61,7 @@ function openTextBox(x) {
         <i>Handig, 1-stekker laadt 6 VR-headsets in één keer op.</i><br>
         De controllers geven de leerlingen vrijheid om te navigeren en om bijvoorbeeld de juiste antwoorden bij de multiple-choice vragen aan te vinken. <br>
         Inhoud van de VR-box:</p>
+        <img id="vr_koffer" src="../images/VR_koffer.png" alt="vr_koffer">
         <ul>
             <li>6x Oculus GO’s 	: De beste VR-headsets beschikbaar.
             <li>6x Controllers	: Belangrijk om in te zoomen, aanvinken,
@@ -90,10 +91,10 @@ function openTextBox(x) {
         beleefd moeten worden. VR-cultuureducatie prikkelt gelijktijdig het
         gehoor en ogen waardoor de inhoud voelt alsof ze er écht voor staan.</p>
 
-        <img id="ministerie" src="../images/ministerie_2.png" alt="ministerie">
         <p><b>VRED = museum VR-tour</b><br>
         Elk relevant Nederlands museum wordt door onze 360°-fotografen als een VR-tour vastgelegd. <br>
         Op Museum360° zijn de musea VR-tours eenvoudig te vinden onder de OCW-indeling:<br>
+        <img id="ministerie" src="../images/ministerie_2.png" alt="ministerie">
         <ol>
             <li> <strong>Kunsthistorie</strong> w.o. Rijks, Frans Hals, VanGogh museum en het Mauritshuis. </li>
             <li> <strong>Volkenkunde</strong> w.o. Tropen, Archeon, Zuiderzee en Openlucht museum.</li>
@@ -101,12 +102,22 @@ function openTextBox(x) {
             <li> <strong>Hedendaagse kunst</strong> w.o. MOCO, FOAM, Stedelijk, Groninger en Bonnefanten museum.</li>
             <li> <strong>Natuurhistorie</strong> w.o. Ecomare, Corpus, Naturalis en Artis</li>
         </ol></p>
-
-        <p><b>VRED = interactief lesprogramma</b><br>
-        De hoofd educatoren van musea zorgen ervoor dat in hun museum VR-tour
-        een interactieve lesprogramma wordt geladen. Multiple-choice vragen over
-        een kunstobject worden voor <strong>Groep 4, 5 en 6 + Groep 7, 8 en MO/VO.</strong>
-        Het lesprogramma omvat vier elementen:</p>
+        <div>
+            <p><b>VRED = interactief lesprogramma</b><br>
+            De hoofd educatoren van musea zorgen ervoor dat in hun museum VR-tour
+            een interactieve lesprogramma wordt geladen. Multiple-choice vragen over
+            een kunstobject worden voor <strong>Groep 4, 5 en 6 + Groep 7, 8 en MO/VO.</strong>
+            Het lesprogramma omvat vier elementen:</p>
+            <div id="logos">
+                <img src="../images/Hotspot_logos.png" alt="Hotspot logos">
+                <ol>
+                    <li><strong>Video:</strong> Uitleg waarom deze kunst bijzonder is.</li>
+                    <li><strong>Vragen:</strong> Zes multiple choice vragen per kunstobject.</li>
+                    <li><strong>Weetje:</strong> Iets specifieks leren over een schilderij.</li>
+                    <li><strong>Zoom-in:</strong> Bekijk de kleinste details door in te zoomen.</li>
+                </ol>
+            </div>
+        </div>
         `;
     } else if (x == 3) { // contact
         vr_box_title.textContent = "Contact";
@@ -115,7 +126,7 @@ function openTextBox(x) {
         <p>Het VRED-team vindt het fijn, om met de school in contact te zijn.  Je kunt ons tijdens máár ook
         buiten kantoortijden bellen. Wij nemen direct of anders binnen 10-minuten contact met jou op. <br>
 
-        <i>Wel zo handig!<h3>020-1239875</h3></i></p>
+        <i>Wel zo handig!<h3>020-7724658</h3></i></p>
         <img id="vred" src="../images/VR-mascotte_logo.png" alt="vred_mascotte">
         <div>
             <p><b>Informatie-desk</b><br>
@@ -132,7 +143,7 @@ function openTextBox(x) {
         vr_box_title.textContent = "Thuis educatie"
         vr_box_text.innerHTML =
             `
-        <p>De coronacrisis zorgt er voor dat scholen cultuureducatie op afstand inrichten. Eenvoudig door leerlingen thuis vanuit hun luie-sofa te laten inloggen op de website:<a href="www.museum360.nl">www.museum360.nl</a> <br>
+        <p>De coronacrisis zorgt er voor dat scholen cultuureducatie op afstand inrichten. Eenvoudig door leerlingen thuis vanuit hun luie-sofa te laten inloggen op de website: <a href="www.museum360.nl">www.museum360.nl</a> <br>
         Inloggen kan via de iPad of laptop, maar de échte beleving, krijg je wanneer je met een Oculus GO het museum binnenstapt. Eenmaal binnen, kan je de uitgestippelde route volgen. Bij relevante kunstobjecten staan hotspots. Klik op de video en beantwoord daarna de multiple-choice vragen. <i>Erg leerzaam.</i>
         Omdat elke docent voor zijn klas een selectie kan maken uit de OCW-categorieën, krijgt een groep leerlingen gericht een hoeveelheid cultuureducatie. <i>“Dit is gaaf, het lijkt wel een game”</i> (quote, Yoëlle groep 6).</p>
                 `
