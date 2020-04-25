@@ -41,28 +41,52 @@
             height: 100%;
             z-index: 3;
         }
-        input:focus, button:focus {
-        outline:none;
+
+        input:focus,
+        button:focus {
+            outline: none;
         }
 
         /*-----------end-------------*/
-        #thuis_educatie {
+         #thuis_educatie{
             font-size: 80px;
             color: white;
             font-family: "Times New Roman", Times, serif;
             float: left;
+            left: 20px;
             top: calc(35% - 100px);
             position: absolute;
             cursor: pointer;
         }
 
         #thuis_educatie:hover {
-            opacity: 80%;
+            -webkit-text-stroke: 2px rgba(0, 0, 0, .15);
+            opacity: .8;
         }
-        @media all and (max-height: 450px)
-        {
-            #thuis_educatie br{
+
+        @media all and (max-height: 450px) {
+            #thuis_educatie br {
                 display: none;
+            }
+        }
+
+        #thuis_educatie {
+            -webkit-animation: pulsate 3s ease-out;
+            -webkit-animation-iteration-count: infinite;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, .9)
+        }
+
+        @-webkit-keyframes pulsate {
+            0% {
+                text-shadow: 0px 0px 10px rgba(255, 241, 161, .4)
+            }
+
+            50% {
+                text-shadow: 0px 0px 10px rgba(255, 255, 255, .9)
+            }
+
+            100% {
+                text-shadow: 0px 0px 10px rgba(255, 241, 161, .4)
             }
         }
 
@@ -91,6 +115,8 @@
 
         .ftr_btns:hover {
             opacity: 80%;
+            -webkit-text-stroke: 2px rgba(0, 0, 0, .15);
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, .4);
         }
 
         #vred_img {
@@ -109,6 +135,8 @@
 
         #bezoek a:hover {
             opacity: 80%;
+            -webkit-text-stroke: 2px rgba(0, 0, 0, .15);
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, .4);
         }
 
         @media (max-width: 780px) {
@@ -207,10 +235,11 @@
     <style namespace="share">
         .share-btn:focus,
         .share-btn:hover {
-            opacity: 0.8;
+            opacity: 80%;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, .2);
         }
 
-        #fb{
+        #fb {
             text-decoration: none;
             color: white;
         }
@@ -251,7 +280,8 @@
             transition: 1s;
             color: white;
         }
-        #inner_share{
+
+        #inner_share {
             display: flex;
             flex-direction: row;
         }
@@ -285,7 +315,8 @@
                 right: 0px;
                 width: 150px;
             }
-            #inner_share{
+
+            #inner_share {
                 flex-direction: column-reverse;
             }
         }
@@ -297,23 +328,31 @@
 
         #ministerie {
             float: left;
-            width: 175px;
+            width: 135px;
         }
-        #logos{
+
+        #musea {
+            margin-left: 130px;
+        }
+
+        #logos {
             display: flex;
             flex-direction: row;
             float: left;
             margin-left: 170px;
         }
-        #logos img{
+
+        #logos img {
             height: 120px;
             margin-top: -5px;
         }
-        #logos ol{
+
+        #logos ol {
             margin-top: -15px;
             margin-left: -20px;
         }
-        #logos li{
+
+        #logos li {
             font-size: small;
             list-style-type: none;
             padding: 5px 0 7px 0;
@@ -321,17 +360,22 @@
 
         #vred {
             float: left;
-            height: 150px;
-            margin-right: 5px;
+            height: 185px;
+            margin-right: 10px;
+            margin-top: 5px;
         }
-        #services{
+
+        #services {
             width: 70%;
+            margin-left: 15%;
         }
-        #vr_koffer{
+
+        #vr_koffer {
             width: 200px;
             float: right;
         }
-        #sofa{
+
+        #sofa {
             width: 90%;
         }
 
@@ -344,9 +388,9 @@
 </head>
 
 <body>
-   <div id="fb-root"></div>
+    <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/nl_NL/sdk.js#xfbml=1&version=v6.0"></script>
-    <embed src="http://vred.museum360.nl/" id="embedded_site">
+    <embed src="http://rijksmuseum360.nl/" id="embedded_site">
     <img id="overlay" src="../images/Website_VRED_boy_S.png" alt="<jongen met vr bril">
 
     <div class="content">
@@ -367,8 +411,8 @@
         </button>
         <p id="thuis_educatie" onclick="openTextBox(4)">Thuis <br> educatie</p>
         <div id=nav_bar>
-            <button id="over_vred"     onclick="openTextBox(2)" class="ftr_btns">Over VRED </button> |
-            <button id="contact"       onclick="openTextBox(3)" class="ftr_btns">Contact </button> |
+            <button id="over_vred" onclick="openTextBox(2)" class="ftr_btns">Over VRED </button> |
+            <button id="contact" onclick="openTextBox(3)" class="ftr_btns">Contact </button> |
             <button id="VRED_services" onclick="openTextBox(1)" class="ftr_btns">VRED-Services</button>
         </div>
         <p id="bezoek">Bezoek: <a target="_blank" style="text-decoration: none; color: white;" href="https://www.museum360.nl">museum360°</a></p>
@@ -378,13 +422,14 @@
             </p>
             <div id="inner_share">
                 <!-- Twitter (url, text, @mention) -->
-                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="share-btn twitter" data-show-count="false">Twitter</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" target="_blank" class="share-btn twitter" data-show-count="false">Twitter</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
                 <!-- Facebook (url) -->
-                <div class="share-btn facebook" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" id="fb" class="fb-xfbml-parse-ignore">Facebook</a></div>
+                <div class="share-btn facebook" data-href="https://vred360.nl" data-layout="button" data-size="large"><a style="text-decoration: none; color: white;" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fvred360.nl%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Facebook</a></div>
 
                 <!-- LinkedIn (url, title, summary, source url) -->
-                <a class="share-btn linkedin" href="https://www.linkedin.com/shareArticle?url=https://www.vred360.nl&title=interessant%20online%20cultuur%20eductatie%20systeem!&summary=Met%20VRED%20kunnen%20scholieren%20in%20Virtual%20reality%20musea%20bezoeken!&source=https://www.vred360.nl">
+                <a class="share-btn linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?url=https://www.vred360.nl&title=interessant%20online%20cultuur%20eductatie%20systeem!&summary=Met%20VRED%20kunnen%20scholieren%20in%20Virtual%20reality%20musea%20bezoeken!&source=https://www.vred360.nl">
                     LinkedIn
                 </a>
 
