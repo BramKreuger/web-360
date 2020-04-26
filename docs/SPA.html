@@ -27,10 +27,12 @@
             margin: 0px 10px 15px 10px;
         }
 
-        button {
+        button,
+        .header_btn {
             border: 1px solid black;
             background-color: #fafafa;
             box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+            text-decoration: none;
         }
 
         button:hover {
@@ -81,6 +83,8 @@
             text-overflow: ellipsis;
             flex-grow: 1;
             min-width: 10px;
+            font-size: small;
+            line-height: 25px;
         }
 
         .header_btn:hover {
@@ -167,7 +171,7 @@
         input[type=number],
         input[type=email],
         select,
-        textarea,
+        registratie textarea,
         option {
             width: 100%;
             padding: 12px 20px;
@@ -178,7 +182,10 @@
             font-size: medium;
         }
 
-        form {
+        #vergeten form,
+        #vergeten_succes form,
+        #registratie_klaar form,
+        #registratie_mislukt form{
             margin: 0 10% 0 10%;
             width: 80%;
         }
@@ -263,6 +270,8 @@
 
         #registratie form {
             height: calc(100% - 75px);
+            margin: 0 10% 0 10%;
+            width: 80%;
         }
     </style>
     <style namespace="vergeten">
@@ -306,7 +315,7 @@
             box-sizing: border-box;
         }
 
-        .container button {
+        .container input[type=submit] {
             background-color: #72309d;
             color: white;
             padding: 14px 20px;
@@ -316,11 +325,11 @@
             width: 100%;
         }
 
-        .container button:hover {
+        .container input[type=submit]:hover {
             background-color: #461d61;
         }
 
-        .container button:active {
+        .container input[type=submit]:active {
             background-color: #7f02d1;
         }
 
@@ -354,10 +363,10 @@
             width: 60%;
             height: calc(100% - 100px);
             overflow-y: auto;
+
         }
     </style>
     <style namespace="kennis_vragen_beheren">
-
         .main_most_content {
             width: calc(100% - 35px);
             height: 100%;
@@ -389,7 +398,7 @@
 
         .vragen_beheren_middle_left {
             width: 100%;
-            height:100%;
+            height: 100%;
             float: left;
             position: relative;
             text-align: center;
@@ -404,7 +413,7 @@
             overflow: hidden;
         }
 
-        #deze_vraag_is_geschikt{
+        #deze_vraag_is_geschikt {
             padding: 0;
             margin: 0px 0px 7.5px 0px;
         }
@@ -477,20 +486,22 @@
 
         /*----VRAGENLIJST Bottom----*/
         #vragen_beheren_bottom_zoeken_inpt {
-            width: calc(100% - 4px); /*- 29px);*/
+            width: calc(100% - 4px);
+            /*- 29px);*/
             height: 20px;
             margin: 2.5px 0px 2.5px 0px;
             padding: 0;
             flex-direction: row;
             text-align: center;
         }
-        #vragen_beheren_bottom_form{
+
+        #vragen_beheren_bottom_form {
             width: 100%;
             margin: 0;
 
         }
 
-        #bottom_table{
+        #bottom_table {
             width: 100%;
             height: 100%;
         }
@@ -508,12 +519,34 @@
             border: 1px white solid;
             border-left: 0;
         }
-        thead th:nth-child(1){min-width: 100px; width: 120px;}
-        thead th:nth-child(2){width: 51%; }
-        thead th:nth-child(3){width: 49%;  }
-        thead th:nth-child(4){min-width: 120px; width: 140px;}
-        thead th:nth-child(5){min-width: 40px; width: 60px; }
-        thead th:nth-child(6){width: 5%; color: black ;}
+
+        thead .vragen_overzicht th:nth-child(1) {
+            min-width: 100px;
+            width: 120px;
+        }
+
+        thead .vragen_overzicht th:nth-child(2) {
+            width: 51%;
+        }
+
+        thead .vragen_overzicht th:nth-child(3) {
+            width: 49%;
+        }
+
+        thead .vragen_overzicht th:nth-child(4) {
+            min-width: 120px;
+            width: 140px;
+        }
+
+        thead .vragen_overzicht th:nth-child(5) {
+            min-width: 40px;
+            width: 60px;
+        }
+
+        thead .vragen_overzicht th:nth-child(6) {
+            width: 5%;
+            color: black;
+        }
 
         tbody.vragen_overzicht {
             display: block;
@@ -527,19 +560,48 @@
             width: 250px;
             height: 26px;
             border-bottom: 1px solid black;
-            border-left:   1px solid black
-
+            border-left: 1px solid black
         }
-        tbody tr:nth-child(even) {background: #CCC}
-        tbody tr:nth-child(odd) {background: #FFF}
-        tbody td:nth-child(1)   {min-width: 100px; width:120px; text-align: center; }
-        tbody td:nth-child(2)   {width: 50%; text-align: center;                    }
-        tbody td:nth-child(3)   {width: 50%; text-align: center;                    }
-        tbody td:nth-child(4)   {min-width: 120px; width: 140px; text-align: center;}
-        tbody td:nth-child(5)   {min-width: 44px; width: 60px; text-align: center;  border-right: 1px solid black;}
+
+        tbody tr:nth-child(even) {
+            background: #CCC
+        }
+
+        tbody tr:nth-child(odd) {
+            background: #FFF
+        }
+
+        tbody .vragen_overzicht td:nth-child(1) {
+            min-width: 100px;
+            width: 120px;
+            text-align: center;
+        }
+
+        tbody .vragen_overzicht td:nth-child(2) {
+            width: 50%;
+            text-align: center;
+        }
+
+        tbody .vragen_overzicht td:nth-child(3) {
+            width: 50%;
+            text-align: center;
+        }
+
+        tbody .vragen_overzicht td:nth-child(4) {
+            min-width: 120px;
+            width: 140px;
+            text-align: center;
+        }
+
+        tbody.vragen_overzicht td:nth-child(5) {
+            min-width: 44px;
+            width: 60px;
+            text-align: center;
+            border-right: 1px solid black;
+        }
 
         /*-----vragenlijst links-----*/
-        #alle_vragen_kunstobj{
+        #alle_vragen_kunstobj {
             margin: 0px 0px 7.5px 0px;
             padding: 0px 0px 0px 0px;
             width: calc(100% - 25px);
@@ -548,7 +610,8 @@
             white-space: nowrap;
             text-overflow: ellipsis;
         }
-        #shuffle_button{
+
+        #shuffle_button {
             width: 20px;
             height: 20px;
             margin: 0px 0px 2.5px 0px;
@@ -556,9 +619,9 @@
             float: right;
         }
 
-        ul.linker_vragen_lijst{
+        ul.linker_vragen_lijst {
             width: calc(100% - 2px);
-            height:calc(100% - 37px);
+            height: calc(100% - 37px);
             float: left;
             margin: 0px 0px 0px 0px;
             padding: 0;
@@ -570,52 +633,64 @@
             background-color: #e3e3e3;
 
         }
-        li.linker_vragen_lijst{
-            list-style-type:none;
+
+        li.linker_vragen_lijst {
+            list-style-type: none;
             height: 55px;
             padding: 10px 5px 0px 5px;
             border-bottom: 1px solid black;
             overflow: hidden;
         }
-        li.linker_vragen_lijst:nth-child(even) {background: #CCC}
-        li.linker_vragen_lijst:nth-child(odd) {background: #FFF}
 
-        li.linker_vragen_lijst:last-child{
+        li.linker_vragen_lijst:nth-child(even) {
+            background: #CCC
+        }
+
+        li.linker_vragen_lijst:nth-child(odd) {
+            background: #FFF
+        }
+
+        li.linker_vragen_lijst:last-child {
             border-bottom: 1px dashed black;
         }
 
-        .vraag_nomering{
+        .vraag_nomering {
             position: relative;
             float: right;
             right: 2px;
         }
-    /*-----Midden------*/
-        #niveau_checkboxes{
+
+        /*-----Midden------*/
+        #niveau_checkboxes {
             list-style-type: none;
             text-align: left;
             padding: 0px 5px 0px 5px;
             margin: 0;
             height: 100px;
         }
-        #all_checked{
-            display: none;
-        }
-        #all_box:checked ~ #all_checked{
-            display: flex;
-            flex-direction: column;
-        }
-        #all_box:checked ~ #all_unchecked{
+
+        #all_checked {
             display: none;
         }
 
-        #vraag_midden{
+        #all_box:checked~#all_checked {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #all_box:checked~#all_unchecked {
+            display: none;
+        }
+
+        #vraag_midden {
             display: flex;
             width: calc(100% - 20px);
             margin: 0px 10px 0px 10px;
             height: calc(66.67% - 36px);
             padding: 0;
         }
-        #vraag_midden_links{
+
+        #vraag_midden_links {
             width: 75%;
             min-height: 150px;
             height: 100%;
@@ -624,7 +699,8 @@
             padding: 5px;
             float: left;
         }
-        #vraag_midden_links_vraag{
+
+        #vraag_midden_links_vraag {
             border: 1px black solid;
             padding: 0;
             margin: 0;
@@ -633,14 +709,16 @@
             background-color: #CCC;
 
         }
-        #vraag_midden_links_antw{
+
+        #vraag_midden_links_antw {
             list-style-type: circle;
             margin: 0;
             padding: 2.5px 0px 2.5px 20px;
             height: 50%;
 
         }
-        .vraag_midden_links_antw_pnts{
+
+        .vraag_midden_links_antw_pnts {
             background-color: white;
             font-size: 10px;
             margin: 10% 5px 10% 0;
@@ -648,14 +726,16 @@
             height: 5%;
             min-height: 2px;
         }
-        #vraag_midden_rechts{
+
+        #vraag_midden_rechts {
             width: 100%;
             height: 100%;
             padding: 0;
             margin: 0;
             float: left;
         }
-        #vraag_midden_rechts_image{
+
+        #vraag_midden_rechts_image {
             object-fit: cover;
             width: calc(100% - 10px);
             height: 100%;
@@ -664,8 +744,9 @@
             border-left: 0;
             float: left;
         }
-    /*------rechts----------*/
-        #alle_kunst_objecten_titel{
+
+        /*------rechts----------*/
+        #alle_kunst_objecten_titel {
             text-align: center;
             /*background-color: white;
             border: 1px black solid;*/
@@ -677,31 +758,36 @@
             white-space: nowrap;
             text-overflow: ellipsis;
         }
-        #vragen_beheren_middle_right_zoek{
+
+        #vragen_beheren_middle_right_zoek {
             width: 100%;
             margin-left: 0;
         }
-        #vragen_beheren_midden_right_input{
+
+        #vragen_beheren_midden_right_input {
             width: calc(100% - 31px);
             height: 25px;
             margin: 0px 6px 2.5px 0px;
             padding: 0;
             float: left;
         }
-        #vragen_beheren_midden_right_btn{
+
+        #vragen_beheren_midden_right_btn {
             width: 25px;
             height: 25px;
             margin: 0px 0px 2.5px 0px;
             padding: 0;
             float: left;
         }
-        #search_icon{
+
+        #search_icon {
             background: url(images/vergrootglas.png) no-repeat;
             float: left;
             width: 10px;
             height: 40px;
         }
-        ul.right_objecten_lijst{
+
+        ul.right_objecten_lijst {
             width: calc(100% - 2px);
             height: calc(100% - 67px);
             float: left;
@@ -715,7 +801,8 @@
 
             background-color: #e3e3e3;
         }
-        li.right_objecten_lijst{
+
+        li.right_objecten_lijst {
             height: 100px;
             /*height: 25%;*/
             width: calc(100% - 1px);
@@ -724,34 +811,227 @@
             margin: 0;
             float: left;
         }
-        li.right_objecten_lijst:nth-child(even) {background: #CCC}
-        li.right_objecten_lijst:nth-child(odd) {background: #FFF}
 
-        .vraag_nomering_rechts{
+        li.right_objecten_lijst:nth-child(even) {
+            background: #CCC
+        }
+
+        li.right_objecten_lijst:nth-child(odd) {
+            background: #FFF
+        }
+
+        .vraag_nomering_rechts {
             float: left;
             position: relative;
             left: 2px;
         }
-        .images_rechter_vragen{
+
+        .images_rechter_vragen {
             object-fit: cover;
             width: 33%;
             height: calc(100% - 20px);
             float: left;
             margin: 10px 10px 10px 5px;
         }
-        .right_objects_data{
+
+        .right_objects_data {
             height: 90%;
             margin: 10px;
             display: flex;
             flex-direction: column;
         }
-        .right_objects_data_p{
+
+        .right_objects_data_p {
             border: 1px solid black;
             margin: 10px 0px 0px 0px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
+    </style>
+    <style namespace="kunst_object_video_toevoegen">
+        /* toplaag */
+        #kunst_object_video_toevoegen .main{
+            display: flex;
+            flex-direction: row;
+        }
+        #kunst_object_video_toevoegen #left_div {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            margin: 10px 2.5% 10px 7.5%;
+        }
+
+        #kunst_object_video_toevoegen #right_div {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            margin: 10px 7.5% 10px 2.5%;
+            height: 100%;
+        }
+        /* Left */
+        #left_header{
+            margin: 10px 0 5px px;
+            display: flex;
+        }
+        #left_div_body{
+            height: 80%;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        #left_div input{
+            padding: 2px 20px;
+            text-align: center;
+            width: calc(50% - 6px);
+        }
+
+        #left_header_inpt{
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+
+        .content_input{
+            display: flex;
+            flex-direction: column;
+            height: 20%;
+            min-height: 100px;
+            text-align: center;
+            flex: 1 0 auto;
+        }
+        .content_input textarea{
+            text-align: center;
+            font-family: Ariel, sans-serif;
+            resize: none;
+            width: calc(100% - 47px);
+            padding: 20px;
+            margin-left: 5px;
+            font-size: medium;
+        }
+        input[type=file]
+        {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+
+        input[type=file] + label{
+            padding: 2px;
+            text-align: center;
+            border: 1px solid black;
+            background-color: #fafafa;
+            box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+            text-decoration: none;
+            cursor: pointer;
+            width: calc(100% - 12px);
+            height: 25px;
+            margin-left: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        input[type=file]:hover + label{
+            background-color: white;
+        }
+
+        input[type=file]:focus + label {
+            outline: 1px dotted #000;
+            outline: -webkit-focus-ring-color auto 5px;
+        }
+        .drag_n_drop{
+            background-color: white;
+            border: 1px solid grey;
+            margin: 5px;
+            height: 100%;
+            width: calc(100% - 7px);
+
+            align-items: center;
+            display: flex;
+        }
+
+        .drag_n_drop label{
+            order: 2;
+            margin:0 auto;
+        }
+        #left_div input[type=submit] {
+            background-color: #72309d;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        #left_div input[type=submit]:hover {
+            background-color: #461d61;
+        }
+
+        #left_div input[type=submit]:active {
+            background-color: #7f02d1;
+        }
+
+        /* Right */
+        #right_div input{
+            width: calc(100% - 30px);
+            height: 25px;
+            text-align: center;
+        }
+        #right_div button{
+            width: 25px;
+            height: 25px;
+        }
+        /*TABLE*/
+        #right_div #table_wrapper{
+            overflow-y: auto;
+            height: calc(100% - 70px);
+            width: 100%;
+        }
+        #table_wrapper table{
+            width: 100%;
+            margin: 0;
+            border-bottom: 1px solid black;
+        }
+        #right_div thead th{
+            color: white;
+            background-color: black;
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+            border-left: 1px solid white;
+        }
+        #right_div tbody td{
+            border-top: 1px solid black;
+            border-left: 1px solid black;
+        }
+        #right_div tbody td,
+        #right_div thead th{
+            height: 25px;
+        }
+        #right_div tbody td:nth-child(1),
+        #right_div thead th:nth-child(1){
+            width: 30%;
+        }
+        #right_div tbody td:nth-child(2),
+        #right_div thead th:nth-child(2){
+            width: 30%;
+        }
+        #right_div tbody td:nth-child(3),
+        #right_div thead th:nth-child(3){
+            width: 30%;
+        }
+        #right_div tbody td:nth-child(4){
+            border-right: 1px solid black;
+            width: 10%;
+        }
+        #right_div thead th:nth-child(4){
+            border-right: 1px solid white;
+            width: 10%;
+        }
+
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -765,22 +1045,22 @@
             <input id="home_button" type="image" src="images/VRED-naamlogo.png" alt="home" class="header_btn">
             <div id="half_header_upper">
                 <!-- Deze is belangrijk -->
-                <button class="header_btn">Beheer Tours</button>
-                <button class="header_btn" id="active">Beheer Kunstobjecten</button>
-                <button class="header_btn">Beheer Kennistest</button>
-                <button class="header_btn">Beheer Gebruikers</button>
-                <button class="header_btn">Statistieken</button>
-                <button class="header_btn">Mijn Museum</button>
-                <button class="header_btn">Sign out</button>
+                <a class="header_btn">Beheer Tours</a>
+                <a href="#kunst_object_video_toevoegen" class="header_btn">Beheer Kunstobjecten</a>
+                <a class="header_btn">Beheer Kennistest</a>
+                <a class="header_btn">Beheer Gebruikers</a>
+                <a class="header_btn">Statistieken</a>
+                <a class="header_btn">Mijn Museum</a>
+                <a href="#login" class="header_btn">Sign out</a>
             </div>
         </div>
         <div id="half_header_bottom" class="half_header">
             <!-- Deze is belangrijk -->
-            <button class="header_btn" id="active">Kennisvragen Beheren</button>
-            <button class="header_btn">Kennis Antwoorden Beheren</button>
-            <button class="header_btn">Kennistest Beheren</button>
-            <button class="header_btn">Kennistest Detail</button>
-            <button class="header_btn">Doe de Kennistest</button>
+            <a href="#kennis_vragen_beheren" class="header_btn">Kennisvragen Beheren</a>
+            <a class="header_btn">Kennis Antwoorden Beheren</a>
+            <a class="header_btn">Kennistest Beheren</a>
+            <a class="header_btn">Kennistest Detail</a>
+            <a class="header_btn">Doe de Kennistest</a>
         </div>
     </div>
     <div class="content">
@@ -1059,6 +1339,246 @@
             </div>
 
         </div>
+        <div class="page" id="kunst_object_video_toevoegen">
+            <div class="main">
+                <form id="left_div">
+                    <div id="left_header">
+                        <input id="left_header_inpt" type="text" name="zoeken_kunstobjecten" placeholder="Naam" value="" required>
+                        <input type="text" name="zoeken_kunstobjecten" placeholder="Omschrijving" value="" required>
+                    </div>
+                       <div id="left_div_body">
+                        <div class="content_input">
+                            <input type="file" id="img" name="img" accept="image/*" required>
+                            <label for="img">Kies een afbeelding</label>
+                            <div class="drag_n_drop">
+                                <label>Of klik en sleep uw afbeelding hier naartoe.</label>
+                            </div>
+                        </div>
+                        <div class="content_input">
+                            <input type="file" id="vid" name="vid" accept="video/*" required>
+                            <label for="vid">Kies een video</label>
+                            <div class="drag_n_drop">
+                                <label>Of klik en sleep uw video hier naartoe.</label>
+                            </div>
+                        </div>
+                        <div class="content_input">
+                            <input type="file" id="audio" name="audio" accept="audio/*" required>
+                            <label for="audio">Kies een Audio bestand</label>
+                            <div class="drag_n_drop">
+                                <label>Of klik en sleep uw audio hier naartoe.</label>
+                            </div>
+                        </div>
+                        <div class="content_input">
+                            <textarea name="kunst_obj_text" cols="30" rows="10"
+                            placeholder="Hier komt de tekst met achtergrond informatie over het kunst object" required></textarea>
+                        </div>
+                    </div>
+                    <input type="submit" value="Sla gegevens op">
+                </form>
+                <div id="right_div">
+                    <form>
+                        <input type="text" name="zoeken_kunstobjecten" placeholder="zoekterm" value="">
+                        <button type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                    <div id="table_wrapper">
+                        <table cellspacing=0>
+                        <thead>
+                            <tr>
+                               <th>Naam</th>
+                               <th>Omschrijving</th>
+                               <th>Aanmaak Datum</th>
+                               <th>Id</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Alle pages zitten in content -->
         <!--Vergeten-->
         <div class="page" id="vergeten">
@@ -1166,7 +1686,7 @@
                         <label for="psw"><b>Wachtwoord</b></label>
                         <input type="password" placeholder="Voer wachtwoord in" name="psw" required>
 
-                        <button type="submit">Login</button>
+                        <input type="submit" value="Login">
                         <label>
                             <input type="checkbox" checked="checked" name="remember"> Herinner mij
                         </label>
