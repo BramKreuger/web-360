@@ -410,7 +410,8 @@
             float: left;
             text-align: center;
             position: relative;
-            overflow: hidden;
+            overflow-y: auto;
+            overflow-x: hidden;
         }
 
         #deze_vraag_is_geschikt {
@@ -686,45 +687,63 @@
             display: flex;
             width: calc(100% - 20px);
             margin: 0px 10px 0px 10px;
-            height: calc(66.67% - 36px);
+            border: 1px black solid;
             padding: 0;
+            overflow: hidden;
+            background: white
         }
 
         #vraag_midden_links {
             width: 75%;
             min-height: 150px;
             height: 100%;
-            border: 1px black solid;
-            margin: 0px 0px 0px 0px;
-            padding: 5px;
+            margin: 0 0px 0px 0px;
+            padding: 0px;
             float: left;
+            overflow: hidden;
+        }
+
+        #vraag_midden_links img{
+            height: 300px;
+            position: absolute;
+            left: 11px;
+            top: 176px;
+            object-fit: cover;
+            z-index: 1;
         }
 
         #vraag_midden_links_vraag {
-            border: 1px black solid;
+            position: absolute;
+            top: 230px;
+            left: -60px;
             padding: 0;
             margin: 0;
             font-size: small;
             width: 100%;
-            background-color: #CCC;
+            z-index: 99999;
 
         }
 
         #vraag_midden_links_antw {
+            position: absolute;
             list-style-type: circle;
+            top: 220px;
             margin: 0;
             padding: 2.5px 0px 2.5px 20px;
             height: 50%;
+            z-index: 9999;
 
         }
 
         .vraag_midden_links_antw_pnts {
-            background-color: white;
             font-size: 10px;
-            margin: 10% 5px 10% 0;
-            border: 1px black solid;
-            height: 5%;
+            margin: 5px;
+            padding: 0px 2px;;
+            height: 30px;
             min-height: 2px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
 
         #vraag_midden_rechts {
@@ -732,17 +751,32 @@
             height: 100%;
             padding: 0;
             margin: 0;
-            float: left;
+            float: right;
         }
 
         #vraag_midden_rechts_image {
-            object-fit: cover;
-            width: calc(100% - 10px);
-            height: 100%;
-            padding: 5px;
-            border: 1px black solid;
-            border-left: 0;
-            float: left;
+            height: 300px;
+            /*padding: 5px;*/
+            float: right;
+            z-index: -3;
+        }
+        @media only screen and (max-width: 850px) {
+              .vragen_beheren_middle_left {
+                margin-right: 5px;
+            }
+
+            .vragen_beheren_middle_middle {
+                width: 0%;
+                height: 100%;
+                float: left;
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .vragen_beheren_middle_right {
+                margin-left: 5px;
+            }
         }
 
         /*------rechts----------*/
@@ -856,14 +890,14 @@
             flex-direction: row;
         }
         #kunst_object_video_toevoegen #left_div {
-            flex: 1 1 auto;
+            width: 40%;
             display: flex;
             flex-direction: column;
             margin: 10px 2.5% 10px 7.5%;
         }
 
         #kunst_object_video_toevoegen #right_div {
-            flex: 1 1 auto;
+            width: 40%;
             display: flex;
             flex-direction: column;
             margin: 10px 7.5% 10px 2.5%;
@@ -919,14 +953,14 @@
         }
 
         input[type=file] + label{
-            padding: 2px;
+            padding: 2px 5px;
             text-align: center;
             border: 1px solid black;
             background-color: #fafafa;
             box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
             text-decoration: none;
             cursor: pointer;
-            width: calc(100% - 12px);
+            width: calc(100% - 17px);
             height: 25px;
             margin-left: 5px;
             white-space: nowrap;
@@ -962,9 +996,10 @@
             color: white;
             padding: 14px 20px;
             margin: 8px 0;
+            margin-left: 5px;
             border: none;
             cursor: pointer;
-            width: 100%;
+            width: calc(100% - 5px);
         }
 
         #left_div input[type=submit]:hover {
@@ -995,6 +1030,7 @@
             width: 100%;
             margin: 0;
             border-bottom: 1px solid black;
+            table-layout:fixed;
         }
         #right_div thead th{
             color: white;
@@ -1010,6 +1046,10 @@
         #right_div tbody td,
         #right_div thead th{
             height: 25px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
         }
         #right_div tbody td:nth-child(1),
         #right_div thead th:nth-child(1){
@@ -1115,21 +1155,19 @@
                             <p><b>Voorbeeld van de vraag</b></p>
                             <div id="vraag_midden">
                                 <div id="vraag_midden_links">
-                                    <div id="vraag_midden_links_vraag">
-                                        <label>Door wie is het melkmeisje geschilderd</label>
-                                    </div>
                                     <ul id="vraag_midden_links_antw">
-                                        <li class="vraag_midden_links_antw_pnts"></li>
-                                        <li class="vraag_midden_links_antw_pnts"></li>
-                                        <li class="vraag_midden_links_antw_pnts"></li>
-                                        <li class="vraag_midden_links_antw_pnts"></li>
-                                        <li class="vraag_midden_links_antw_pnts"></li>
-                                        <li class="vraag_midden_links_antw_pnts"></li>
-                                        <li class="vraag_midden_links_antw_pnts"></li>
+                                        <li class="vraag_midden_links_antw_pnts"><b>Door wie is het melkmeisje geschilderd</b></li>
+                                        <li class="vraag_midden_links_antw_pnts">voorbeeld antwoord #1</li>
+                                        <li class="vraag_midden_links_antw_pnts">voorbeeld antwoord #2</li>
+                                        <li class="vraag_midden_links_antw_pnts">voorbeeld antwoord #3</li>
+                                        <li class="vraag_midden_links_antw_pnts">voorbeeld antwoord #4</li>
+                                        <li class="vraag_midden_links_antw_pnts">voorbeeld antwoord #5</li>
+                                        <li class="vraag_midden_links_antw_pnts">voorbeeld antwoord #6</li>
                                     </ul>
+                                    <img src="images/BASIS-Kubus-vraag_2.png" alt="">
                                 </div>
                                 <div id="vraag_midden_rechts">
-                                    <img id="vraag_midden_rechts_image" src="images/melk_meisje.jpg" alt="Melk meisje">
+                                   <img id="vraag_midden_rechts_image" src="images/melk_meisje.jpg" alt="Melk meisje">
                                 </div>
                             </div>
                         </div>
@@ -1370,7 +1408,7 @@
                         </div>
                         <div class="content_input">
                             <textarea name="kunst_obj_text" cols="30" rows="10"
-                            placeholder="Hier komt de tekst met achtergrond informatie over het kunst object" required></textarea>
+                            placeholder="Typ hier de tekst met achtergrond informatie over het kunst object" required></textarea>
                         </div>
                     </div>
                     <input type="submit" value="Sla gegevens op">
@@ -1394,10 +1432,10 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
+                                <td>Rembrandt</td>
+                                <td>De nachtwacht </td>
+                                <td>01-02-2020</td>
+                                <td>1</td>
                             </tr>
                             <tr>
                                 <td>item 1</td>
