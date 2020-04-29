@@ -28,8 +28,9 @@
         }
 
         button,
-        .header_btn {
-            border: 1px solid black;
+        .header_btn,
+        #antwoorden_top input[type=submit]{
+            border: 1px solid grey;
             background-color: #fafafa;
             box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
             text-decoration: none;
@@ -166,11 +167,21 @@
             overflow: hidden;
         }
 
+        select:invalid { color: gray; }
+
+        li.right_objecten_lijst:nth-child(even):hover,
+        li.right_objecten_lijst:nth-child(odd):hover,
+        li.linker_vragen_lijst:nth-child(even):hover,
+        li.linker_vragen_lijst:nth-child(odd):hover,
+        table tbody tr:hover {
+          background-color: #ffff99;
+        }
+
         input[type=text],
         input[type=password],
         input[type=number],
         input[type=email],
-        select,
+        #login select,
         registratie textarea,
         option {
             width: 100%;
@@ -185,7 +196,7 @@
         #vergeten form,
         #vergeten_succes form,
         #registratie_klaar form,
-        #registratie_mislukt form{
+        #registratie_mislukt form {
             margin: 0 10% 0 10%;
             width: 80%;
         }
@@ -440,7 +451,7 @@
         }
 
         .vragen_beheren_bottom_overzicht {
-            height: calc(100% - 25px);
+            height: calc(100% - 35px);
             width: calc(100% - 4px);
             padding: 0;
             margin: 0;
@@ -489,8 +500,8 @@
         #vragen_beheren_bottom_zoeken_inpt {
             width: calc(100% - 4px);
             /*- 29px);*/
-            height: 20px;
-            margin: 2.5px 0px 2.5px 0px;
+            height: 25px;
+            margin: 2.5px 0px 5px 0px;
             padding: 0;
             flex-direction: row;
             text-align: center;
@@ -703,7 +714,7 @@
             overflow: hidden;
         }
 
-        #vraag_midden_links img{
+        #vraag_midden_links img {
             height: 300px;
             position: absolute;
             left: 11px;
@@ -738,7 +749,8 @@
         .vraag_midden_links_antw_pnts {
             font-size: 10px;
             margin: 5px;
-            padding: 0px 2px;;
+            padding: 0px 2px;
+            ;
             height: 30px;
             min-height: 2px;
             overflow: hidden;
@@ -760,8 +772,9 @@
             float: right;
             z-index: -3;
         }
+
         @media only screen and (max-width: 850px) {
-              .vragen_beheren_middle_left {
+            .vragen_beheren_middle_left {
                 margin-right: 5px;
             }
 
@@ -885,10 +898,11 @@
     </style>
     <style namespace="kunst_object_video_toevoegen">
         /* toplaag */
-        #kunst_object_video_toevoegen .main{
+        #kunst_object_video_toevoegen .main {
             display: flex;
             flex-direction: row;
         }
+
         #kunst_object_video_toevoegen #left_div {
             width: 40%;
             display: flex;
@@ -903,47 +917,52 @@
             margin: 10px 7.5% 10px 2.5%;
             height: 100%;
         }
+
         /* Left */
-        #left_header{
-            margin: 10px 0 5px px;
+        #left_header {
             display: flex;
         }
-        #left_div_body{
+
+        #left_div_body {
             height: 80%;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
         }
-        #left_div input{
+
+        #left_div input {
             padding: 2px 20px;
             text-align: center;
             width: calc(50% - 6px);
         }
 
-        #left_header_inpt{
+        #left_header_inpt {
             margin-right: 5px;
             margin-left: 5px;
         }
 
-        .content_input{
+        .content_input {
             display: flex;
             flex-direction: column;
             height: 20%;
             min-height: 100px;
+            m
             text-align: center;
             flex: 1 0 auto;
         }
-        .content_input textarea{
+
+        .content_input textarea {
             text-align: center;
             font-family: Ariel, sans-serif;
             resize: none;
             width: calc(100% - 47px);
             padding: 20px;
             margin-left: 5px;
+            margin-top: 5px;
             font-size: medium;
         }
-        input[type=file]
-        {
+
+        input[type=file] {
             width: 0.1px;
             height: 0.1px;
             opacity: 0;
@@ -952,10 +971,10 @@
             z-index: -1;
         }
 
-        input[type=file] + label{
+        input[type=file]+label {
             padding: 2px 5px;
             text-align: center;
-            border: 1px solid black;
+            border: 1px solid grey;
             background-color: #fafafa;
             box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
             text-decoration: none;
@@ -968,15 +987,16 @@
             text-overflow: ellipsis;
         }
 
-        input[type=file]:hover + label{
+        input[type=file]:hover+label {
             background-color: white;
         }
 
-        input[type=file]:focus + label {
+        input[type=file]:focus+label {
             outline: 1px dotted #000;
             outline: -webkit-focus-ring-color auto 5px;
         }
-        .drag_n_drop{
+
+        .drag_n_drop {
             background-color: white;
             border: 1px solid grey;
             margin: 5px;
@@ -987,10 +1007,11 @@
             display: flex;
         }
 
-        .drag_n_drop label{
+        .drag_n_drop label {
             order: 2;
-            margin:0 auto;
+            margin: 0 auto;
         }
+
         #left_div input[type=submit] {
             background-color: #72309d;
             color: white;
@@ -1011,67 +1032,227 @@
         }
 
         /* Right */
-        #right_div input{
+        #right_div input {
             width: calc(100% - 30px);
             height: 25px;
             text-align: center;
         }
-        #right_div button{
+
+        #right_div button {
             width: 25px;
             height: 25px;
         }
+
         /*TABLE*/
-        #right_div #table_wrapper{
+        #right_div #table_wrapper {
             overflow-y: auto;
             height: calc(100% - 70px);
             width: 100%;
         }
-        #table_wrapper table{
+
+        #table_wrapper table {
             width: 100%;
             margin: 0;
             border-bottom: 1px solid black;
-            table-layout:fixed;
+            table-layout: fixed;
         }
-        #right_div thead th{
+
+        #right_div thead th {
             color: white;
             background-color: black;
             border-top: 1px solid white;
             border-bottom: 1px solid white;
             border-left: 1px solid white;
         }
-        #right_div tbody td{
+
+        #right_div tbody td {
             border-top: 1px solid black;
             border-left: 1px solid black;
         }
+
         #right_div tbody td,
-        #right_div thead th{
+        #right_div thead th {
             height: 25px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             text-align: center;
         }
+
         #right_div tbody td:nth-child(1),
-        #right_div thead th:nth-child(1){
+        #right_div thead th:nth-child(1) {
             width: 30%;
         }
+
         #right_div tbody td:nth-child(2),
-        #right_div thead th:nth-child(2){
+        #right_div thead th:nth-child(2) {
             width: 30%;
         }
+
         #right_div tbody td:nth-child(3),
-        #right_div thead th:nth-child(3){
+        #right_div thead th:nth-child(3) {
             width: 30%;
         }
-        #right_div tbody td:nth-child(4){
+
+        #right_div tbody td:nth-child(4) {
             border-right: 1px solid black;
             width: 10%;
         }
-        #right_div thead th:nth-child(4){
+
+        #right_div thead th:nth-child(4) {
             border-right: 1px solid white;
             width: 10%;
         }
+    </style>
+    <style namespace="statistieken"></style>
+    <style namespace="kennis_antwoorden_beheren">
+        #kennis_antwoorden_beheren .main{
+            display: flex;
+            flex-direction: column;
+        }
 
+        #antwoorden_top  {
+            display: flex;
+            flex-direction: row;
+            height: 5%;
+            min-height: 35px;
+        }
+
+        #antwoorden_top input[type=text]{
+            height: 25px;
+            width: 50%;
+        }
+        #antwoorden_top select{
+            width: 25%;
+            margin: 8px 5px 0 5px;
+            height: 25px;
+        }
+
+        #antwoorden_top input[type=submit]{
+            width: 25%;
+            margin-top: 8px;
+            height: 25px;
+        }
+
+        #antwoorden_midden_1 {
+            height: 45%;
+            flex: 0;
+        }
+        #antwoorden_midden_1 #table_wrapper {
+            overflow-y: auto;
+            height: 100%;
+            width: 100%;
+        }
+        #antwoorden_midden_1 table {
+            width: 100%;
+            margin: 0;
+            border-bottom: 1px solid black;
+            table-layout: fixed;
+        }
+        #antwoorden_midden_1 input[type=submit]{
+            width: 48%;
+            margin: 0 1px;
+            height: 25px;
+            border: 0;
+            color: white
+        }
+        #antwoorden_midden_1 input[type=submit]:nth-child(1){
+            background-color: #a6797b;
+        }
+        #antwoorden_midden_1 input[type=submit]:nth-child(1):hover{
+            background-color: #a62e34;
+        }
+        #antwoorden_midden_1 input[type=submit]:nth-child(2){
+            background-color:#797ea6;
+        }
+         #antwoorden_midden_1 input[type=submit]:nth-child(2):hover{
+            background-color: #2e2ea6;
+        }
+        #antwoorden_midden_1 thead th {
+            color: white;
+            background-color: black;
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+            border-left: 1px solid white;
+        }
+
+        #antwoorden_midden_1 tbody td {
+            border-top: 1px solid black;
+            border-left: 1px solid black;
+        }
+
+        #antwoorden_midden_1 tbody td,
+        #antwoorden_midden_1 thead th {
+            height: 25px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
+        }
+        #antwoorden_midden_1 tbody td:nth-child(1),
+        #antwoorden_midden_1 thead th:nth-child(1) {
+            width: 70%;
+        }
+
+        #antwoorden_midden_1 tbody td:nth-child(2),
+        #antwoorden_midden_1 thead th:nth-child(2) {
+            width: 5%;
+        }
+
+        #antwoorden_midden_1 tbody td:nth-child(3),
+        #antwoorden_midden_1 thead th:nth-child(3) {
+            width: 20%;
+        }
+
+        #antwoorden_midden_1 tbody td:nth-child(4) {
+            border-right: 1px solid black;
+            width: 5%;
+        }
+
+        #antwoorden_midden_1 thead th:nth-child(4) {
+            border-right: 1px solid white;
+            width: 5%;
+        }
+        #antwoorden_midden_2 {
+            height: 20%;
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+        }
+        #antwoorden_midden_2_links{
+            width: 50%;
+        }
+        #antwoorden_midden_2_links button{
+            margin-top: 5px;
+            width: 20%;
+            max-width: 150px;
+            height: 50px;
+            border-radius: 25px;
+            box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+            border: 1px solid grey;
+            font-size: large;
+        }
+        #antwoorden_midden_2_links button:nth-last-child(1) i{
+            transform: scaleX(-1);
+            -moz-transform: scaleX(-1);
+            -webkit-transform: scaleX(-1);
+            -ms-transform: scaleX(-1);
+        }
+        #antwoorden_top input[type=submit]:hover,
+        #antwoorden_midden_2_links input[type=submit]:hover{
+            background-color: white;
+            cursor: pointer
+        }
+        #antwoorden_midden_2_rechts{
+            width: 50%;
+        }
+        #antwoorden_midden_2_rechts form{
+            margin: 5px;
+            float: right;
+        }
+        #antwoorden_bottom {
+            height: 40%;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -1089,7 +1270,7 @@
                 <a href="#kunst_object_video_toevoegen" class="header_btn">Beheer Kunstobjecten</a>
                 <a class="header_btn">Beheer Kennistest</a>
                 <a class="header_btn">Beheer Gebruikers</a>
-                <a class="header_btn">Statistieken</a>
+                <a href="#statistieken" class="header_btn">Statistieken</a>
                 <a class="header_btn">Mijn Museum</a>
                 <a href="#login" class="header_btn">Sign out</a>
             </div>
@@ -1097,7 +1278,7 @@
         <div id="half_header_bottom" class="half_header">
             <!-- Deze is belangrijk -->
             <a href="#kennis_vragen_beheren" class="header_btn">Kennisvragen Beheren</a>
-            <a class="header_btn">Kennis Antwoorden Beheren</a>
+            <a href="#kennis_antwoorden_beheren"  class="header_btn">Kennis Antwoorden Beheren</a>
             <a class="header_btn">Kennistest Beheren</a>
             <a class="header_btn">Kennistest Detail</a>
             <a class="header_btn">Doe de Kennistest</a>
@@ -1167,7 +1348,7 @@
                                     <img src="images/BASIS-Kubus-vraag_2.png" alt="">
                                 </div>
                                 <div id="vraag_midden_rechts">
-                                   <img id="vraag_midden_rechts_image" src="images/melk_meisje.jpg" alt="Melk meisje">
+                                    <img id="vraag_midden_rechts_image" src="images/melk_meisje.jpg" alt="Melk meisje">
                                 </div>
                             </div>
                         </div>
@@ -1384,31 +1565,30 @@
                         <input id="left_header_inpt" type="text" name="zoeken_kunstobjecten" placeholder="Naam" value="" required>
                         <input type="text" name="zoeken_kunstobjecten" placeholder="Omschrijving" value="" required>
                     </div>
-                       <div id="left_div_body">
+                    <div id="left_div_body">
                         <div class="content_input">
-                            <input type="file" id="img" name="img" accept="image/*" required>
-                            <label for="img">Kies een afbeelding</label>
                             <div class="drag_n_drop">
                                 <label>Of klik en sleep uw afbeelding hier naartoe.</label>
                             </div>
+                            <input type="file" id="img" name="img" accept="image/*" required>
+                            <label for="img">Kies een afbeelding</label>
                         </div>
                         <div class="content_input">
-                            <input type="file" id="vid" name="vid" accept="video/*" required>
-                            <label for="vid">Kies een video</label>
                             <div class="drag_n_drop">
                                 <label>Of klik en sleep uw video hier naartoe.</label>
                             </div>
+                            <input type="file" id="vid" name="vid" accept="video/*" required>
+                            <label for="vid">Kies een video</label>
                         </div>
                         <div class="content_input">
-                            <input type="file" id="audio" name="audio" accept="audio/*" required>
-                            <label for="audio">Kies een Audio bestand</label>
                             <div class="drag_n_drop">
                                 <label>Of klik en sleep uw audio hier naartoe.</label>
                             </div>
+                            <input type="file" id="audio" name="audio" accept="audio/*" required>
+                            <label for="audio">Kies een Audio bestand</label>
                         </div>
                         <div class="content_input">
-                            <textarea name="kunst_obj_text" cols="30" rows="10"
-                            placeholder="Typ hier de tekst met achtergrond informatie over het kunst object" required></textarea>
+                            <textarea name="kunst_obj_text" cols="30" rows="10" placeholder="Typ hier de tekst met achtergrond informatie over het kunst object" required></textarea>
                         </div>
                     </div>
                     <input type="submit" value="Sla gegevens op">
@@ -1422,198 +1602,476 @@
                     </form>
                     <div id="table_wrapper">
                         <table cellspacing=0>
-                        <thead>
-                            <tr>
-                               <th>Naam</th>
-                               <th>Omschrijving</th>
-                               <th>Aanmaak Datum</th>
-                               <th>Id</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Rembrandt</td>
-                                <td>De nachtwacht </td>
-                                <td>01-02-2020</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                            <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                            <thead>
+                                <tr>
+                                    <th>Naam</th>
+                                    <th>Omschrijving</th>
+                                    <th>Aanmaak Datum</th>
+                                    <th>Id</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Rembrandt</td>
+                                    <td>De nachtwacht </td>
+                                    <td>01-02-2020</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                                <tr>
+                                    <td>item 1</td>
+                                    <td>item 2</td>
+                                    <td>item 3</td>
+                                    <td>item 4</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="page" id="statistieken">
+            <div class="main">
+            </div>
+        </div>
+        <div class="page" id="kennis_antwoorden_beheren">
+            <div class="main">
+                <form action="" id="antwoorden_top">
+                    <input type="text">
+                    <select required name="is_juist">
+                        <option value="" disabled selected>Is juist?</option>
+                        <option value="0">Ja</option>
+                        <option value="1">Nee</option>
+                    </select>
+                    <input type="submit">
+                </form>
+                <div id="antwoorden_midden_1">
+                    <div id="table_wrapper">
+                        <table cellspacing=0>
+                           <thead>
+                               <th>Antwoord text</th>
+                               <th>Juist</th>
+                               <th>Actie</th>
+                               <th>Id</th>
+                           </thead>
+                            <tbody>
+                                <tr>
+                                    <td>200 BC</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>200 AC</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td>1800</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td>1780</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td>1900</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>2000</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td>test</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                    <td>7</td>
+                                </tr>
+                                <tr>
+                                    <td>test</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                    <td>8</td>
+                                </tr>
+                                <tr>
+                                    <td>test</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                    <td>9</td>
+                                </tr>
+                                <tr>
+                                    <td>test</td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                    <td>10</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="antwoorden_midden_2">
+                    <form id="antwoorden_midden_2_links">
+                        <button type="submit" ><i class="fa fa-arrow-down"></i></button>
+                        <button type="submit" ><i class="fa fa-arrow-up"></i></button>
+                        <button type="submit" ><i class="fa fa-undo"></i></button>
+                        <button type="submit" ><i class="fa fa-undo"></i></button>
+                    </form>
+                    <div id="antwoorden_midden_2_rechts">
+                        <form id="niveau_checkboxes">
+                               <p id="deze_vraag_is_geschikt">Vraag is geschikt voor</p>
+                                <input type="checkbox" id="all_box" name="alle_groepen" value="1"><label for="alle_groepen"> Alle groepen</label>
+                                <div id="all_unchecked">
+                                    <div><input type="checkbox" name="groep_4_5_6" value="1"><label for="groep_4_5_6"> Groep 4 / 5 / 6 </label></div>
+                                    <div><input type="checkbox" name="groep_7_8" value="1"><label for="groep_7_8"> Groep 7 / 8 </label></div>
+                                    <div><input type="checkbox" name="middelbaar" value="1"><label for="middelbaar"> Middelbaar onderwijs </label></div>
+                                    <div><input type="checkbox" name="voortgezet" value="1"><label for="voortgezet"> Voortgezet onderwijs </label></div>
+                                </div>
+                                <div id="all_checked">
+                                    <div><input type="checkbox" checked disabled> Groep 4 / 5 / 6 </div>
+                                    <div><input type="checkbox" checked disabled> Groep 7 / 8 </div>
+                                    <div><input type="checkbox" checked disabled> Middelbaar onderwijs</div>
+                                    <div><input type="checkbox" checked disabled> Voortgezet onderwijs</div>
+                                </div>
+                            </form>
+                    </div>
+                </div>
+                <div id="antwoorden_bottom"  >
+                    <form id="vragen_beheren_bottom_form" action="">
+                            <input type="text" id="vragen_beheren_bottom_zoeken_inpt" placeholder="Lijst met alle vragen." name="alle_vragen_zoeken">
+                        </form>
+                        <div class="vragen_beheren_bottom_overzicht">
+                            <table cellspacing="0" id=bottom_table>
+                                <thead class="vragen_overzicht">
+                                    <tr class="vragen_overzicht">
+                                        <th class="vragen_overzicht">Volgnummer</th>
+                                        <th class="vragen_overzicht">Vraag</th>
+                                        <th class="vragen_overzicht">Object naam</th>
+                                        <th class="vragen_overzicht"># Antwoorden</th>
+                                        <th class="vragen_overzicht">Id</th>
+                                        <th class="vragen_overzicht">....</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="vragen_overzicht">
+                                    <tr class="vragen_overzicht">
+                                        <td class="vragen_overzicht">1</td>
+                                        <td class="vragen_overzicht">In welk jaar is het melkmeisje geschilderd?</td>
+                                        <td class="vragen_overzicht">Het melk meisje</td>
+                                        <td class="vragen_overzicht">4</td>
+                                        <td class="vragen_overzicht">1</td>
+                                    </tr>
+                                    <tr class="vragen_overzicht">
+                                        <td class="vragen_overzicht">2</td>
+                                        <td class="vragen_overzicht">In welk museum hangt het het melk meisje?</td>
+                                        <td class="vragen_overzicht">Het melk meisje</td>
+                                        <td class="vragen_overzicht">2</td>
+                                        <td class="vragen_overzicht">2</td>
+                                    </tr>
+                                    <tr class="vragen_overzicht">
+                                        <td class="vragen_overzicht">3</td>
+                                        <td class="vragen_overzicht">Door wie is het melk meisje geschilderd?</td>
+                                        <td class="vragen_overzicht">Het melk meisje</td>
+                                        <td class="vragen_overzicht">6</td>
+                                        <td class="vragen_overzicht">3</td>
+                                    </tr>
+                                    <tr class="vragen_overzicht">
+                                        <td class="vragen_overzicht">4</td>
+                                        <td class="vragen_overzicht">Valt het melk meisje onder stil leven?</td>
+                                        <td class="vragen_overzicht">Het melk meisje</td>
+                                        <td class="vragen_overzicht">7</td>
+                                        <td class="vragen_overzicht">4</td>
+                                    </tr>
+                                    <tr class="vragen_overzicht">
+                                        <td class="vragen_overzicht">item 1</td>
+                                        <td class="vragen_overzicht">item 2</td>
+                                        <td class="vragen_overzicht">item 3</td>
+                                        <td class="vragen_overzicht">item 4</td>
+                                        <td class="vragen_overzicht">item 5</td>
+                                    </tr>
+                                    <tr class="vragen_overzicht">
+                                        <td class="vragen_overzicht">item 1</td>
+                                        <td class="vragen_overzicht">item 2</td>
+                                        <td class="vragen_overzicht">item 3</td>
+                                        <td class="vragen_overzicht">item 4</td>
+                                        <td class="vragen_overzicht">item 5</td>
+                                    </tr>
+                                    <tr class="vragen_overzicht">
+                                        <td class="vragen_overzicht">item 1</td>
+                                        <td class="vragen_overzicht">item 2</td>
+                                        <td class="vragen_overzicht">item 3</td>
+                                        <td class="vragen_overzicht">item 4</td>
+                                        <td class="vragen_overzicht">item 5</td>
+                                    </tr>
+                                    <tr class="vragen_overzicht">
+                                        <td class="vragen_overzicht">item 1</td>
+                                        <td class="vragen_overzicht">item 2</td>
+                                        <td class="vragen_overzicht">item 3</td>
+                                        <td class="vragen_overzicht">item 4</td>
+                                        <td class="vragen_overzicht">item 5</td>
+                                    </tr>
+                                    <tr class="vragen_overzicht">
+                                        <td class="vragen_overzicht">item 1</td>
+                                        <td class="vragen_overzicht">item 2</td>
+                                        <td class="vragen_overzicht">item 3</td>
+                                        <td class="vragen_overzicht">item 4</td>
+                                        <td class="vragen_overzicht">item 5</td>
+                                    </tr>
+                                    <tr class="vragen_overzicht">
+                                        <td class="vragen_overzicht">item 1</td>
+                                        <td class="vragen_overzicht">item 2</td>
+                                        <td class="vragen_overzicht">item 3</td>
+                                        <td class="vragen_overzicht">item 4</td>
+                                        <td class="vragen_overzicht">item 5</td>
+                                    </tr>
+                                    <tr class="vragen_overzicht">
+                                        <td class="vragen_overzicht">item 1</td>
+                                        <td class="vragen_overzicht">item 2</td>
+                                        <td class="vragen_overzicht">item 3</td>
+                                        <td class="vragen_overzicht">item 4</td>
+                                        <td class="vragen_overzicht">item 5</td>
+                                    </tr>
+                                    <tr class="vragen_overzicht">
+                                        <td class="vragen_overzicht">item 1</td>
+                                        <td class="vragen_overzicht">item 2</td>
+                                        <td class="vragen_overzicht">item 3</td>
+                                        <td class="vragen_overzicht">item 4</td>
+                                        <td class="vragen_overzicht">item 5</td>
+                                    </tr>
+                                    <tr class="vragen_overzicht">
+                                        <td class="vragen_overzicht">item 1</td>
+                                        <td class="vragen_overzicht">item 2</td>
+                                        <td class="vragen_overzicht">item 3</td>
+                                        <td class="vragen_overzicht">item 4</td>
+                                        <td class="vragen_overzicht">item 5</td>
+                                    </tr>
+                                    <tr class="vragen_overzicht">
+                                        <td class="vragen_overzicht">item 1</td>
+                                        <td class="vragen_overzicht">item 2</td>
+                                        <td class="vragen_overzicht">item 3</td>
+                                        <td class="vragen_overzicht">item 4</td>
+                                        <td class="vragen_overzicht">item 5</td>
+                                    </tr>
+                                    <tr class="vragen_overzicht">
+                                        <td class="vragen_overzicht">item 1</td>
+                                        <td class="vragen_overzicht">item 2</td>
+                                        <td class="vragen_overzicht">item 3</td>
+                                        <td class="vragen_overzicht">item 4</td>
+                                        <td class="vragen_overzicht">item 5</td>
+                                    </tr>
+                                    <tr class="vragen_overzicht">
+                                        <td class="vragen_overzicht">item 1</td>
+                                        <td class="vragen_overzicht">item 2</td>
+                                        <td class="vragen_overzicht">item 3</td>
+                                        <td class="vragen_overzicht">item 4</td>
+                                        <td class="vragen_overzicht">item 5</td>
+                                    </tr>
+                                    <tr class="vragen_overzicht">
+                                        <td class="vragen_overzicht">item 1</td>
+                                        <td class="vragen_overzicht">item 2</td>
+                                        <td class="vragen_overzicht">item 3</td>
+                                        <td class="vragen_overzicht">item 4</td>
+                                        <td class="vragen_overzicht">item 5</td>
+                                    </tr>
+                                    <tr class="vragen_overzicht">
+                                        <td class="vragen_overzicht">item 1</td>
+                                        <td class="vragen_overzicht">item 2</td>
+                                        <td class="vragen_overzicht">item 3</td>
+                                        <td class="vragen_overzicht">item 4</td>
+                                        <td class="vragen_overzicht">item 5</td>
+                                    </tr>
+                                    <tr class="vragen_overzicht">
+                                        <td class="vragen_overzicht">item 1</td>
+                                        <td class="vragen_overzicht">item 2</td>
+                                        <td class="vragen_overzicht">item 3</td>
+                                        <td class="vragen_overzicht">item 4</td>
+                                        <td class="vragen_overzicht">item 5</td>
+                                    </tr>
+                                    <tr class="vragen_overzicht">
+                                        <td class="vragen_overzicht">item 1</td>
+                                        <td class="vragen_overzicht">item 2</td>
+                                        <td class="vragen_overzicht">item 3</td>
+                                        <td class="vragen_overzicht">item 4</td>
+                                        <td class="vragen_overzicht">item 5</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                 </div>
             </div>
         </div>
@@ -1626,7 +2084,7 @@
                     <div class="container" id="middle_cont">
                         <label for="email"><b>Voer uw email adres in om uw wachtwoord te resetten</b></label>
                         <input type="text" placeholder="Email" name="email" required>
-                        <button class="submit_button" type="submit">Verstuur</button>
+                        <input class="submit_button" type="submit" value="Verstuur">
                     </div>
                     <div class="container" id="lower_cont">
                         <span class="psw"><a href="#login">Terug</a></span>
@@ -1679,7 +2137,7 @@
                         <input type="text" placeholder="Postcode" name="postcode" required>
                         <input type="text" placeholder="Plaats" name="plaats" required>
                         <textarea name="biografie" cols="40" rows="3" placeholder="Biografie"></textarea>
-                        <button type="submit">Registreer</button>
+                        <input type="submit" value="Registreer">
                     </div>
                     <div class="container" id="lower_cont">
                         <span class="reg"><a href="#login">Terug naar Aanmelden</a></span>
@@ -1694,7 +2152,7 @@
                     <div id="middle_cont" class="container">
                         <label><b>Bedankt voor uw registratie. <br>
                                 Volg de instructie in de verzonden email om uw account te activeren</b></label>
-                        <button class="submit_button" type="submit">Keer terug naar het home scherm</button>
+                        <input class="submit_button" type="submit" value="Keer terug naar het home scherm">
                     </div>
                 </form>
             </div>
@@ -1706,7 +2164,7 @@
                     <div id="middle_cont" class="container">
                         <label><b>Uw registratie is mislukt. <br>
                                 Probeert u het nog maals.</b></label>
-                        <button class="submit_button" type="submit">Keer terug naar het registratie scherm</button>
+                        <input class="submit_button" type="submit" value="Keer terug naar het registratie scherm">
                     </div>
 
                 </form>

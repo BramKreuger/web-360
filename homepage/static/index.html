@@ -48,7 +48,8 @@
         }
 
         /*-----------end-------------*/
-         #thuis_educatie{
+        #thuis_educatie {
+            position: relative;
             font-size: 80px;
             color: white;
             font-family: "Times New Roman", Times, serif;
@@ -57,6 +58,30 @@
             top: calc(35% - 100px);
             position: absolute;
             cursor: pointer;
+            height: 0px;
+
+            -webkit-animation: pulsate 3s ease-out;
+            -webkit-animation-iteration-count: infinite;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, .9)
+
+            z-index: 999;
+        }
+
+        #thuis_educatie img {
+            position: absolute;
+            top: 90px;
+            left: 120px;
+            width: 200px;
+            z-index: -2;
+        }
+
+        #glow {
+            z-index: -1;
+            filter: brightness(0) invert(1) blur(5px);
+            -webkit-filter: brightness(0) invert(1) blur(5px);
+            opacity: .8;
+            -webkit-animation: glow 3s ease-out;
+            -webkit-animation-iteration-count: infinite;
         }
 
         #thuis_educatie:hover {
@@ -69,11 +94,18 @@
                 display: none;
             }
         }
+        @-webkit-keyframes glow {
+            0% {
+                opacity: .4;
+            }
 
-        #thuis_educatie {
-            -webkit-animation: pulsate 3s ease-out;
-            -webkit-animation-iteration-count: infinite;
-            text-shadow: 0px 0px 10px rgba(255, 255, 255, .9)
+            50% {
+                opacity: .8;
+            }
+
+            100% {
+                opacity: .4;
+            }
         }
 
         @-webkit-keyframes pulsate {
@@ -409,7 +441,11 @@
         <button id="vr_bril_open" class="vr_bril_open" onclick="openTextBox(1)">
             <img class="vr_bril_img" src="../images/Oculus_VR-box_transparant.png" alt="vr_bril">
         </button>
-        <p id="thuis_educatie" onclick="openTextBox(4)">Thuis <br> educatie</p>
+        <div id="thuis_educatie" onclick="openTextBox(4)">
+            <p>Thuis <br> educatie</p>
+            <img src="../images/vr_update.png" alt="vr update">
+            <img id="glow" src="../images/vr_update.png" alt="vr update glow">
+        </div>
         <div id=nav_bar>
             <button id="over_vred" onclick="openTextBox(2)" class="ftr_btns">Over VRED </button> |
             <button id="contact" onclick="openTextBox(3)" class="ftr_btns">Contact </button> |
