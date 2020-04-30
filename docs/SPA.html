@@ -29,7 +29,7 @@
 
         button,
         .header_btn,
-        #antwoorden_top input[type=submit]{
+        #antwoorden_top input[type=submit] {
             border: 1px solid grey;
             background-color: #fafafa;
             box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
@@ -167,14 +167,16 @@
             overflow: hidden;
         }
 
-        select:invalid { color: gray; }
+        select:invalid {
+            color: gray;
+        }
 
         li.right_objecten_lijst:nth-child(even):hover,
         li.right_objecten_lijst:nth-child(odd):hover,
         li.linker_vragen_lijst:nth-child(even):hover,
         li.linker_vragen_lijst:nth-child(odd):hover,
         table tbody tr:hover {
-          background-color: #ffff99;
+            background-color: #ffff99;
         }
 
         input[type=text],
@@ -946,8 +948,7 @@
             flex-direction: column;
             height: 20%;
             min-height: 100px;
-            m
-            text-align: center;
+            m text-align: center;
             flex: 1 0 auto;
         }
 
@@ -957,8 +958,7 @@
             resize: none;
             width: calc(100% - 47px);
             padding: 20px;
-            margin-left: 5px;
-            margin-top: 5px;
+            margin: 5px 0 5px 5px;
             font-size: medium;
         }
 
@@ -1104,31 +1104,65 @@
             width: 10%;
         }
     </style>
-    <style namespace="statistieken"></style>
+    <style namespace="statistieken">
+        #statistieken #statistieken_top{
+            width: 100%;
+            height: 50%;
+            display: flex;
+            flex-direction: row;
+        }
+        .pie_container{
+            flex: 1;
+        }
+        .pie {
+             /* Basic layout */
+          display: inline-block;
+          width: 10em;
+          height: 10em;
+          border-radius: 50%;
+          margin: 10px 10%;
+
+          /* A little styling */
+          border: .15em solid #fff;
+          box-shadow: 0 .075em .2em .05em rgba(0,0,0,.25);
+
+          /* fixes a minor clipping issue in Chrome */
+          background-origin: border-box;
+
+           background-image: conic-gradient(
+            #d44 calc(3.6deg * var(--segment1, 100)),
+            #fc3 0 calc(3.6deg * var(--segment2, 100)),
+            #ac0 0 calc(3.6deg * var(--segment3, 100)),
+            #0ac 0 calc(3.6deg * var(--segment4, 100)),
+            #f7b 0
+          );
+        }
+    </style>
     <style namespace="kennis_antwoorden_beheren">
-        #kennis_antwoorden_beheren .main{
+        #kennis_antwoorden_beheren .main {
             display: flex;
             flex-direction: column;
         }
 
-        #antwoorden_top  {
+        #antwoorden_top {
             display: flex;
             flex-direction: row;
             height: 5%;
             min-height: 35px;
         }
 
-        #antwoorden_top input[type=text]{
+        #antwoorden_top input[type=text] {
             height: 25px;
             width: 50%;
         }
-        #antwoorden_top select{
+
+        #antwoorden_top select {
             width: 25%;
             margin: 8px 5px 0 5px;
             height: 25px;
         }
 
-        #antwoorden_top input[type=submit]{
+        #antwoorden_top input[type=submit] {
             width: 25%;
             margin-top: 8px;
             height: 25px;
@@ -1138,36 +1172,44 @@
             height: 45%;
             flex: 0;
         }
+
         #antwoorden_midden_1 #table_wrapper {
             overflow-y: auto;
             height: 100%;
             width: 100%;
         }
+
         #antwoorden_midden_1 table {
             width: 100%;
             margin: 0;
             border-bottom: 1px solid black;
             table-layout: fixed;
         }
-        #antwoorden_midden_1 input[type=submit]{
+
+        #antwoorden_midden_1 input[type=submit] {
             width: 48%;
             margin: 0 1px;
             height: 25px;
             border: 0;
             color: white
         }
-        #antwoorden_midden_1 input[type=submit]:nth-child(1){
+
+        #antwoorden_midden_1 input[type=submit]:nth-child(1) {
             background-color: #a6797b;
         }
-        #antwoorden_midden_1 input[type=submit]:nth-child(1):hover{
+
+        #antwoorden_midden_1 input[type=submit]:nth-child(1):hover {
             background-color: #a62e34;
         }
-        #antwoorden_midden_1 input[type=submit]:nth-child(2){
-            background-color:#797ea6;
+
+        #antwoorden_midden_1 input[type=submit]:nth-child(2) {
+            background-color: #797ea6;
         }
-         #antwoorden_midden_1 input[type=submit]:nth-child(2):hover{
+
+        #antwoorden_midden_1 input[type=submit]:nth-child(2):hover {
             background-color: #2e2ea6;
         }
+
         #antwoorden_midden_1 thead th {
             color: white;
             background-color: black;
@@ -1189,6 +1231,7 @@
             text-overflow: ellipsis;
             text-align: center;
         }
+
         #antwoorden_midden_1 tbody td:nth-child(1),
         #antwoorden_midden_1 thead th:nth-child(1) {
             width: 70%;
@@ -1213,16 +1256,19 @@
             border-right: 1px solid white;
             width: 5%;
         }
+
         #antwoorden_midden_2 {
-            height: 20%;
-            flex: 1;
+            min-height: 25%;
+            flex: 0;
             display: flex;
             flex-direction: row;
         }
-        #antwoorden_midden_2_links{
+
+        #antwoorden_midden_2_links {
             width: 50%;
         }
-        #antwoorden_midden_2_links button{
+
+        #antwoorden_midden_2_links button {
             margin-top: 5px;
             width: 20%;
             max-width: 150px;
@@ -1232,29 +1278,46 @@
             border: 1px solid grey;
             font-size: large;
         }
-        #antwoorden_midden_2_links button:nth-last-child(1) i{
+
+        #antwoorden_midden_2_links button:nth-last-child(1) i {
             transform: scaleX(-1);
             -moz-transform: scaleX(-1);
             -webkit-transform: scaleX(-1);
             -ms-transform: scaleX(-1);
         }
+
         #antwoorden_top input[type=submit]:hover,
-        #antwoorden_midden_2_links input[type=submit]:hover{
+        #antwoorden_midden_2_links input[type=submit]:hover {
             background-color: white;
             cursor: pointer
         }
-        #antwoorden_midden_2_rechts{
+
+        #antwoorden_midden_2_rechts {
             width: 50%;
+            display: flex;
         }
-        #antwoorden_midden_2_rechts form{
-            margin: 5px;
+
+        #antwoorden_midden_2_rechts form {
             float: right;
+            margin: 5px;
+            width: 100%;
+            height: 100%;
+            right: 20px;
+            white-space: nowrap;
+            overflow-y: auto;
+            text-overflow: ellipsis;
         }
+
+        #antwoorden_midden_2_rechts #all_unchecked,
+        #antwoorden_midden_2_rechts #all_checked {}
+
         #antwoorden_bottom {
-            height: 40%;
+            height: 30%;
+            flex: 1;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="csslinegraph/csslinegraph.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
 
 <body>
@@ -1278,7 +1341,7 @@
         <div id="half_header_bottom" class="half_header">
             <!-- Deze is belangrijk -->
             <a href="#kennis_vragen_beheren" class="header_btn">Kennisvragen Beheren</a>
-            <a href="#kennis_antwoorden_beheren"  class="header_btn">Kennis Antwoorden Beheren</a>
+            <a href="#kennis_antwoorden_beheren" class="header_btn">Kennis Antwoorden Beheren</a>
             <a class="header_btn">Kennistest Beheren</a>
             <a class="header_btn">Kennistest Detail</a>
             <a class="header_btn">Doe de Kennistest</a>
@@ -1589,6 +1652,8 @@
                         </div>
                         <div class="content_input">
                             <textarea name="kunst_obj_text" cols="30" rows="10" placeholder="Typ hier de tekst met achtergrond informatie over het kunst object" required></textarea>
+                            <input type="file" id="text" name="text" accept=".txt .pdf .doc .doxc" required>
+                            <label for="text">Kies een tekst bestand</label>
                         </div>
                     </div>
                     <input type="submit" value="Sla gegevens op">
@@ -1799,12 +1864,62 @@
         </div>
         <div class="page" id="statistieken">
             <div class="main">
+                <div id="statistieken_top">
+                   <div class="pie_container">
+                        <div class="pie" style="--segment1: 40;"></div>
+                    </div>
+                    <div class="pie_container">
+                        <div class="pie" style="--segment1: 40; --segment2: 70;"></div>
+                    </div>
+                    <div class="pie_container">
+                        <div class="pie" style="--segment1: 40; --segment2: 70; --segment3: 80; --segment4: 90;"></div>
+                    </div>
+                </div>
+                <div id="statistieken_bottom">
+                    <dl class="csslinegraph">
+                        <dt>Day 1</dt>
+                        <dd class="first"><span class="pi0 i1"><em>3</em></span></dd>
+
+                      <dt>Day 2</dt>
+                        <dd><span class="pi1 i10"><em>36</em></span></dd>
+
+                      <dt>Day 3</dt>
+                        <dd><span class="pd11 d d4"><em>23</em></span></dd>
+
+                      <dt>Day 4</dt>
+                        <dd><span class="pi7 i10"><em>56</em></span></dd>
+
+                      <dt>Day 5</dt>
+                        <dd><span class="pd17 d d0"><em>55</em></span></dd>
+
+                      <dt>Day 6</dt>
+                        <dd><span class="pd17 d d7"><em>32</em></span></dd>
+
+                      <dt>Day 7</dt>
+                        <dd><span class="pi10 i14"><em>79</em></span></dd>
+
+                      <dt>Day 8</dt>
+                        <dd><span class="pd24 d d2"><em>74</em></span></dd>
+
+                      <dt>Day 9</dt>
+                        <dd><span class="pi22 i1"><em>77</em></span></dd>
+
+                      <dt>Day 10</dt>
+                        <dd><span class="pi23 i2"><em>83</em></span></dd>
+
+                      <dt>Day 11</dt>
+                        <dd><span class="pd25 d d15"><em>34</em></span></dd>
+
+                      <dt>Day 12</dt>
+                        <dd><span class="pi10 i2"><em>39</em></span></dd>
+                    </dl>
+                </div>
             </div>
         </div>
         <div class="page" id="kennis_antwoorden_beheren">
             <div class="main">
                 <form action="" id="antwoorden_top">
-                    <input type="text">
+                    <input placeholder="Antwoord tekst" type="text">
                     <select required name="is_juist">
                         <option value="" disabled selected>Is juist?</option>
                         <option value="0">Ja</option>
@@ -1815,12 +1930,12 @@
                 <div id="antwoorden_midden_1">
                     <div id="table_wrapper">
                         <table cellspacing=0>
-                           <thead>
-                               <th>Antwoord text</th>
-                               <th>Juist</th>
-                               <th>Actie</th>
-                               <th>Id</th>
-                           </thead>
+                            <thead>
+                                <th>Antwoord text</th>
+                                <th>Juist</th>
+                                <th>Actie</th>
+                                <th>Id</th>
+                            </thead>
                             <tbody>
                                 <tr>
                                     <td>200 BC</td>
@@ -1888,190 +2003,190 @@
                 </div>
                 <div id="antwoorden_midden_2">
                     <form id="antwoorden_midden_2_links">
-                        <button type="submit" ><i class="fa fa-arrow-down"></i></button>
-                        <button type="submit" ><i class="fa fa-arrow-up"></i></button>
-                        <button type="submit" ><i class="fa fa-undo"></i></button>
-                        <button type="submit" ><i class="fa fa-undo"></i></button>
+                        <button type="submit"><i class="fa fa-arrow-down"></i></button>
+                        <button type="submit"><i class="fa fa-arrow-up"></i></button>
+                        <button type="submit"><i class="fa fa-undo"></i></button>
+                        <button type="submit"><i class="fa fa-undo"></i></button>
                     </form>
                     <div id="antwoorden_midden_2_rechts">
+                        <p id="deze_vraag_is_geschikt">Vraag is geschikt voor:</p>
                         <form id="niveau_checkboxes">
-                               <p id="deze_vraag_is_geschikt">Vraag is geschikt voor</p>
-                                <input type="checkbox" id="all_box" name="alle_groepen" value="1"><label for="alle_groepen"> Alle groepen</label>
-                                <div id="all_unchecked">
-                                    <div><input type="checkbox" name="groep_4_5_6" value="1"><label for="groep_4_5_6"> Groep 4 / 5 / 6 </label></div>
-                                    <div><input type="checkbox" name="groep_7_8" value="1"><label for="groep_7_8"> Groep 7 / 8 </label></div>
-                                    <div><input type="checkbox" name="middelbaar" value="1"><label for="middelbaar"> Middelbaar onderwijs </label></div>
-                                    <div><input type="checkbox" name="voortgezet" value="1"><label for="voortgezet"> Voortgezet onderwijs </label></div>
-                                </div>
-                                <div id="all_checked">
-                                    <div><input type="checkbox" checked disabled> Groep 4 / 5 / 6 </div>
-                                    <div><input type="checkbox" checked disabled> Groep 7 / 8 </div>
-                                    <div><input type="checkbox" checked disabled> Middelbaar onderwijs</div>
-                                    <div><input type="checkbox" checked disabled> Voortgezet onderwijs</div>
-                                </div>
-                            </form>
+                            <input type="checkbox" id="all_box" name="alle_groepen" value="1"><label for="alle_groepen"> Alle groepen</label>
+                            <div id="all_unchecked">
+                                <div><input type="checkbox" name="groep_4_5_6" value="1"><label for="groep_4_5_6"> Groep 4 / 5 / 6 </label></div>
+                                <div><input type="checkbox" name="groep_7_8" value="1"><label for="groep_7_8"> Groep 7 / 8 </label></div>
+                                <div><input type="checkbox" name="middelbaar" value="1"><label for="middelbaar"> Middelbaar onderwijs </label></div>
+                                <div><input type="checkbox" name="voortgezet" value="1"><label for="voortgezet"> Voortgezet onderwijs </label></div>
+                            </div>
+                            <div id="all_checked">
+                                <div><input type="checkbox" checked disabled> Groep 4 / 5 / 6 </div>
+                                <div><input type="checkbox" checked disabled> Groep 7 / 8 </div>
+                                <div><input type="checkbox" checked disabled> Middelbaar onderwijs</div>
+                                <div><input type="checkbox" checked disabled> Voortgezet onderwijs</div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <div id="antwoorden_bottom"  >
+                <div id="antwoorden_bottom">
                     <form id="vragen_beheren_bottom_form" action="">
-                            <input type="text" id="vragen_beheren_bottom_zoeken_inpt" placeholder="Lijst met alle vragen." name="alle_vragen_zoeken">
-                        </form>
-                        <div class="vragen_beheren_bottom_overzicht">
-                            <table cellspacing="0" id=bottom_table>
-                                <thead class="vragen_overzicht">
-                                    <tr class="vragen_overzicht">
-                                        <th class="vragen_overzicht">Volgnummer</th>
-                                        <th class="vragen_overzicht">Vraag</th>
-                                        <th class="vragen_overzicht">Object naam</th>
-                                        <th class="vragen_overzicht"># Antwoorden</th>
-                                        <th class="vragen_overzicht">Id</th>
-                                        <th class="vragen_overzicht">....</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="vragen_overzicht">
-                                    <tr class="vragen_overzicht">
-                                        <td class="vragen_overzicht">1</td>
-                                        <td class="vragen_overzicht">In welk jaar is het melkmeisje geschilderd?</td>
-                                        <td class="vragen_overzicht">Het melk meisje</td>
-                                        <td class="vragen_overzicht">4</td>
-                                        <td class="vragen_overzicht">1</td>
-                                    </tr>
-                                    <tr class="vragen_overzicht">
-                                        <td class="vragen_overzicht">2</td>
-                                        <td class="vragen_overzicht">In welk museum hangt het het melk meisje?</td>
-                                        <td class="vragen_overzicht">Het melk meisje</td>
-                                        <td class="vragen_overzicht">2</td>
-                                        <td class="vragen_overzicht">2</td>
-                                    </tr>
-                                    <tr class="vragen_overzicht">
-                                        <td class="vragen_overzicht">3</td>
-                                        <td class="vragen_overzicht">Door wie is het melk meisje geschilderd?</td>
-                                        <td class="vragen_overzicht">Het melk meisje</td>
-                                        <td class="vragen_overzicht">6</td>
-                                        <td class="vragen_overzicht">3</td>
-                                    </tr>
-                                    <tr class="vragen_overzicht">
-                                        <td class="vragen_overzicht">4</td>
-                                        <td class="vragen_overzicht">Valt het melk meisje onder stil leven?</td>
-                                        <td class="vragen_overzicht">Het melk meisje</td>
-                                        <td class="vragen_overzicht">7</td>
-                                        <td class="vragen_overzicht">4</td>
-                                    </tr>
-                                    <tr class="vragen_overzicht">
-                                        <td class="vragen_overzicht">item 1</td>
-                                        <td class="vragen_overzicht">item 2</td>
-                                        <td class="vragen_overzicht">item 3</td>
-                                        <td class="vragen_overzicht">item 4</td>
-                                        <td class="vragen_overzicht">item 5</td>
-                                    </tr>
-                                    <tr class="vragen_overzicht">
-                                        <td class="vragen_overzicht">item 1</td>
-                                        <td class="vragen_overzicht">item 2</td>
-                                        <td class="vragen_overzicht">item 3</td>
-                                        <td class="vragen_overzicht">item 4</td>
-                                        <td class="vragen_overzicht">item 5</td>
-                                    </tr>
-                                    <tr class="vragen_overzicht">
-                                        <td class="vragen_overzicht">item 1</td>
-                                        <td class="vragen_overzicht">item 2</td>
-                                        <td class="vragen_overzicht">item 3</td>
-                                        <td class="vragen_overzicht">item 4</td>
-                                        <td class="vragen_overzicht">item 5</td>
-                                    </tr>
-                                    <tr class="vragen_overzicht">
-                                        <td class="vragen_overzicht">item 1</td>
-                                        <td class="vragen_overzicht">item 2</td>
-                                        <td class="vragen_overzicht">item 3</td>
-                                        <td class="vragen_overzicht">item 4</td>
-                                        <td class="vragen_overzicht">item 5</td>
-                                    </tr>
-                                    <tr class="vragen_overzicht">
-                                        <td class="vragen_overzicht">item 1</td>
-                                        <td class="vragen_overzicht">item 2</td>
-                                        <td class="vragen_overzicht">item 3</td>
-                                        <td class="vragen_overzicht">item 4</td>
-                                        <td class="vragen_overzicht">item 5</td>
-                                    </tr>
-                                    <tr class="vragen_overzicht">
-                                        <td class="vragen_overzicht">item 1</td>
-                                        <td class="vragen_overzicht">item 2</td>
-                                        <td class="vragen_overzicht">item 3</td>
-                                        <td class="vragen_overzicht">item 4</td>
-                                        <td class="vragen_overzicht">item 5</td>
-                                    </tr>
-                                    <tr class="vragen_overzicht">
-                                        <td class="vragen_overzicht">item 1</td>
-                                        <td class="vragen_overzicht">item 2</td>
-                                        <td class="vragen_overzicht">item 3</td>
-                                        <td class="vragen_overzicht">item 4</td>
-                                        <td class="vragen_overzicht">item 5</td>
-                                    </tr>
-                                    <tr class="vragen_overzicht">
-                                        <td class="vragen_overzicht">item 1</td>
-                                        <td class="vragen_overzicht">item 2</td>
-                                        <td class="vragen_overzicht">item 3</td>
-                                        <td class="vragen_overzicht">item 4</td>
-                                        <td class="vragen_overzicht">item 5</td>
-                                    </tr>
-                                    <tr class="vragen_overzicht">
-                                        <td class="vragen_overzicht">item 1</td>
-                                        <td class="vragen_overzicht">item 2</td>
-                                        <td class="vragen_overzicht">item 3</td>
-                                        <td class="vragen_overzicht">item 4</td>
-                                        <td class="vragen_overzicht">item 5</td>
-                                    </tr>
-                                    <tr class="vragen_overzicht">
-                                        <td class="vragen_overzicht">item 1</td>
-                                        <td class="vragen_overzicht">item 2</td>
-                                        <td class="vragen_overzicht">item 3</td>
-                                        <td class="vragen_overzicht">item 4</td>
-                                        <td class="vragen_overzicht">item 5</td>
-                                    </tr>
-                                    <tr class="vragen_overzicht">
-                                        <td class="vragen_overzicht">item 1</td>
-                                        <td class="vragen_overzicht">item 2</td>
-                                        <td class="vragen_overzicht">item 3</td>
-                                        <td class="vragen_overzicht">item 4</td>
-                                        <td class="vragen_overzicht">item 5</td>
-                                    </tr>
-                                    <tr class="vragen_overzicht">
-                                        <td class="vragen_overzicht">item 1</td>
-                                        <td class="vragen_overzicht">item 2</td>
-                                        <td class="vragen_overzicht">item 3</td>
-                                        <td class="vragen_overzicht">item 4</td>
-                                        <td class="vragen_overzicht">item 5</td>
-                                    </tr>
-                                    <tr class="vragen_overzicht">
-                                        <td class="vragen_overzicht">item 1</td>
-                                        <td class="vragen_overzicht">item 2</td>
-                                        <td class="vragen_overzicht">item 3</td>
-                                        <td class="vragen_overzicht">item 4</td>
-                                        <td class="vragen_overzicht">item 5</td>
-                                    </tr>
-                                    <tr class="vragen_overzicht">
-                                        <td class="vragen_overzicht">item 1</td>
-                                        <td class="vragen_overzicht">item 2</td>
-                                        <td class="vragen_overzicht">item 3</td>
-                                        <td class="vragen_overzicht">item 4</td>
-                                        <td class="vragen_overzicht">item 5</td>
-                                    </tr>
-                                    <tr class="vragen_overzicht">
-                                        <td class="vragen_overzicht">item 1</td>
-                                        <td class="vragen_overzicht">item 2</td>
-                                        <td class="vragen_overzicht">item 3</td>
-                                        <td class="vragen_overzicht">item 4</td>
-                                        <td class="vragen_overzicht">item 5</td>
-                                    </tr>
-                                    <tr class="vragen_overzicht">
-                                        <td class="vragen_overzicht">item 1</td>
-                                        <td class="vragen_overzicht">item 2</td>
-                                        <td class="vragen_overzicht">item 3</td>
-                                        <td class="vragen_overzicht">item 4</td>
-                                        <td class="vragen_overzicht">item 5</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        <input type="text" id="vragen_beheren_bottom_zoeken_inpt" placeholder="Lijst met alle vragen." name="alle_vragen_zoeken">
+                    </form>
+                    <div class="vragen_beheren_bottom_overzicht">
+                        <table cellspacing="0" id=bottom_table>
+                            <thead class="vragen_overzicht">
+                                <tr class="vragen_overzicht">
+                                    <th class="vragen_overzicht">Volgnummer</th>
+                                    <th class="vragen_overzicht">Vraag</th>
+                                    <th class="vragen_overzicht">Object naam</th>
+                                    <th class="vragen_overzicht"># Antwoorden</th>
+                                    <th class="vragen_overzicht">Id</th>
+                                    <th class="vragen_overzicht">....</th>
+                                </tr>
+                            </thead>
+                            <tbody class="vragen_overzicht">
+                                <tr class="vragen_overzicht">
+                                    <td class="vragen_overzicht">1</td>
+                                    <td class="vragen_overzicht">In welk jaar is het melkmeisje geschilderd?</td>
+                                    <td class="vragen_overzicht">Het melk meisje</td>
+                                    <td class="vragen_overzicht">4</td>
+                                    <td class="vragen_overzicht">1</td>
+                                </tr>
+                                <tr class="vragen_overzicht">
+                                    <td class="vragen_overzicht">2</td>
+                                    <td class="vragen_overzicht">In welk museum hangt het het melk meisje?</td>
+                                    <td class="vragen_overzicht">Het melk meisje</td>
+                                    <td class="vragen_overzicht">2</td>
+                                    <td class="vragen_overzicht">2</td>
+                                </tr>
+                                <tr class="vragen_overzicht">
+                                    <td class="vragen_overzicht">3</td>
+                                    <td class="vragen_overzicht">Door wie is het melk meisje geschilderd?</td>
+                                    <td class="vragen_overzicht">Het melk meisje</td>
+                                    <td class="vragen_overzicht">6</td>
+                                    <td class="vragen_overzicht">3</td>
+                                </tr>
+                                <tr class="vragen_overzicht">
+                                    <td class="vragen_overzicht">4</td>
+                                    <td class="vragen_overzicht">Valt het melk meisje onder stil leven?</td>
+                                    <td class="vragen_overzicht">Het melk meisje</td>
+                                    <td class="vragen_overzicht">7</td>
+                                    <td class="vragen_overzicht">4</td>
+                                </tr>
+                                <tr class="vragen_overzicht">
+                                    <td class="vragen_overzicht">item 1</td>
+                                    <td class="vragen_overzicht">item 2</td>
+                                    <td class="vragen_overzicht">item 3</td>
+                                    <td class="vragen_overzicht">item 4</td>
+                                    <td class="vragen_overzicht">item 5</td>
+                                </tr>
+                                <tr class="vragen_overzicht">
+                                    <td class="vragen_overzicht">item 1</td>
+                                    <td class="vragen_overzicht">item 2</td>
+                                    <td class="vragen_overzicht">item 3</td>
+                                    <td class="vragen_overzicht">item 4</td>
+                                    <td class="vragen_overzicht">item 5</td>
+                                </tr>
+                                <tr class="vragen_overzicht">
+                                    <td class="vragen_overzicht">item 1</td>
+                                    <td class="vragen_overzicht">item 2</td>
+                                    <td class="vragen_overzicht">item 3</td>
+                                    <td class="vragen_overzicht">item 4</td>
+                                    <td class="vragen_overzicht">item 5</td>
+                                </tr>
+                                <tr class="vragen_overzicht">
+                                    <td class="vragen_overzicht">item 1</td>
+                                    <td class="vragen_overzicht">item 2</td>
+                                    <td class="vragen_overzicht">item 3</td>
+                                    <td class="vragen_overzicht">item 4</td>
+                                    <td class="vragen_overzicht">item 5</td>
+                                </tr>
+                                <tr class="vragen_overzicht">
+                                    <td class="vragen_overzicht">item 1</td>
+                                    <td class="vragen_overzicht">item 2</td>
+                                    <td class="vragen_overzicht">item 3</td>
+                                    <td class="vragen_overzicht">item 4</td>
+                                    <td class="vragen_overzicht">item 5</td>
+                                </tr>
+                                <tr class="vragen_overzicht">
+                                    <td class="vragen_overzicht">item 1</td>
+                                    <td class="vragen_overzicht">item 2</td>
+                                    <td class="vragen_overzicht">item 3</td>
+                                    <td class="vragen_overzicht">item 4</td>
+                                    <td class="vragen_overzicht">item 5</td>
+                                </tr>
+                                <tr class="vragen_overzicht">
+                                    <td class="vragen_overzicht">item 1</td>
+                                    <td class="vragen_overzicht">item 2</td>
+                                    <td class="vragen_overzicht">item 3</td>
+                                    <td class="vragen_overzicht">item 4</td>
+                                    <td class="vragen_overzicht">item 5</td>
+                                </tr>
+                                <tr class="vragen_overzicht">
+                                    <td class="vragen_overzicht">item 1</td>
+                                    <td class="vragen_overzicht">item 2</td>
+                                    <td class="vragen_overzicht">item 3</td>
+                                    <td class="vragen_overzicht">item 4</td>
+                                    <td class="vragen_overzicht">item 5</td>
+                                </tr>
+                                <tr class="vragen_overzicht">
+                                    <td class="vragen_overzicht">item 1</td>
+                                    <td class="vragen_overzicht">item 2</td>
+                                    <td class="vragen_overzicht">item 3</td>
+                                    <td class="vragen_overzicht">item 4</td>
+                                    <td class="vragen_overzicht">item 5</td>
+                                </tr>
+                                <tr class="vragen_overzicht">
+                                    <td class="vragen_overzicht">item 1</td>
+                                    <td class="vragen_overzicht">item 2</td>
+                                    <td class="vragen_overzicht">item 3</td>
+                                    <td class="vragen_overzicht">item 4</td>
+                                    <td class="vragen_overzicht">item 5</td>
+                                </tr>
+                                <tr class="vragen_overzicht">
+                                    <td class="vragen_overzicht">item 1</td>
+                                    <td class="vragen_overzicht">item 2</td>
+                                    <td class="vragen_overzicht">item 3</td>
+                                    <td class="vragen_overzicht">item 4</td>
+                                    <td class="vragen_overzicht">item 5</td>
+                                </tr>
+                                <tr class="vragen_overzicht">
+                                    <td class="vragen_overzicht">item 1</td>
+                                    <td class="vragen_overzicht">item 2</td>
+                                    <td class="vragen_overzicht">item 3</td>
+                                    <td class="vragen_overzicht">item 4</td>
+                                    <td class="vragen_overzicht">item 5</td>
+                                </tr>
+                                <tr class="vragen_overzicht">
+                                    <td class="vragen_overzicht">item 1</td>
+                                    <td class="vragen_overzicht">item 2</td>
+                                    <td class="vragen_overzicht">item 3</td>
+                                    <td class="vragen_overzicht">item 4</td>
+                                    <td class="vragen_overzicht">item 5</td>
+                                </tr>
+                                <tr class="vragen_overzicht">
+                                    <td class="vragen_overzicht">item 1</td>
+                                    <td class="vragen_overzicht">item 2</td>
+                                    <td class="vragen_overzicht">item 3</td>
+                                    <td class="vragen_overzicht">item 4</td>
+                                    <td class="vragen_overzicht">item 5</td>
+                                </tr>
+                                <tr class="vragen_overzicht">
+                                    <td class="vragen_overzicht">item 1</td>
+                                    <td class="vragen_overzicht">item 2</td>
+                                    <td class="vragen_overzicht">item 3</td>
+                                    <td class="vragen_overzicht">item 4</td>
+                                    <td class="vragen_overzicht">item 5</td>
+                                </tr>
+                                <tr class="vragen_overzicht">
+                                    <td class="vragen_overzicht">item 1</td>
+                                    <td class="vragen_overzicht">item 2</td>
+                                    <td class="vragen_overzicht">item 3</td>
+                                    <td class="vragen_overzicht">item 4</td>
+                                    <td class="vragen_overzicht">item 5</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
