@@ -167,10 +167,6 @@
             overflow: hidden;
         }
 
-        select:invalid {
-            color: gray;
-        }
-
         li.right_objecten_lijst:nth-child(even):hover,
         li.right_objecten_lijst:nth-child(odd):hover,
         li.linker_vragen_lijst:nth-child(even):hover,
@@ -183,15 +179,19 @@
         input[type=password],
         input[type=number],
         input[type=email],
-        #login select,
         registratie textarea,
         option {
             width: 100%;
-            padding: 12px 20px;
+            padding: 12px 10px;
             margin: 1px 0;
             display: inline-block;
             border: 1px solid #ccc;
             box-sizing: border-box;
+            font-size: medium;
+        }
+
+        select {
+            font-family: Ariel, sans-serif;
             font-size: medium;
         }
 
@@ -241,7 +241,7 @@
         #registratie textarea,
         #registratie option {
             width: 100%;
-            padding: 12px 20px;
+            padding: 12px 5px;
             margin: 0px 0;
             display: inline-block;
             border: 1px solid #ccc;
@@ -499,7 +499,7 @@
         }
 
         /*----VRAGENLIJST Bottom----*/
-        #vragen_beheren_bottom_zoeken_inpt {
+        .vragen_beheren_bottom_zoeken_inpt {
             width: calc(100% - 4px);
             /*- 29px);*/
             height: 25px;
@@ -509,7 +509,7 @@
             text-align: center;
         }
 
-        #vragen_beheren_bottom_form {
+        .vragen_beheren_bottom_form {
             width: 100%;
             margin: 0;
 
@@ -675,7 +675,7 @@
         }
 
         /*-----Midden------*/
-        #niveau_checkboxes {
+        .niveau_checkboxes {
             list-style-type: none;
             text-align: left;
             padding: 0px 5px 0px 5px;
@@ -683,16 +683,16 @@
             height: 100px;
         }
 
-        #all_checked {
+        .all_checked {
             display: none;
         }
 
-        #all_box:checked~#all_checked {
+        .all_box:checked~.all_checked {
             display: flex;
             flex-direction: column;
         }
 
-        #all_box:checked~#all_unchecked {
+        .all_box:checked~.all_unchecked {
             display: none;
         }
 
@@ -1105,37 +1105,37 @@
         }
     </style>
     <style namespace="statistieken">
-        #statistieken #statistieken_top{
+        #statistieken #statistieken_top {
             width: 100%;
             height: 50%;
             display: flex;
             flex-direction: row;
         }
-        .pie_container{
+
+        .pie_container {
             flex: 1;
         }
+
         .pie {
-             /* Basic layout */
-          display: inline-block;
-          width: 10em;
-          height: 10em;
-          border-radius: 50%;
-          margin: 10px 10%;
+            /* Basic layout */
+            display: inline-block;
+            width: 10em;
+            height: 10em;
+            border-radius: 50%;
+            margin: 10px 10%;
 
-          /* A little styling */
-          border: .15em solid #fff;
-          box-shadow: 0 .075em .2em .05em rgba(0,0,0,.25);
+            /* A little styling */
+            border: .15em solid #fff;
+            box-shadow: 0 .075em .2em .05em rgba(0, 0, 0, .25);
 
-          /* fixes a minor clipping issue in Chrome */
-          background-origin: border-box;
+            /* fixes a minor clipping issue in Chrome */
+            background-origin: border-box;
 
-           background-image: conic-gradient(
-            #d44 calc(3.6deg * var(--segment1, 100)),
-            #fc3 0 calc(3.6deg * var(--segment2, 100)),
-            #ac0 0 calc(3.6deg * var(--segment3, 100)),
-            #0ac 0 calc(3.6deg * var(--segment4, 100)),
-            #f7b 0
-          );
+            background-image: conic-gradient(#d44 calc(3.6deg * var(--segment1, 100)),
+                    #fc3 0 calc(3.6deg * var(--segment2, 100)),
+                    #ac0 0 calc(3.6deg * var(--segment3, 100)),
+                    #0ac 0 calc(3.6deg * var(--segment4, 100)),
+                    #f7b 0);
         }
     </style>
     <style namespace="kennis_antwoorden_beheren">
@@ -1316,6 +1316,123 @@
             flex: 1;
         }
     </style>
+    <style namespace="beheer_gebruikers">
+        #beheer_gebruikers .main {}
+
+        #beheer_gebruikers_top {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        #beheer_gebruikers_top_header,
+        #beheer_gebruikers_top_input_form {
+            display: flex;
+            width: 100%;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        #beheer_gebruikers_top_input_form input,
+        #beheer_gebruikers_top_input_form select {
+            height: 25px;
+            text-align: center;
+        }
+
+        #beheer_gebruikers_top_header p:nth-child(1),
+        #beheer_gebruikers_top_input_form input[type=text]:nth-child(1) {
+            width: 15%;
+            min-width: 100px;
+        }
+
+        #beheer_gebruikers_top_header p:nth-child(2),
+        #beheer_gebruikers_top_input_form input[type=text]:nth-child(2) {
+            width: 15%;
+            min-width: 100px
+        }
+
+        #beheer_gebruikers_top_header p:nth-child(2),
+        #beheer_gebruikers_top_input_form input:nth-child(2) {
+            width: 10%;
+            min-width: 75px
+        }
+
+        #beheer_gebruikers_top_header p:nth-child(3),
+        #beheer_gebruikers_top_input_form input:nth-child(3) {
+            width: 15%;
+            min-width: 100px
+        }
+
+        #beheer_gebruikers_top_header p:nth-child(4),
+        #beheer_gebruikers_top_input_form input:nth-child(4) {
+            width: 15%;
+            min-width: 100px
+        }
+
+        #beheer_gebruikers_top_input_form input:nth-child(4),
+        #beheer_gebruikers_top_input_form select:nth-child(5),
+        #beheer_gebruikers_top_input_form select:nth-child(6),
+        #beheer_gebruikers_top_input_form input:nth-child(8),
+        #beheer_gebruikers_top_input_form input:nth-child(9) {
+            margin-top: 8px;
+        }
+
+        #beheer_gebruikers_top_header p:nth-child(5),
+        #beheer_gebruikers_top_input_form select:nth-child(5) {
+            width: 10%;
+            min-width: 75px
+        }
+
+        #beheer_gebruikers_top_header p:nth-child(6),
+        #beheer_gebruikers_top_input_form select:nth-child(6) {
+            width: 10%;
+            min-width: 75px
+        }
+
+        #beheer_gebruikers_top_header p:nth-child(7),
+        #beheer_gebruikers_top_input_form input:nth-child(7) {
+            width: 20%;
+            min-width: 200px
+        }
+
+        #beheer_gebruikers_top_header p:nth-child(8),
+        #beheer_gebruikers_top_input_form input:nth-child(8) {
+            width: 4%;
+            min-width: 25px
+        }
+
+        #beheer_gebruikers_top_header p:nth-child(9),
+        #beheer_gebruikers_top_input_form input[type=submit] {
+            width: 2%;
+            min-width: 25px
+        }
+
+        #beheer_gebruikers_middle{
+            width: 100%;
+            height: 100px;
+        }
+
+        #beheer_gebruikers_middle table{
+            width: 100%;
+        }
+
+        #beheer_gebruikers_middle table tbody {
+            display: block;
+            width: 100%;
+            overflow-y: scroll;
+            height: 100%;
+        }
+
+        thead, tbody tr {
+            display:table;
+            width:100%;
+            table-layout:fixed;/* even columns width , fix width of table too*/
+        }
+
+        #beheer_gebruikers_middle table th,
+        #beheer_gebruikers_middle table td {
+           width: 12.5%;
+        }
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="csslinegraph/csslinegraph.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
@@ -1332,7 +1449,7 @@
                 <a class="header_btn">Beheer Tours</a>
                 <a href="#kunst_object_video_toevoegen" class="header_btn">Beheer Kunstobjecten</a>
                 <a class="header_btn">Beheer Kennistest</a>
-                <a class="header_btn">Beheer Gebruikers</a>
+                <a href="#beheer_gebruikers" class="header_btn">Beheer Gebruikers</a>
                 <a href="#statistieken" class="header_btn">Statistieken</a>
                 <a class="header_btn">Mijn Museum</a>
                 <a href="#login" class="header_btn">Sign out</a>
@@ -1381,15 +1498,15 @@
                         </div>
                         <div class="vragen_beheren_middle_middle">
                             <p id="deze_vraag_is_geschikt">Vraag is geschikt voor</p>
-                            <form id="niveau_checkboxes">
-                                <input type="checkbox" id="all_box" name="alle_groepen" value="1"><label for="alle_groepen"> Alle groepen</label>
-                                <div id="all_unchecked">
+                            <form class="niveau_checkboxes">
+                                <input type="checkbox" class="all_box" name="alle_groepen" value="1"><label for="alle_groepen"> Alle groepen</label>
+                                <div class="all_unchecked">
                                     <div><input type="checkbox" name="groep_4_5_6" value="1"><label for="groep_4_5_6"> Groep 4 / 5 / 6 </label></div>
                                     <div><input type="checkbox" name="groep_7_8" value="1"><label for="groep_7_8"> Groep 7 / 8 </label></div>
                                     <div><input type="checkbox" name="middelbaar" value="1"><label for="middelbaar"> Middelbaar onderwijs </label></div>
                                     <div><input type="checkbox" name="voortgezet" value="1"><label for="voortgezet"> Voortgezet onderwijs </label></div>
                                 </div>
-                                <div id="all_checked">
+                                <div class="all_checked">
                                     <div><input type="checkbox" checked disabled> Groep 4 / 5 / 6 </div>
                                     <div><input type="checkbox" checked disabled> Groep 7 / 8 </div>
                                     <div><input type="checkbox" checked disabled> Middelbaar onderwijs</div>
@@ -1457,8 +1574,8 @@
                         </div>
                     </div>
                     <div class="vragen_beheren_bottom">
-                        <form id="vragen_beheren_bottom_form" action="">
-                            <input type="text" id="vragen_beheren_bottom_zoeken_inpt" placeholder="Lijst met alle vragen." name="alle_vragen_zoeken">
+                        <form class="vragen_beheren_bottom_form" action="">
+                            <input type="text" class="vragen_beheren_bottom_zoeken_inpt" placeholder="Lijst met alle vragen." name="alle_vragen_zoeken">
                         </form>
                         <div class="vragen_beheren_bottom_overzicht">
                             <table cellspacing="0" id=bottom_table>
@@ -1865,7 +1982,7 @@
         <div class="page" id="statistieken">
             <div class="main">
                 <div id="statistieken_top">
-                   <div class="pie_container">
+                    <div class="pie_container">
                         <div class="pie" style="--segment1: 40;"></div>
                     </div>
                     <div class="pie_container">
@@ -1880,37 +1997,37 @@
                         <dt>Day 1</dt>
                         <dd class="first"><span class="pi0 i1"><em>3</em></span></dd>
 
-                      <dt>Day 2</dt>
+                        <dt>Day 2</dt>
                         <dd><span class="pi1 i10"><em>36</em></span></dd>
 
-                      <dt>Day 3</dt>
+                        <dt>Day 3</dt>
                         <dd><span class="pd11 d d4"><em>23</em></span></dd>
 
-                      <dt>Day 4</dt>
+                        <dt>Day 4</dt>
                         <dd><span class="pi7 i10"><em>56</em></span></dd>
 
-                      <dt>Day 5</dt>
+                        <dt>Day 5</dt>
                         <dd><span class="pd17 d d0"><em>55</em></span></dd>
 
-                      <dt>Day 6</dt>
+                        <dt>Day 6</dt>
                         <dd><span class="pd17 d d7"><em>32</em></span></dd>
 
-                      <dt>Day 7</dt>
+                        <dt>Day 7</dt>
                         <dd><span class="pi10 i14"><em>79</em></span></dd>
 
-                      <dt>Day 8</dt>
+                        <dt>Day 8</dt>
                         <dd><span class="pd24 d d2"><em>74</em></span></dd>
 
-                      <dt>Day 9</dt>
+                        <dt>Day 9</dt>
                         <dd><span class="pi22 i1"><em>77</em></span></dd>
 
-                      <dt>Day 10</dt>
+                        <dt>Day 10</dt>
                         <dd><span class="pi23 i2"><em>83</em></span></dd>
 
-                      <dt>Day 11</dt>
+                        <dt>Day 11</dt>
                         <dd><span class="pd25 d d15"><em>34</em></span></dd>
 
-                      <dt>Day 12</dt>
+                        <dt>Day 12</dt>
                         <dd><span class="pi10 i2"><em>39</em></span></dd>
                     </dl>
                 </div>
@@ -2010,15 +2127,15 @@
                     </form>
                     <div id="antwoorden_midden_2_rechts">
                         <p id="deze_vraag_is_geschikt">Vraag is geschikt voor:</p>
-                        <form id="niveau_checkboxes">
-                            <input type="checkbox" id="all_box" name="alle_groepen" value="1"><label for="alle_groepen"> Alle groepen</label>
-                            <div id="all_unchecked">
+                        <form class="niveau_checkboxes">
+                            <input type="checkbox" class="all_box" name="alle_groepen" value="1"><label for="alle_groepen"> Alle groepen</label>
+                            <div class="all_unchecked">
                                 <div><input type="checkbox" name="groep_4_5_6" value="1"><label for="groep_4_5_6"> Groep 4 / 5 / 6 </label></div>
                                 <div><input type="checkbox" name="groep_7_8" value="1"><label for="groep_7_8"> Groep 7 / 8 </label></div>
                                 <div><input type="checkbox" name="middelbaar" value="1"><label for="middelbaar"> Middelbaar onderwijs </label></div>
                                 <div><input type="checkbox" name="voortgezet" value="1"><label for="voortgezet"> Voortgezet onderwijs </label></div>
                             </div>
-                            <div id="all_checked">
+                            <div class="all_checked">
                                 <div><input type="checkbox" checked disabled> Groep 4 / 5 / 6 </div>
                                 <div><input type="checkbox" checked disabled> Groep 7 / 8 </div>
                                 <div><input type="checkbox" checked disabled> Middelbaar onderwijs</div>
@@ -2028,8 +2145,8 @@
                     </div>
                 </div>
                 <div id="antwoorden_bottom">
-                    <form id="vragen_beheren_bottom_form" action="">
-                        <input type="text" id="vragen_beheren_bottom_zoeken_inpt" placeholder="Lijst met alle vragen." name="alle_vragen_zoeken">
+                    <form class="vragen_beheren_bottom_form" action="">
+                        <input type="text" class="vragen_beheren_bottom_zoeken_inpt" placeholder="Lijst met alle vragen." name="alle_vragen_zoeken">
                     </form>
                     <div class="vragen_beheren_bottom_overzicht">
                         <table cellspacing="0" id=bottom_table>
@@ -2190,6 +2307,285 @@
                 </div>
             </div>
         </div>
+        <div class="page" id="beheer_gebruikers">
+            <div class="main">
+                <div id="beheer_gebruikers_top">
+                    <div id="beheer_gebruikers_top_header">
+                        <p>Voornaam    </p>
+                        <p>Voorvoegsel </p>
+                        <p>Achternaam  </p>
+                        <p>Email Adres </p>
+                        <p>Geslacht    </p>
+                        <p>Rol         </p>
+                        <p>Beschrijving</p>
+                        <p>Id          </p>
+                        <p></p>
+                    </div>
+                    <form id="beheer_gebruikers_top_input_form">
+                        <input type="text" value="voornaam" required>
+                        <input type="text" value="Voorvoegsel" required>
+                        <input type="text" value="Achternaam" required>
+                        <input type="email" value="Email Adres" required>
+                        <select value="geslacht" required>
+                            <option selected disabled value="">Geslacht</option>
+                            <option value="0">Man</option>
+                            <option value="1">Vrouw</option>
+                            <option value="2">Anders</option>
+                        </select>
+                        <select value="rol" required>
+                            <option selected disabled value="">rol</option>
+                            <option value="0">Administrator</option>
+                            <option value="1">Hoofd Educatie</option>
+                            <option value="2">ICC</option>
+                            <option value="3">Docent</option>
+                            <option value="4">Leerling</option>
+                        </select>
+                        <input type="text" value="Beschrijving" required>
+                        <input type="number" value="" placeholder="ID" required>
+                        <input type="submit" value="+">
+                    </form>
+                </div>
+                <div id="beheer_gebruikers_middle">
+                    <table cellspacing=0>
+                        <thead>
+                            <tr>
+                                <th>Voornaam</th>
+                                <th>Voorvoegsel</th>
+                                <th>Achternaam</th>
+                                <th>Email Adres </th>
+                                <th>Geslacht</th>
+                                <th>Rol</th>
+                                <th>Beschrijving</th>
+                                <th>Actie</th>
+                                <th>Id</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                                <td>item 5</td>
+                                <td>item 6</td>
+                                <td>item 7</td>
+                                <td>item 8</td>
+                                <td>item 9</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                                <td>item 5</td>
+                                <td>item 6</td>
+                                <td>item 7</td>
+                                <td>item 8</td>
+                                <td>item 9</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                                <td>item 5</td>
+                                <td>item 6</td>
+                                <td>item 7</td>
+                                <td>item 8</td>
+                                <td>item 9</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                                <td>item 5</td>
+                                <td>item 6</td>
+                                <td>item 7</td>
+                                <td>item 8</td>
+                                <td>item 9</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                                <td>item 5</td>
+                                <td>item 6</td>
+                                <td>item 7</td>
+                                <td>item 8</td>
+                                <td>item 9</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                                <td>item 5</td>
+                                <td>item 6</td>
+                                <td>item 7</td>
+                                <td>item 8</td>
+                                <td>item 9</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                                <td>item 5</td>
+                                <td>item 6</td>
+                                <td>item 7</td>
+                                <td>item 8</td>
+                                <td>item 9</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                                <td>item 5</td>
+                                <td>item 6</td>
+                                <td>item 7</td>
+                                <td>item 8</td>
+                                <td>item 9</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                                <td>item 5</td>
+                                <td>item 6</td>
+                                <td>item 7</td>
+                                <td>item 8</td>
+                                <td>item 9</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                                <td>item 5</td>
+                                <td>item 6</td>
+                                <td>item 7</td>
+                                <td>item 8</td>
+                                <td>item 9</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                                <td>item 5</td>
+                                <td>item 6</td>
+                                <td>item 7</td>
+                                <td>item 8</td>
+                                <td>item 9</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                                <td>item 5</td>
+                                <td>item 6</td>
+                                <td>item 7</td>
+                                <td>item 8</td>
+                                <td>item 9</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                                <td>item 5</td>
+                                <td>item 6</td>
+                                <td>item 7</td>
+                                <td>item 8</td>
+                                <td>item 9</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                                <td>item 5</td>
+                                <td>item 6</td>
+                                <td>item 7</td>
+                                <td>item 8</td>
+                                <td>item 9</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                                <td>item 5</td>
+                                <td>item 6</td>
+                                <td>item 7</td>
+                                <td>item 8</td>
+                                <td>item 9</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                                <td>item 5</td>
+                                <td>item 6</td>
+                                <td>item 7</td>
+                                <td>item 8</td>
+                                <td>item 9</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                                <td>item 5</td>
+                                <td>item 6</td>
+                                <td>item 7</td>
+                                <td>item 8</td>
+                                <td>item 9</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                                <td>item 5</td>
+                                <td>item 6</td>
+                                <td>item 7</td>
+                                <td>item 8</td>
+                                <td>item 9</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                                <td>item 5</td>
+                                <td>item 6</td>
+                                <td>item 7</td>
+                                <td>item 8</td>
+                                <td>item 9</td>
+                            </tr>
+                            <tr>
+                                <td>item 1</td>
+                                <td>item 2</td>
+                                <td>item 3</td>
+                                <td>item 4</td>
+                                <td>item 5</td>
+                                <td>item 6</td>
+                                <td>item 7</td>
+                                <td>item 8</td>
+                                <td>item 9</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
         <!-- Alle pages zitten in content -->
         <!--Vergeten-->
         <div class="page" id="vergeten">
@@ -2240,6 +2636,7 @@
                             <label>Geslacht:</label>
                             <div class="geslacht_check"><input type="checkbox" name="man"> Man </div>
                             <div class="geslacht_check"><input type="checkbox" name="vrouw"> vrouw </div>
+                            <div class="geslacht_check"><input type="checkbox" name="anders"> anders </div>
                         </div>
                         <input type="number" placeholder="Telefoon nummer" name="telfoon_nummer">
                         <input type="number" placeholder="Mobiel nummer" name="mobiel_nummer">

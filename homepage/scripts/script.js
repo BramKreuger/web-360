@@ -12,6 +12,7 @@ window.onload = function () {
             !divToHide.contains(e.target) &&
             e.target.className !== 'ftr_btns' &&
             e.target.id !== 'thuis_educatie' &&
+            e.target.className !== thuis_educ_text &&
             e.target.id !== 'glow' &&
             e.target.id !== 'vr_bril_open' &&
             e.target.className !== 'vr_bril_img') {
