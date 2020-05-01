@@ -29,19 +29,23 @@
 
         button,
         .header_btn,
-        #antwoorden_top input[type=submit] {
+        input[type=submit] {
             border: 1px solid grey;
             background-color: #fafafa;
             box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
             text-decoration: none;
         }
 
-        button:hover {
+        button:hover,
+        input[type=submit]:hover {
             background-color: white;
         }
 
-        button:active {
-            background-color: #efd6ff;
+        button:active,
+        input[type=submit]:active {
+            background-color: white;
+             box-shadow: 0 2px rgba(0, 0, 0, 0.17);
+              transform: translateY(4px);
         }
 
         .half_header {
@@ -92,8 +96,10 @@
             background-color: #461d61;
         }
 
-        .header_btn#active {
-            background-color: #7f02d1;
+        .header_btn:active {
+             background-color: #37174d;
+             box-shadow: 0 2px #666;
+              transform: translateY(4px);
         }
 
         #home_button {
@@ -453,7 +459,7 @@
         }
 
         .vragen_beheren_bottom_overzicht {
-            height: calc(100% - 35px);
+            height: calc(100% - 45px);
             width: calc(100% - 4px);
             padding: 0;
             margin: 0;
@@ -1144,25 +1150,25 @@
             flex-direction: column;
         }
 
-        #antwoorden_top {
+        .antwoorden_top {
             display: flex;
             flex-direction: row;
             height: 5%;
             min-height: 35px;
         }
 
-        #antwoorden_top input[type=text] {
+        .antwoorden_top input[type=text] {
             height: 25px;
             width: 50%;
         }
 
-        #antwoorden_top select {
+        .antwoorden_top select {
             width: 25%;
             margin: 8px 5px 0 5px;
             height: 25px;
         }
 
-        #antwoorden_top input[type=submit] {
+        .antwoorden_top input[type=submit] {
             width: 25%;
             margin-top: 8px;
             height: 25px;
@@ -1264,11 +1270,11 @@
             flex-direction: row;
         }
 
-        #antwoorden_midden_2_links {
+        .antwoorden_midden_2_links {
             width: 50%;
         }
 
-        #antwoorden_midden_2_links button {
+        .antwoorden_midden_2_links button {
             margin-top: 5px;
             width: 20%;
             max-width: 150px;
@@ -1279,15 +1285,15 @@
             font-size: large;
         }
 
-        #antwoorden_midden_2_links button:nth-last-child(1) i {
+        #antwoorden_midden_2 .antwoorden_midden_2_links button:nth-last-child(1) i {
             transform: scaleX(-1);
             -moz-transform: scaleX(-1);
             -webkit-transform: scaleX(-1);
             -ms-transform: scaleX(-1);
         }
 
-        #antwoorden_top input[type=submit]:hover,
-        #antwoorden_midden_2_links input[type=submit]:hover {
+        .antwoorden_top input[type=submit]:hover,
+        .antwoorden_midden_2_links input[type=submit]:hover {
             background-color: white;
             cursor: pointer
         }
@@ -1407,30 +1413,296 @@
         }
 
         #beheer_gebruikers_middle{
-            width: 100%;
-            height: 100px;
+            width: calc(100% - 10px);
+            height: calc(100% - 130px);
+            overflow: scroll;
+            margin: 25px 5px 5px 5px;
         }
-
         #beheer_gebruikers_middle table{
             width: 100%;
+            white-space: nowrap;
+        }
+        #beheer_gebruikers_middle th{
+            height: 30px;
+            color: white;
+            background-color: black;
+            border-left: 1px solid white;
+        }
+        #beheer_gebruikers_middle td{
+            height: 30px;
+            border-left: 1px solid black;
+            border-bottom: 1px solid black;
         }
 
-        #beheer_gebruikers_middle table tbody {
-            display: block;
+        #beheer_gebruikers_middle table th:nth-child(1),
+        #beheer_gebruikers_middle table td:nth-child(1) {
+            width: 10%;
+        }
+        #beheer_gebruikers_middle table th:nth-child(2),
+        #beheer_gebruikers_middle table td:nth-child(2) {
+            width: 5%;
+        }
+        #beheer_gebruikers_middle table th:nth-child(3),
+        #beheer_gebruikers_middle table td:nth-child(3) {
+            width: 10%;
+        }
+        #beheer_gebruikers_middle table th:nth-child(4),
+        #beheer_gebruikers_middle table td:nth-child(4) {
+            width: 15%;
+        }
+        #beheer_gebruikers_middle table th:nth-child(5),
+        #beheer_gebruikers_middle table td:nth-child(5) {
+           width: 10%;
+        }
+        #beheer_gebruikers_middle table th:nth-child(6),
+        #beheer_gebruikers_middle table td:nth-child(6) {
+           width: 10%;
+        }
+        #beheer_gebruikers_middle table th:nth-child(7),
+        #beheer_gebruikers_middle table td:nth-child(7) {
+           width:23.75%;
+        }
+        #beheer_gebruikers_middle table th:nth-child(8),
+        #beheer_gebruikers_middle table td:nth-child(8) {
+           width:23.75%;
+        }
+        #beheer_gebruikers_middle table th:nth-child(9),
+        #beheer_gebruikers_middle table td:nth-child(9) {
+           width:2.5%;
+            border-right: 1px solid black;
+            padding-right: 10px;
+        }
+
+        #beheer_gebruikers_middle input[type=submit] {
+            width: 48%;
+            margin: 0 1px;
+            height: 25px;
+            border: 0;
+            color: white
+        }
+
+        #beheer_gebruikers_middle input[type=submit]:nth-child(1) {
+            background-color: #a6797b;
+        }
+
+        #beheer_gebruikers_middle input[type=submit]:nth-child(1):hover {
+            background-color: #a62e34;
+        }
+
+        #beheer_gebruikers_middle input[type=submit]:nth-child(2) {
+            background-color: #797ea6;
+        }
+
+        #beheer_gebruikers_middle input[type=submit]:nth-child(2):hover {
+            background-color: #2e2ea6;
+        }
+
+    </style>
+    <style namespace="beheer_kennistest">
+        #beheer_kennistest .antwoorden_top input:nth-child(2){
+            margin: 8px 5px;
+        }
+
+        #kennistests_midden{
+            width: calc(100% - 10px);
+            height: calc(80% - 100px);
+            overflow-y: auto;
+            overflow-x: hidden;
+            margin: 25px 5px 5px 5px;
+        }
+        #beheer_kennistest table{
             width: 100%;
-            overflow-y: scroll;
-            height: 100%;
+            white-space: nowrap;
+
+        }
+        #beheer_kennistest th{
+            height: 30px;
+            color: white;
+            background-color: black;
+            border-left: 1px solid white;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            table-layout: fixed;
+
+
+        }
+        #beheer_kennistest td{
+            height: 30px;
+            border-left: 1px solid black;
+            border-bottom: 1px solid black;
+            padding-left: 5px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            table-layout: fixed;
+            max-width: 0;
         }
 
-        thead, tbody tr {
-            display:table;
-            width:100%;
-            table-layout:fixed;/* even columns width , fix width of table too*/
+        #beheer_kennistest table th:nth-child(1),
+        #beheer_kennistest table td:nth-child(1) {
+            width: 40%;
+        }
+        #beheer_kennistest table th:nth-child(2),
+        #beheer_kennistest table td:nth-child(2) {
+            width: 10%;
+        }
+        #beheer_kennistest table th:nth-child(3),
+        #beheer_kennistest table td:nth-child(3) {
+            width: 40%;
+        }
+        #beheer_kennistest table th:nth-child(4),
+        #beheer_kennistest table td:nth-child(4) {
+           width: 10%;
+            text-align: center;
+            border-right: 1px solid black;
+            padding-right: 10px;
+        }
+        .klaar_voor_publicatie{
+            color: royalblue;
+        }
+        .klaar_voor_controle{
+            color: red;
+        }
+        .gepubliceerd{
+            color: green;
+        }
+        #kennistests_bottom{
+            margin-top: 10px;
+        }
+        #kennistests_legenda{
+            position: relative;
+            float: right;
+            border: 1px solid black;
+            padding: 10px;
+            background-color: white;
+            margin-right: 5px;
+        }
+    </style>
+    <style namespace="kennistest_detail">
+        #kennistest_detail_top{
+            margin-top: 8px;
+            width: 100%;
+            display: flex;
+        }
+        #kennistest_detail_top > div{
+            height: 23px;
+            background-color: lightgray;
+            margin-right: 5px;
+            width: 80%;
+            display: flex;
+            border: 1px solid grey;
+            text-align: center;
+        }
+        #kennistest_detail_top > div label:nth-child(1){
+            width: 20%;
+            border-right: 1px solid grey;
+            padding: 5px;
+        }
+        #kennistest_detail_top > div label:nth-child(2){
+            width: 80%;
+            margin: 0 5px;
+            padding: 5px;
+        }
+        #kennistest_detail_top > button{
+            width: 20%;
+            height: 25px;
+        }
+        #kennistest_detail_middle_1{
+            text-align: center;
+        }
+        #kennistest_detail_middle_1 h3{
+            padding: 0 10px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
         }
 
-        #beheer_gebruikers_middle table th,
-        #beheer_gebruikers_middle table td {
-           width: 12.5%;
+        #kennistest_detail_middle_2{
+            display: flex;
+            width: 100%;
+        }
+        #details_left{
+            width: 40%;
+        }
+        #details_left p,
+        #details_right p{
+            text-align: center;
+        }
+        #details_middle{
+            width: 20%;
+            padding-top: 5%;
+        }
+        #details_middle > p{
+            margin-left: 27px;
+        }
+        #details_right{
+            width: 40%;
+        }
+        .details_tables{
+            width: 100%;
+            white-space: nowrap;
+
+        }
+        .details_tables th{
+            height: 30px;
+            color: white;
+            background-color: black;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            table-layout: fixed;
+        }
+        .details_tables th:nth-child(2){
+            border-left: 1px solid white
+        }
+        .details_tables td{
+            height: 30px;
+            border-left: 1px solid black;
+            border-bottom: 1px solid black;
+            padding-left: 5px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            table-layout: fixed;
+            max-width: 0;
+        }
+
+        .details_tables th:nth-child(1),
+        .details_tables td:nth-child(1) {
+            width: 10%;
+            text-align: center;
+        }
+        .details_tables th:nth-child(2),
+        .details_tables td:nth-child(2) {
+            width: 99%;
+
+            border-right: 1px solid black;
+            padding-right: 10px;
+        }
+        #details_nav{
+            width: 66%;
+            margin: 50px 16.6%;
+        }
+        #details_nav button{
+            width: 100%;
+        }
+        @media screen and (max-width: 1023px) {
+            #details_middle p,
+            #checkboxes_details{
+                display: none;
+            }
+            #details_nav{
+            margin-top: 200px;
+        }
+        }
+        #kennistest_detail_bottom{
+            float: right;
+            margin-top: 20px;
+        }
+        #kennistest_detail_bottom input{
+            height: 50px;
+            width: 200px;
+        }
+        #detail_form{
+            height: calc(100% - 100px);
+            overflow-y: auto;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -1459,8 +1731,8 @@
             <!-- Deze is belangrijk -->
             <a href="#kennis_vragen_beheren" class="header_btn">Kennisvragen Beheren</a>
             <a href="#kennis_antwoorden_beheren" class="header_btn">Kennis Antwoorden Beheren</a>
-            <a class="header_btn">Kennistest Beheren</a>
-            <a class="header_btn">Kennistest Detail</a>
+            <a href="#beheer_kennistest" class="header_btn">Kennistest Beheren</a>
+            <a href="#kennistest_detail" class="header_btn">Kennistest Detail</a>
             <a class="header_btn">Doe de Kennistest</a>
         </div>
     </div>
@@ -2035,14 +2307,14 @@
         </div>
         <div class="page" id="kennis_antwoorden_beheren">
             <div class="main">
-                <form action="" id="antwoorden_top">
+                <form action="" class="antwoorden_top">
                     <input placeholder="Antwoord tekst" type="text">
                     <select required name="is_juist">
                         <option value="" disabled selected>Is juist?</option>
                         <option value="0">Ja</option>
                         <option value="1">Nee</option>
                     </select>
-                    <input type="submit">
+                    <input type="submit" value="toevoegen">
                 </form>
                 <div id="antwoorden_midden_1">
                     <div id="table_wrapper">
@@ -2119,7 +2391,7 @@
                     </div>
                 </div>
                 <div id="antwoorden_midden_2">
-                    <form id="antwoorden_midden_2_links">
+                    <form class="antwoorden_midden_2_links">
                         <button type="submit"><i class="fa fa-arrow-down"></i></button>
                         <button type="submit"><i class="fa fa-arrow-up"></i></button>
                         <button type="submit"><i class="fa fa-undo"></i></button>
@@ -2312,7 +2584,7 @@
                 <div id="beheer_gebruikers_top">
                     <div id="beheer_gebruikers_top_header">
                         <p>Voornaam    </p>
-                        <p>Voorvoegsel </p>
+                        <p>Tussenvoegsel </p>
                         <p>Achternaam  </p>
                         <p>Email Adres </p>
                         <p>Geslacht    </p>
@@ -2323,7 +2595,7 @@
                     </div>
                     <form id="beheer_gebruikers_top_input_form">
                         <input type="text" value="voornaam" required>
-                        <input type="text" value="Voorvoegsel" required>
+                        <input type="text" value="Tussenvoegsel" required>
                         <input type="text" value="Achternaam" required>
                         <input type="email" value="Email Adres" required>
                         <select value="geslacht" required>
@@ -2346,11 +2618,11 @@
                     </form>
                 </div>
                 <div id="beheer_gebruikers_middle">
-                    <table cellspacing=0>
+                    <table cellspacing=0 class="table-scroll small-first-col">
                         <thead>
                             <tr>
                                 <th>Voornaam</th>
-                                <th>Voorvoegsel</th>
+                                <th>Tussenvoegsel</th>
                                 <th>Achternaam</th>
                                 <th>Email Adres </th>
                                 <th>Geslacht</th>
@@ -2360,17 +2632,17 @@
                                 <th>Id</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="body-half-screen">
                             <tr>
-                                <td>item 1</td>
-                                <td>item 2</td>
-                                <td>item 3</td>
-                                <td>item 4</td>
-                                <td>item 5</td>
-                                <td>item 6</td>
-                                <td>item 7</td>
-                                <td>item 8</td>
-                                <td>item 9</td>
+                                <td>Bram</td>
+                                <td></td>
+                                <td>Kreuger</td>
+                                <td>bramkreuger@gmail.com</td>
+                                <td>Man</td>
+                                <td>Administrator</td>
+                                <td>Als dit kort genoeg is werkt het wel</td>
+                                <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                <td>1</td>
                             </tr>
                             <tr>
                                 <td>item 1</td>
@@ -2380,8 +2652,8 @@
                                 <td>item 5</td>
                                 <td>item 6</td>
                                 <td>item 7</td>
-                                <td>item 8</td>
-                                <td>item 9</td>
+                                <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                <td>id</td>
                             </tr>
                             <tr>
                                 <td>item 1</td>
@@ -2391,8 +2663,8 @@
                                 <td>item 5</td>
                                 <td>item 6</td>
                                 <td>item 7</td>
-                                <td>item 8</td>
-                                <td>item 9</td>
+                                <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                <td>id</td>
                             </tr>
                             <tr>
                                 <td>item 1</td>
@@ -2402,8 +2674,8 @@
                                 <td>item 5</td>
                                 <td>item 6</td>
                                 <td>item 7</td>
-                                <td>item 8</td>
-                                <td>item 9</td>
+                                <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                <td>id</td>
                             </tr>
                             <tr>
                                 <td>item 1</td>
@@ -2413,8 +2685,8 @@
                                 <td>item 5</td>
                                 <td>item 6</td>
                                 <td>item 7</td>
-                                <td>item 8</td>
-                                <td>item 9</td>
+                                <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                <td>id</td>
                             </tr>
                             <tr>
                                 <td>item 1</td>
@@ -2424,8 +2696,8 @@
                                 <td>item 5</td>
                                 <td>item 6</td>
                                 <td>item 7</td>
-                                <td>item 8</td>
-                                <td>item 9</td>
+                                <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                <td>id</td>
                             </tr>
                             <tr>
                                 <td>item 1</td>
@@ -2435,8 +2707,8 @@
                                 <td>item 5</td>
                                 <td>item 6</td>
                                 <td>item 7</td>
-                                <td>item 8</td>
-                                <td>item 9</td>
+                                <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                <td>id</td>
                             </tr>
                             <tr>
                                 <td>item 1</td>
@@ -2446,8 +2718,8 @@
                                 <td>item 5</td>
                                 <td>item 6</td>
                                 <td>item 7</td>
-                                <td>item 8</td>
-                                <td>item 9</td>
+                                <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                <td>id</td>
                             </tr>
                             <tr>
                                 <td>item 1</td>
@@ -2457,8 +2729,8 @@
                                 <td>item 5</td>
                                 <td>item 6</td>
                                 <td>item 7</td>
-                                <td>item 8</td>
-                                <td>item 9</td>
+                                <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                <td>id</td>
                             </tr>
                             <tr>
                                 <td>item 1</td>
@@ -2468,8 +2740,8 @@
                                 <td>item 5</td>
                                 <td>item 6</td>
                                 <td>item 7</td>
-                                <td>item 8</td>
-                                <td>item 9</td>
+                                <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                <td>id</td>
                             </tr>
                             <tr>
                                 <td>item 1</td>
@@ -2479,8 +2751,8 @@
                                 <td>item 5</td>
                                 <td>item 6</td>
                                 <td>item 7</td>
-                                <td>item 8</td>
-                                <td>item 9</td>
+                                <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                <td>id</td>
                             </tr>
                             <tr>
                                 <td>item 1</td>
@@ -2490,8 +2762,8 @@
                                 <td>item 5</td>
                                 <td>item 6</td>
                                 <td>item 7</td>
-                                <td>item 8</td>
-                                <td>item 9</td>
+                                <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                <td>id</td>
                             </tr>
                             <tr>
                                 <td>item 1</td>
@@ -2501,8 +2773,8 @@
                                 <td>item 5</td>
                                 <td>item 6</td>
                                 <td>item 7</td>
-                                <td>item 8</td>
-                                <td>item 9</td>
+                                <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                <td>id</td>
                             </tr>
                             <tr>
                                 <td>item 1</td>
@@ -2512,8 +2784,8 @@
                                 <td>item 5</td>
                                 <td>item 6</td>
                                 <td>item 7</td>
-                                <td>item 8</td>
-                                <td>item 9</td>
+                                <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                <td>id</td>
                             </tr>
                             <tr>
                                 <td>item 1</td>
@@ -2523,8 +2795,8 @@
                                 <td>item 5</td>
                                 <td>item 6</td>
                                 <td>item 7</td>
-                                <td>item 8</td>
-                                <td>item 9</td>
+                                <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                <td>id</td>
                             </tr>
                             <tr>
                                 <td>item 1</td>
@@ -2534,8 +2806,8 @@
                                 <td>item 5</td>
                                 <td>item 6</td>
                                 <td>item 7</td>
-                                <td>item 8</td>
-                                <td>item 9</td>
+                                <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                <td>id</td>
                             </tr>
                             <tr>
                                 <td>item 1</td>
@@ -2545,8 +2817,8 @@
                                 <td>item 5</td>
                                 <td>item 6</td>
                                 <td>item 7</td>
-                                <td>item 8</td>
-                                <td>item 9</td>
+                                <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                <td>id</td>
                             </tr>
                             <tr>
                                 <td>item 1</td>
@@ -2556,8 +2828,8 @@
                                 <td>item 5</td>
                                 <td>item 6</td>
                                 <td>item 7</td>
-                                <td>item 8</td>
-                                <td>item 9</td>
+                                <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                <td>id</td>
                             </tr>
                             <tr>
                                 <td>item 1</td>
@@ -2567,8 +2839,8 @@
                                 <td>item 5</td>
                                 <td>item 6</td>
                                 <td>item 7</td>
-                                <td>item 8</td>
-                                <td>item 9</td>
+                                <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                <td>id</td>
                             </tr>
                             <tr>
                                 <td>item 1</td>
@@ -2578,12 +2850,301 @@
                                 <td>item 5</td>
                                 <td>item 6</td>
                                 <td>item 7</td>
-                                <td>item 8</td>
-                                <td>item 9</td>
+                                <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                <td>id</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+        <div class="page" id="beheer_kennistest">
+            <div class="main">
+                <form action="" class="antwoorden_top">
+                    <input placeholder="Naam van de Test" type="text">
+                    <input placeholder="Omschrijving Test" type="text">
+                    <input type="submit" value="toevoegen">
+                </form>
+                <div id="kennistests_midden">
+                <table cellspacing=0>
+                        <thead>
+                            <tr>
+                                <th>Naam van de test</th>
+                                <th>Aantal vragen</th>
+                                <th>Omschrijving test</th>
+                                <th>Id</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="klaar_voor_publicatie">
+                            <td>De herfst van de nederlandse kunst</td>
+                            <td>20</td>
+                            <td>Kunst van de herfst</td>
+                            <td>2</td>
+                        </tr>
+                        <tr class="klaar_voor_controle">
+                            <td>De gouden eeuw</td>
+                            <td>21</td>
+                            <td>Gouden eeuw kunst</td>
+                            <td>2</td>
+                        </tr>
+                        <tr class="gepubliceerd">
+                            <td>Hedendaagse kunst</td>
+                            <td>18</td>
+                            <td>Wat is heedendaagse kunst</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+                <div id="kennistests_bottom">
+                    <div id="kennistests_legenda">
+                        <p class="klaar_voor_publicatie">Klaar voor publicatie</p>
+                        <p class="gepubliceerd">Gepubliceerd</p>
+                        <p class="klaar_voor_controle">Klaar voor controle</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="page" id="kennistest_detail">
+            <div class="main">
+                <div id="kennistest_detail_top">
+                    <div>
+                        <label for="id">Id</label>
+                        <label for="title">Title</label>
+                    </div>
+                    <button>Doe de test</button>
+                </div>
+                <div id="kennistest_detail_middle_1">
+                    <h3>Hier kunt u de vragen die de toets bevat aanpassen</h3>
+                </div>
+                   <form id="detail_form" action="">
+                    <div id="kennistest_detail_middle_2">
+                        <div id="details_left">
+                           <p>Tour toets vragen</p>
+                            <table cellspacing=0 class="details_tables">
+                               <thead>
+                                   <th>Id</th>
+                                   <th>Vraag</th>
+                               </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Valt het melk meisje onder stil leven?</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="details_middle">
+                           <p>Geschikt voor:</p>
+                            <div id="checkboxes_details" class="niveau_checkboxes">
+                                <input type="checkbox" class="all_box" name="alle_groepen" value="1"><label for="alle_groepen"> Alle groepen</label>
+                                <div class="all_unchecked">
+                                    <div><input type="checkbox" name="groep_4_5_6" value="1"><label class= for="groep_4_5_6"> Groep 4 / 5 / 6 </label></div>
+                                    <div><input type="checkbox" name="groep_7_8" value="1"><label for="groep_7_8"> Groep 7 / 8 </label></div>
+                                    <div><input type="checkbox" name="middelbaar" value="1"><label for="middelbaar"> Middelbaar onderwijs </label></div>
+                                    <div><input type="checkbox" name="voortgezet" value="1"><label for="voortgezet"> Voortgezet onderwijs </label></div>
+                                </div>
+                                <div class="all_checked">
+                                    <div><input type="checkbox" checked disabled> Groep 4 / 5 / 6 </div>
+                                    <div><input type="checkbox" checked disabled> Groep 7 / 8 </div>
+                                    <div><input type="checkbox" checked disabled> Middelbaar onderwijs</div>
+                                    <div><input type="checkbox" checked disabled> Voortgezet onderwijs</div>
+                                </div>
+                            </div>
+                            <div id="details_nav" class="antwoorden_midden_2_links">
+                                <button type="submit"><i class="fa fa-arrow-left"></i></button>
+                                <button type="submit"><i class="fa fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                        <div id="details_right">
+                             <p>Alle vragen</p>
+                            <table cellspacing=0 class="details_tables">
+                               <thead>
+                                   <th>Id</th>
+                                   <th>Vraag</th>
+                               </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="kennistest_detail_bottom">
+                        <input type="submit" value="Annuleer">
+                        <input type="submit" value="Opslaan">
+                    </div>
+                </form>
             </div>
         </div>
         <!-- Alle pages zitten in content -->
