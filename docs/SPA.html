@@ -1704,6 +1704,75 @@
             height: calc(100% - 100px);
             overflow-y: auto;
         }
+        /* Dropdown */
+
+        .dropdown {
+          display: inline-block;
+          position: relative;
+          width: 100%;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+
+        .dd-button {
+            text-align: center;
+          width: calc(100% - 52px);
+          display: inline-block;
+          border: 1px solid gray;
+          padding: 10px 30px 10px 20px;
+          background-color: #ffffff;
+          cursor: pointer;
+          white-space: nowrap;
+        }
+
+        .dd-button:after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          right: 15px;
+          transform: translateY(-50%);
+          width: 0;
+          height: 0;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 5px solid black;
+        }
+
+        .dd-button:hover {
+          background-color: #eeeeee;
+        }
+
+
+        .dd-input {
+          display: none;
+        }
+
+        .dd-menu {
+          position: absolute;
+          width: calc(100% - 42px);
+          top: 93%;
+          height: 250px;
+          border: 1px solid #ccc;
+          padding: 10px 20px;
+          margin: 2px 0 0 0;
+          box-shadow: 0 2px 7px 0 rgba(0,0,0,0.2);
+          background-color: #ffffff;
+          list-style-type: none;
+            overflow: hidden;
+
+        }
+
+        .dd-input + .dd-menu {
+          display: none;
+        }
+
+        .dd-input:checked + .dd-menu {
+          display: block;
+        }
+
+        .dd-menu div {
+          padding: 10px 10px;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="csslinegraph/csslinegraph.css" rel="stylesheet" type="text/css" media="screen" />
@@ -3019,12 +3088,31 @@
                     <button>Doe de test</button>
                 </div>
                 <div id="kennistest_detail_middle_1">
-                    <h3>Hier kunt u de vragen die de toets bevat aanpassen</h3>
+                    <h3>Pas hier uw toetsvragen aan</h3>
                 </div>
                    <form id="detail_form" action="">
                     <div id="kennistest_detail_middle_2">
                         <div id="details_left">
-                           <p>Tour toets vragen</p>
+                           <label class="dropdown">
+                              <div class="dd-button">
+                                Tour (toets) vragen
+                              </div>
+
+                              <input type="checkbox" class="dd-input" id="test">
+
+                              <div class="dd-menu">
+                               Filter op groep:
+                               <div>
+                                    <div><input type="checkbox" name="groep_4_5_6" value="1"><label class= for="groep_4_5_6"> Groep 4 / 5 / 6 </label></div>
+                                    <div><input type="checkbox" name="groep_7_8" value="1"><label for="groep_7_8"> Groep 7 / 8 </label></div>
+                                    <div><input type="checkbox" name="middelbaar" value="1"><label for="middelbaar"> Middelbaar onderwijs </label></div>
+                                </div>
+                                Filter op kunstobject
+                                <div>
+                                    <input type="text" placeholder="Kunstobject">
+                                </div>
+                              </div>
+                        </label>
                             <table cellspacing=0 class="details_tables">
                                <thead>
                                    <th>Id</th>
@@ -3093,7 +3181,26 @@
                             </div>
                         </div>
                         <div id="details_right">
-                             <p>Alle vragen</p>
+                            <label class="dropdown">
+                              <div class="dd-button">
+                                Tour (toets) vragen
+                              </div>
+
+                              <input type="checkbox" class="dd-input" id="test">
+
+                              <div class="dd-menu">
+                               Filter op groep:
+                               <div>
+                                    <div><input type="checkbox" name="groep_4_5_6" value="1"><label class= for="groep_4_5_6"> Groep 4 / 5 / 6 </label></div>
+                                    <div><input type="checkbox" name="groep_7_8" value="1"><label for="groep_7_8"> Groep 7 / 8 </label></div>
+                                    <div><input type="checkbox" name="middelbaar" value="1"><label for="middelbaar"> Middelbaar onderwijs </label></div>
+                                </div>
+                                Filter op kunstobject
+                                <div>
+                                    <input type="text" placeholder="Kunstobject">
+                                </div>
+                              </div>
+                        </label>
                             <table cellspacing=0 class="details_tables">
                                <thead>
                                    <th>Id</th>
