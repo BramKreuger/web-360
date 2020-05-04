@@ -1958,6 +1958,60 @@
         }
 
     </style>
+    <style namespace="beheer_panoramas">
+        #beheer_panoramas .main{
+            display: flex;
+            flex-direction: column;
+        }
+        .beheer_panoramas_hordiv{
+            height: 30%;
+            width: 90%;
+            margin: 1.52% 5%;
+            display: flex;
+        }
+
+        .beheer_panoramas_hordiv p{
+            font-weight: bold;
+            transform: rotate(-5deg);
+        }
+
+        .upload_thumbnail{
+            width: 20%;
+            height: calc(100% - 20px);
+            margin: 10px;
+            background-color: white;
+            border: 1px solid grey;
+
+            display: flex;
+           justify-content: center;
+            align-items: center;
+        }
+
+        .upload_gestitchte_foto{
+            height: 100%;
+            width: 80%;
+            background-color: white;
+            border: 1px solid grey;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .panorama_controls{
+            width: 10%;
+            height: calc(100% - 20px);
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .panorama_controls button{
+            vertical-align: top;
+            height: 20%;
+            width: 90%;
+            margin: 5% 5px;
+        }
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--<link href="csslinegraph/csslinegraph.css" rel="stylesheet" type="text/css" media="screen" />-->
 </head>
@@ -1971,7 +2025,7 @@
             <input id="home_button" type="image" src="images/VRED-naamlogo.png" alt="home" class="header_btn">
             <div id="half_header_upper">
                 <!-- Deze is belangrijk -->
-                <a class="header_btn">Beheer Tours</a>
+                <a href="#beheer_panoramas" class="header_btn">Beheer Tours</a>
                 <a href="#kunst_object_video_toevoegen" class="header_btn">Beheer Kunstobjecten</a>
                 <a class="header_btn">Beheer Kennistest</a>
                 <a href="#beheer_gebruikers" class="header_btn">Beheer Gebruikers</a>
@@ -3486,8 +3540,39 @@
                         </div>
             </div>
         </div>
-        <!-- Alle pages zitten in content -->
-        <!--Vergeten-->
+        <div class="page" id="beheer_panoramas">
+            <div class="main">
+                <div class="beheer_panoramas_hordiv">
+                    <div class="upload_thumbnail"> <p>Upload thumbnail hier!</p></div>
+                    <div class="upload_gestitchte_foto"> <p>Upload gestitchte foto's hier!</p></div>
+                    <div class="panorama_controls">
+                        <button class="panorama_control_button">Verwijder</button>
+                        <button class="panorama_control_button">Beheer Hotspots</button>
+                        <button class="panorama_control_button">Show Panorama</button>
+                        <button class="panorama_control_button">Clear</button>
+                    </div>
+                </div>
+                <div class="beheer_panoramas_hordiv">
+                   <div class="upload_thumbnail"> <p>Upload thumbnail hier!</p></div>
+                    <div class="upload_gestitchte_foto"> <p>Upload gestitchte foto's hier!</p></div>
+                    <div class="panorama_controls">
+                        <button class="panorama_control_button">Verwijder</button>
+                        <button class="panorama_control_button">Beheer Hotspots</button>
+                        <button class="panorama_control_button">Show Panorama</button>
+                        <button class="panorama_control_button">Clear</button>
+                    </div></div>
+                <div class="beheer_panoramas_hordiv">
+                   <div class="upload_thumbnail"> <p>Upload thumbnail hier!</p></div>
+                    <div class="upload_gestitchte_foto"> <p>Upload gestitchte foto's hier!</p></div>
+                    <div class="panorama_controls">
+                        <button class="panorama_control_button">Verwijder</button>
+                        <button class="panorama_control_button">Beheer Hotspots</button>
+                        <button class="panorama_control_button">Show Panorama</button>
+                        <button class="panorama_control_button">Clear</button>
+                    </div></div>
+            </div>
+        </div>
+        <!-- Login e.d. -->
         <div class="page" id="vergeten">
             <div class="main">
                 <h2 id="title">Wachtwoord resetten</h2>
@@ -3516,7 +3601,6 @@
                 </form>
             </div>
         </div>
-        <!--REGISTREREN-->
         <div class="page" id="registratie">
             <div class="main">
                 <h2 id="title">Registreren</h2>
@@ -3582,7 +3666,6 @@
                 </form>
             </div>
         </div>
-        <!--LOGIN----- DEZE MOET ALS LAATSTE -->
         <div class="page active" id="login">
             <div class="main">
                 <h2 id="title">Login</h2>
