@@ -34,6 +34,7 @@
             background-color: #fafafa;
             box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
             text-decoration: none;
+            cursor: pointer;
         }
 
         button:hover,
@@ -1353,25 +1354,25 @@
         #beheer_gebruikers_top_header p:nth-child(2),
         #beheer_gebruikers_top_input_form input[type=text]:nth-child(2) {
             width: 15%;
-            min-width: 100px
+            min-width: 100px;
         }
 
         #beheer_gebruikers_top_header p:nth-child(2),
         #beheer_gebruikers_top_input_form input:nth-child(2) {
             width: 10%;
-            min-width: 75px
+            min-width: 75px;
         }
 
         #beheer_gebruikers_top_header p:nth-child(3),
         #beheer_gebruikers_top_input_form input:nth-child(3) {
             width: 15%;
-            min-width: 100px
+            min-width: 100px;
         }
 
         #beheer_gebruikers_top_header p:nth-child(4),
         #beheer_gebruikers_top_input_form input:nth-child(4) {
             width: 15%;
-            min-width: 100px
+            min-width: 100px;
         }
 
         #beheer_gebruikers_top_input_form input:nth-child(4),
@@ -1385,31 +1386,32 @@
         #beheer_gebruikers_top_header p:nth-child(5),
         #beheer_gebruikers_top_input_form select:nth-child(5) {
             width: 10%;
-            min-width: 75px
+            min-width: 75px;
         }
 
         #beheer_gebruikers_top_header p:nth-child(6),
         #beheer_gebruikers_top_input_form select:nth-child(6) {
             width: 10%;
-            min-width: 75px
+            min-width: 75px;
         }
 
         #beheer_gebruikers_top_header p:nth-child(7),
         #beheer_gebruikers_top_input_form input:nth-child(7) {
             width: 20%;
-            min-width: 200px
+            min-width: 200px;
         }
 
         #beheer_gebruikers_top_header p:nth-child(8),
         #beheer_gebruikers_top_input_form input:nth-child(8) {
             width: 4%;
-            min-width: 25px
+            min-width: 25px;
         }
 
         #beheer_gebruikers_top_header p:nth-child(9),
         #beheer_gebruikers_top_input_form input[type=submit] {
             width: 2%;
-            min-width: 25px
+            min-width: 25px;
+            margin-left: 5px;
         }
 
         #beheer_gebruikers_middle {
@@ -1745,6 +1747,15 @@
             width: 200px;
         }
 
+        #kennistest_detail_bottom input:nth-child(2) {
+            color: white;
+            background-color: #72309d;
+        }
+
+        #kennistest_detail_bottom input:nth-child(2):hover {
+            background-color: #461d61;
+        }
+
         #detail_form {
             height: calc(100% - 100px);
             overflow-y: auto;
@@ -1821,9 +1832,20 @@
         }
     </style>
     <style namespace="doe_de_kennistest">
+
+        #doe_kennistest .main{
+            overflow-y: auto;
+        }
+
         #doe_kennistest_middle{
             display: flex;
             flex-direction: row;
+            margin-top: 10px;
+        }
+
+        #doe_kennistest_middle h2,
+        #doe_kennistest_middle p{
+            margin: 0;
         }
 
         #doe_kennistest .kennistest_detail_top>div {
@@ -1835,7 +1857,9 @@
         #doe_kennistest_left{
             width: calc(50% - 50px);
             margin-left: 20px;
-            background-color: red;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .doe_kennistest_checkboxes  div{
             margin: 10px;
@@ -1853,6 +1877,9 @@
             border-radius: 3px;
             display: inline-block;
             position: relative;
+        }
+        .doe_kennistest_checkboxes input:hover{
+            background-color: white;
         }
          .doe_kennistest_checkboxes input :active,  .doe_kennistest_checkboxes input:checked:active {
             box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
@@ -1879,27 +1906,55 @@
             top: -5px;
 
         }
+        #doe_kennistest_left button{
+            height: 25px;
+            width: 80%;
+        }
         #doe_kennistest_right{
             margin-right: 5px;
             width: 50%;
-            background-color: green;
             display: flex;
             flex-direction: column;
+            height: 100%;
         }
         #doe_kennistest_right img{
             width: 100%;
+            min-width: 300px;
             object-fit: cover;
         }
         #doe_kennistest_right .niveau_checkboxes{
+            margin-top: 10px;
             float: right;
         }
         #doe_kennistest_buttons{
-
-            height 50px;
+            margin-top: 10px;
+            width: 100%;
         }
         #doe_kennistest_buttons button{
-            width: 20%;
-            height 50px;
+            width: 45%;
+            min-width: 75px;
+            height: 25px;
+        }
+        @media only screen and (max-width: 750px) {
+          #doe_kennistest_middle{
+                display: flex;
+                flex-direction: column;
+            }
+            #doe_kennistest_left,
+            #doe_kennistest_right{
+                width: 100%;
+            }
+            #doe_kennistest_right img{
+                margin: 10px;
+                width: calc(100% - 20px);
+            }
+            #doe_kennistest_left{
+                width: 50%;
+                min-width: 300px;
+            }
+            #doe_kennistest_buttons button{
+                width: 25%;
+            }
         }
 
     </style>
@@ -2792,10 +2847,10 @@
                         <p></p>
                     </div>
                     <form id="beheer_gebruikers_top_input_form">
-                        <input type="text" value="voornaam" required>
-                        <input type="text" value="Tussenvoegsel" required>
-                        <input type="text" value="Achternaam" required>
-                        <input type="email" value="Email Adres" required>
+                        <input type="text" placeholder="voornaam" required>
+                        <input type="text" placeholder="Tussenvoegsel" required>
+                        <input type="text" placeholder="Achternaam" required>
+                        <input type="email" placeholder="Email Adres" required>
                         <select value="geslacht" required>
                             <option selected disabled value="">Geslacht</option>
                             <option value="0">Man</option>
@@ -2810,7 +2865,7 @@
                             <option value="3">Docent</option>
                             <option value="4">Leerling</option>
                         </select>
-                        <input type="text" value="Beschrijving" required>
+                        <input type="text" placeholder="Beschrijving" required>
                         <input type="number" value="" placeholder="ID" required>
                         <input type="submit" value="+">
                     </form>
@@ -3393,8 +3448,8 @@
                 </div>
                    <div id="doe_kennistest_middle">
                     <div id="doe_kennistest_left">
-                        <p>Vraag: $1 van $2</p>
-                        <h3>Vraag (Wat is de nachtwacht?)</h3>
+                        <p>Vraag: 2 van 12</p>
+                        <h2>Wat is de nachtwacht?</h2>
                         <div class="doe_kennistest_checkboxes">
                             <div><input type="checkbox"><label for="">Vraag 1</label></div>
                             <div><input type="checkbox"><label for="">Vraag 2</label></div>
@@ -3404,14 +3459,14 @@
                             <div><input type="checkbox"><label for="">Vraag 6</label></div>
                         </div>
                         <div><input type="checkbox"><label for="">Na controle goed bevonden</label></div>
-                        <button>start de toets vanaf het begin</button>
+                            <button>start de toets vanaf het begin</button>
                     </div>
                     <div id="doe_kennistest_right">
                         <img src="images/nachtwacht.jpg" alt="de nachtwacht">
                         <div class="niveau_checkboxes">
                             <input type="checkbox" class="all_box" name="alle_groepen" value="1"><label for="alle_groepen"> Alle groepen</label>
                             <div class="all_unchecked">
-                                <div><input type="checkbox" name="groep_4_5_6" value="1"><label class=for="groep_4_5_6"> Groep 4 / 5 / 6 </label></div>
+                                <div><input type="checkbox" name="groep_4_5_6" value="1"><label for="groep_4_5_6"> Groep 4 / 5 / 6 </label></div>
                                 <div><input type="checkbox" name="groep_7_8" value="1"><label for="groep_7_8"> Groep 7 / 8 </label></div>
                                 <div><input type="checkbox" name="middelbaar" value="1"><label for="middelbaar"> Middelbaar onderwijs </label></div>
                                 <div><input type="checkbox" name="voortgezet" value="1"><label for="voortgezet"> Voortgezet onderwijs </label></div>
