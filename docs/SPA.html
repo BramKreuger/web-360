@@ -1832,66 +1832,73 @@
         }
     </style>
     <style namespace="doe_de_kennistest">
-
-        #doe_kennistest .main{
+        #doe_kennistest .main {
             overflow-y: auto;
         }
 
-        #doe_kennistest_middle{
+        #doe_kennistest_middle {
             display: flex;
             flex-direction: row;
             margin-top: 10px;
         }
 
         #doe_kennistest_middle h2,
-        #doe_kennistest_middle p{
+        #doe_kennistest_middle p {
             margin: 0;
         }
 
         #doe_kennistest .kennistest_detail_top>div {
             width: 100%;
         }
-        #doe_kennistest_checkboxes{
+
+        #doe_kennistest_checkboxes {
             margin: 0 0 10px 20px;
         }
-        #doe_kennistest_left{
+
+        #doe_kennistest_left {
             width: calc(50% - 50px);
             margin-left: 20px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
-        .doe_kennistest_checkboxes  div{
+
+        .doe_kennistest_checkboxes div {
             margin: 10px;
         }
-        #doe_kennistest_left  div input{
+
+        #doe_kennistest_left div input {
             margin-right: 10px;
         }
 
-         .doe_kennistest_checkboxes input {
+        .doe_kennistest_checkboxes input {
             -webkit-appearance: none;
             background-color: #fafafa;
             border: 1px solid #cacece;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
             padding: 9px;
             border-radius: 3px;
             display: inline-block;
             position: relative;
         }
-        .doe_kennistest_checkboxes input:hover{
+
+        .doe_kennistest_checkboxes input:hover {
             background-color: white;
         }
-         .doe_kennistest_checkboxes input :active,  .doe_kennistest_checkboxes input:checked:active {
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+
+        .doe_kennistest_checkboxes input :active,
+        .doe_kennistest_checkboxes input:checked:active {
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
         }
 
-         .doe_kennistest_checkboxes input:checked {
+        .doe_kennistest_checkboxes input:checked {
             background-color: #e9ecee;
             border: 1px solid #adb8c0;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
             color: #99a1a7;
         }
-         .doe_kennistest_checkboxes input:checked:after {
+
+        .doe_kennistest_checkboxes input:checked:after {
             content: '\2714';
             font-size: 14px;
             position: absolute;
@@ -1900,82 +1907,93 @@
             color: #99a1a7;
         }
 
-        .doe_kennistest_checkboxes label{
+        .doe_kennistest_checkboxes label {
             font-size: large;
             position: relative;
             top: -5px;
 
         }
-        #doe_kennistest_left button{
+
+        #doe_kennistest_left button {
             height: 25px;
             width: 80%;
         }
-        #doe_kennistest_right{
+
+        #doe_kennistest_right {
             margin-right: 5px;
             width: 50%;
             display: flex;
             flex-direction: column;
             height: 100%;
         }
-        #doe_kennistest_right img{
+
+        #doe_kennistest_right img {
             width: 100%;
             min-width: 300px;
             object-fit: cover;
         }
-        #doe_kennistest_right .niveau_checkboxes{
+
+        #doe_kennistest_right .niveau_checkboxes {
             margin-top: 10px;
             float: right;
         }
-        #doe_kennistest_buttons{
+
+        #doe_kennistest_buttons {
             margin-top: 10px;
             width: 100%;
         }
-        #doe_kennistest_buttons button{
+
+        #doe_kennistest_buttons button {
             width: 45%;
             min-width: 75px;
             height: 25px;
         }
+
         @media only screen and (max-width: 750px) {
-          #doe_kennistest_middle{
+            #doe_kennistest_middle {
                 display: flex;
                 flex-direction: column;
             }
+
             #doe_kennistest_left,
-            #doe_kennistest_right{
+            #doe_kennistest_right {
                 width: 100%;
             }
-            #doe_kennistest_right img{
+
+            #doe_kennistest_right img {
                 margin: 10px;
                 width: calc(100% - 20px);
             }
-            #doe_kennistest_left{
+
+            #doe_kennistest_left {
                 width: 50%;
                 min-width: 300px;
             }
-            #doe_kennistest_buttons button{
+
+            #doe_kennistest_buttons button {
                 width: 25%;
             }
         }
-
     </style>
     <style namespace="beheer_panoramas">
-        #beheer_panoramas .main{
+        #beheer_panoramas .main {
             display: flex;
             flex-direction: column;
         }
-        .beheer_panoramas_hordiv{
+
+        .beheer_panoramas_hordiv {
             height: 30%;
             width: 90%;
             margin: 1.52% 5%;
             display: flex;
         }
 
-        .beheer_panoramas_hordiv p{
+        .beheer_panoramas_hordiv p {
             font-weight: bold;
             transform: rotate(-5deg);
         }
 
-        .upload_thumbnail{
+        .upload_thumbnail {
             width: 20%;
             height: calc(100% - 20px);
             margin: 10px;
@@ -1983,11 +2001,11 @@
             border: 1px solid grey;
 
             display: flex;
-           justify-content: center;
+            justify-content: center;
             align-items: center;
         }
 
-        .upload_gestitchte_foto{
+        .upload_gestitchte_foto {
             height: 100%;
             width: 80%;
             background-color: white;
@@ -1997,7 +2015,8 @@
             justify-content: center;
             align-items: center;
         }
-        .panorama_controls{
+
+        .panorama_controls {
             width: 10%;
             height: calc(100% - 20px);
             margin: 10px;
@@ -2005,11 +2024,84 @@
             flex-direction: column;
         }
 
-        .panorama_controls button{
+        .panorama_controls button {
             vertical-align: top;
             height: 20%;
             width: 90%;
             margin: 5% 5px;
+        }
+    </style>
+    <style namespace="beheer_tour_hotspots">
+        #beheer_tour_hotspots .main {
+            display: flex;
+            overflow-y: auto;
+        }
+
+        #hotspots_left{
+            width: 20%;
+            margin-left: 10%;
+            margin-top: 50px;
+
+        }
+        #hotspots_middle{
+            width: 35%;
+            margin: 50px 2.5%;
+
+        }
+        #hotspots_middle>div:nth-child(3){
+            width: 100%;
+            padding-top: 100%;
+            background-color: white;
+            border: 1px solid grey;
+        }
+        #hotspots_middle>div:nth-child(1){
+            width: 40%;
+            min-width: 150px;
+            height: 35px;
+            position: relative;
+            top: 0;
+            left: 0;
+            background-color: red;
+            color: white;
+            line-height: 35px;
+            text-align: center;
+        }
+        #hotspots_right{
+            width: 20%;
+            margin-right: 10%;
+            margin-top: 50px;
+        }
+
+        #hotspots_left table tr.active_pano{
+            background-color: red;
+            color: white;
+        }
+
+        #pano_buttons{
+            width: 80px;
+            position: relative;
+            float: right;
+            top: 20px;
+        }
+
+        #pano_buttons button{
+            vertical-align: top;
+            margin: 10;
+            width: 25px;
+            height: 25px;
+            font-weight: bold;
+        }
+        @media only screen and (max-width: 1023px) {
+          #beheer_tour_hotspots .main {
+                display: flex;
+                flex-direction: column;
+            }
+            #hotspots_left,
+            #hotspots_middle,
+            #hotspots_right{
+                width: 80%;
+                margin: 10px 10%;
+            }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -2032,6 +2124,7 @@
                 <a href="#statistieken" class="header_btn">Statistieken</a>
                 <a class="header_btn">Mijn Museum</a>
                 <a href="#login" class="header_btn">Sign out</a>
+                <a href="#beheer_tour_hotspots" class="header_btn">beheer_tour_hotspots</a>
             </div>
         </div>
         <div id="half_header_bottom" class="half_header">
@@ -3500,7 +3593,7 @@
                         <label for="title">Toets voor groep $</label>
                     </div>
                 </div>
-                   <div id="doe_kennistest_middle">
+                <div id="doe_kennistest_middle">
                     <div id="doe_kennistest_left">
                         <p>Vraag: 2 van 12</p>
                         <h2>Wat is de nachtwacht?</h2>
@@ -3513,7 +3606,7 @@
                             <div><input type="checkbox"><label for="">Vraag 6</label></div>
                         </div>
                         <div><input type="checkbox"><label for="">Na controle goed bevonden</label></div>
-                            <button>start de toets vanaf het begin</button>
+                        <button>start de toets vanaf het begin</button>
                     </div>
                     <div id="doe_kennistest_right">
                         <img src="images/nachtwacht.jpg" alt="de nachtwacht">
@@ -3531,20 +3624,24 @@
                                 <div><input type="checkbox" checked disabled> Middelbaar onderwijs</div>
                                 <div><input type="checkbox" checked disabled> Voortgezet onderwijs</div>
                             </div>
-                            </div>
-                           <div id="doe_kennistest_buttons">
-                                <button>Vorige</button>
-                                <button>Volgende</button>
-                            </div>
                         </div>
+                        <div id="doe_kennistest_buttons">
+                            <button>Vorige</button>
+                            <button>Volgende</button>
                         </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="page" id="beheer_panoramas">
             <div class="main">
                 <div class="beheer_panoramas_hordiv">
-                    <div class="upload_thumbnail"> <p>Upload thumbnail hier!</p></div>
-                    <div class="upload_gestitchte_foto"> <p>Upload gestitchte foto's hier!</p></div>
+                    <div class="upload_thumbnail">
+                        <p>Upload thumbnail hier!</p>
+                    </div>
+                    <div class="upload_gestitchte_foto">
+                        <p>Upload gestitchte foto's hier!</p>
+                    </div>
                     <div class="panorama_controls">
                         <button class="panorama_control_button">Verwijder</button>
                         <button class="panorama_control_button">Beheer Hotspots</button>
@@ -3553,23 +3650,160 @@
                     </div>
                 </div>
                 <div class="beheer_panoramas_hordiv">
-                   <div class="upload_thumbnail"> <p>Upload thumbnail hier!</p></div>
-                    <div class="upload_gestitchte_foto"> <p>Upload gestitchte foto's hier!</p></div>
+                    <div class="upload_thumbnail">
+                        <p>Upload thumbnail hier!</p>
+                    </div>
+                    <div class="upload_gestitchte_foto">
+                        <p>Upload gestitchte foto's hier!</p>
+                    </div>
                     <div class="panorama_controls">
                         <button class="panorama_control_button">Verwijder</button>
                         <button class="panorama_control_button">Beheer Hotspots</button>
                         <button class="panorama_control_button">Show Panorama</button>
                         <button class="panorama_control_button">Clear</button>
-                    </div></div>
+                    </div>
+                </div>
                 <div class="beheer_panoramas_hordiv">
-                   <div class="upload_thumbnail"> <p>Upload thumbnail hier!</p></div>
-                    <div class="upload_gestitchte_foto"> <p>Upload gestitchte foto's hier!</p></div>
+                    <div class="upload_thumbnail">
+                        <p>Upload thumbnail hier!</p>
+                    </div>
+                    <div class="upload_gestitchte_foto">
+                        <p>Upload gestitchte foto's hier!</p>
+                    </div>
                     <div class="panorama_controls">
                         <button class="panorama_control_button">Verwijder</button>
                         <button class="panorama_control_button">Beheer Hotspots</button>
                         <button class="panorama_control_button">Show Panorama</button>
                         <button class="panorama_control_button">Clear</button>
-                    </div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page" id="beheer_tour_hotspots">
+            <div class="main">
+                <div id="hotspots_left">
+                    <label class="dropdown">
+                        <div class="dd-button">
+                            Panoramas
+                        </div>
+
+                        <input type="checkbox" class="dd-input">
+
+                        <div class="dd-menu">
+                            PLACEHOLDER
+                        </div>
+                    </label>
+                    <table cellspacing=0 class="details_tables">
+                        <thead>
+                            <th>Id</th>
+                            <th>Panorama</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Vergaderzaal</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                            </tr>
+                            <tr class="active_pano">
+                                <td>5</td>
+                                <td>Ere gallerij</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="hotspots_middle">
+                   <div>Ere gallerij</div>
+                   <div id="pano_buttons">
+                            <button>+</button>
+                            <button>-</button>
+                        </div>
+                    <div>
+                    </div>
+                </div>
+                <div id="hotspots_right">
+                    <label class="dropdown">
+                        <div class="dd-button">
+                            Hotspots
+                        </div>
+
+                        <input type="checkbox" class="dd-input">
+
+                        <div class="dd-menu">
+                            PLACEHOLDER
+                        </div>
+                    </label>
+                    <table cellspacing=0 class="details_tables">
+                        <thead>
+                            <th>Id</th>
+                            <th>Hotspot</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Nachtwacht</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
         <!-- Login e.d. -->
