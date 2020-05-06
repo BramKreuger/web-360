@@ -142,7 +142,7 @@
         }
 
         .footer {
-            z-index: -1;
+            z-index: 1;
             position: absolute;
             bottom: 2.5px;
             min-height: 20px;
@@ -323,7 +323,10 @@
         #vergeten .main,
         #vergeten_succes .main,
         #registratie_klaar .main,
-        #registratie_mislukt .main {
+        #registratie_mislukt .main,
+        #privacy .main,
+        #algemene_voorwaarden .main,
+        #contact .main{
             height: 500px;
             max-height: calc(100% - 180px);
         }
@@ -387,6 +390,11 @@
             height: calc(100% - 100px);
             overflow-y: auto;
 
+        }
+        #bad_login{
+            display: block;
+            margin-left: 15px;
+            color: red;
         }
 
     </style>
@@ -2178,6 +2186,14 @@
             border-bottom: 0;
         }
     </style>
+    <style namespace="footer_pages">
+        #privacy .main div,
+        #disclaimer .main div,
+        #algemene_voorwaarden .main div,
+        #contact .main div{
+            padding: 50px;
+        }
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--<link href="csslinegraph/csslinegraph.css" rel="stylesheet" type="text/css" media="screen" />-->
 </head>
@@ -2211,7 +2227,9 @@
     </div>
     <div class="content">
         <!--Basis portaal-->
-        <div class="page" id="portaal_basis"></div>
+        <div class="page" id="portaal_basis">
+            <div class="main"></div>
+        </div>
         <div class="page" id="kennis_vragen_beheren">
             <div class="main">
                 <div class="main_most_content">
@@ -3973,6 +3991,82 @@
                 </div>
             </div>
         </div>
+        <div class="page" id="musea_beheer">
+            <div class="main">
+            </div>
+        </div>
+        <div class="page" id="rollen_beheer">
+            <div class="main">
+            </div>
+        </div>
+        <!-- footer paginas -->
+        <div class="page" id="privacy">
+            <div class="main">
+               <div>
+                <h3>privacy</h3>
+                <p>Xxess360.com respecteert de privacy van alle gebruikers van haar site en
+                draagt er zorg voor dat de persoonlijke informatie die u ons verschaft
+                vertrouwelijk wordt behandeld.</p>
+
+                <p>Wij gebruiken uw gegevens om uw bezoek soepel mogelijk te laten verlopen.</p>
+
+                <p>Voor het overige zullen wij deze gegevens uitsluitend gebruiken met uw
+                toestemming.</p>
+
+                <p>xXess360.com zal uw persoonlijke gegevens niet aan derden verkopen en zal
+                deze uitsluitend aan derden ter beschikking stellen die zijn betrokken bij het
+                uitvoeren van werkzaamheiden mbt veiligheid.</p>
+                </div>
+            </div>
+        </div>
+        <div class="page" id="disclaimer">
+            <div class="main">
+                <div>
+                    <h3>Disclaimer</h3>
+                    <p><b>Geen advies.</b> Op de website staat alleen algemene informatie. Dat betekent dat deze informatie niet voor uw
+                    persoonlijke situatie is geschreven. We geven u op de website daarom geen persoonlijk advies om iets wel of niet te
+                    doen. Het is uw eigen verantwoordelijkheid als u alleen op basis van de informatie op de website een beslissing
+                    neemt. Als u wel persoonlijk advies wilt, dan helpen wij u graag. Neem dan contact met ons op voor het maken van
+                    een afspraak. Dat kan op via de website.</p>
+
+                    <p><b>Bereikbaarheid website.</b> We zorgen ervoor dat de website zo veel mogelijk beschikbaar is. Toch kan het voorkomen
+                    dat de website tijdelijk niet bereikbaar is. Wij zijn niet aansprakelijk als u daardoor schade lijdt.</p>
+
+                    <p><b>Fouten op de website.</b> We zorgen ervoor dat de informatie op de website zo betrouwbaar mogelijk is . Het kan toch
+                    gebeuren dat de informatie op de website niet (meer) klopt. Wij zijn niet aansprakelijk als u daardoor schade lijdt.</p>
+
+                    <p><b>Auteursrechten.</b> Alle informatie op de website is van Xess360. Dit geldt ook voor de vormgeving, huisstijl en logo's.
+                    U mag de informatie op onze website gebruiken voor privédoeleinden, bijvoorbeeld voor het bestellen van een
+                    product of op uw privé weblog. Vermeld dan wel dat u de informatie heeft gevonden op www.xxess360.com. U mag
+                    de teksten van de website niet veranderen. U moet eerst toestemming aan Xxess360 vragen als u de informatie op de</p>
+
+                    <p><b>Nederland.</b> De informatie op de website is bedoeld voor Nederland. In het buitenland kunnen andere regels gelden.</p>
+
+                    <p><b>Wijzigingen.</b> We kunnen de regels van deze disclaimer aanpassen.</p>
+                </div>
+            </div>
+        </div>
+        <div class="page" id="algemene_voorwaarden">
+            <div class="main">
+                <div>
+                    <h3>Algemene Voorwaarden</h3>
+                    <p><b>ALGEMENE VOORWAARDEN THUISWINKEL</b></p>
+                    <p>AV CZ/79 4 juni 2012</p>
+                    <p>Deze Algemene Voorwaarden van de Nederlandse Thuiswinkel Organisatie zijn tot
+                    stand gekomen in overleg met de Consumentenbond in het kader van de
+                    Coördinatiegroep Zelfreguleringsoverleg (CZ) van de Sociaal-Economische Raad en
+                    treden in werking per 4 juni 2012.</p>
+                    <p>Deze Algemene Voorwaarden zullen worden gebruikt door alle leden van de
+                    Nederlandse Thuiswinkel Organisatie met uitzondering van financiële diensten als
+                    bedoeld in de Wet Financieel Toezicht en voor zover deze diensten onder toezicht
+                    staan van de Autoriteit Financiële Markten.</p>
+                </div>
+            </div>
+        </div>
+        <div class="page" id="contact">
+            <div class="main">
+            </div>
+        </div>
         <!-- Login e.d. -->
         <div class="page" id="vergeten">
             <div class="main">
@@ -4083,7 +4177,9 @@
                             <input type="checkbox" checked="checked" name="remember"> Herinner mij
                         </label>
                     </div>
-
+                    <div id="bad_login">
+                       De combinatie van deze gebruikersnaam en wachtwoord is niet correct.
+                   </div>
                     <div class="container" id="lower_cont">
                         <span class="reg"><a href="#registratie">Registreren</a></span>
                         <span class="psw"><a href="#vergeten">Wachtwoord vergeten?</a></span>
@@ -4096,10 +4192,10 @@
         <img src="images/VR-mascotte_logo.png" alt="vred mascotte">
     </div>
     <div class="footer">
-        <a href="default.asp" target="_blank" class="ftr_btns">privacy</a> |
-        <a href="default.asp" target="_blank" class="ftr_btns">disclaimer</a> |
-        <a href="default.asp" target="_blank" class="ftr_btns">voorwaarden</a> |
-        <a href="default.asp" target="_blank" class="ftr_btns">contact</a>
+        <a href="#privacy"  class="ftr_btns">privacy</a> |
+        <a href="#disclaimer"  class="ftr_btns">disclaimer</a> |
+        <a href="#algemene_voorwaarden"  class="ftr_btns">voorwaarden</a> |
+        <a href="#contact" class="ftr_btns">contact</a>
     </div>
 </body>
 
