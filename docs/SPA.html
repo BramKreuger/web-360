@@ -229,6 +229,7 @@
         :target~.active {
             display: none;
         }
+
     </style>
     <style namespace="registratie">
         /*--------PAGES-----------*/
@@ -240,13 +241,13 @@
             margin: 0;
         }
 
-        #registratie input[type=text],
-        #registratie input[type=password],
-        #registratie input[type=number],
-        #registratie input[type=email],
-        #registratie select,
-        #registratie textarea,
-        #registratie option {
+        .registratie input[type=text],
+        .registratie input[type=password],
+        .registratie input[type=number],
+        .registratie input[type=email],
+        .registratie select,
+        .registratie textarea,
+        .registratie option {
             width: 100%;
             padding: 12px 5px;
             margin: 0px 0;
@@ -257,30 +258,30 @@
             -moz-appearance: textfield;
         }
 
-        #registratie h2 {
+        .registratie h2 {
             margin-bottom: 5px;
         }
 
-        #registratie .container {
+        .registratie .container {
             padding-top: 0;
-            margin-top: 0;
         }
 
-        #registratie textarea {
+        .registratie textarea {
             font-family: Ariel, sans-serif;
             resize: none;
         }
 
-        #registratie select {
+        .registratie select {
             padding: 12px 15px;
         }
 
-        #geslacht {
+        .geslacht {
             padding-left: 20px;
             display: flex;
+            flex-direction: row;
         }
 
-        #geslacht label {
+        .geslacht label {
             padding-top: 6px;
         }
 
@@ -288,11 +289,12 @@
             margin: 5px 20px 5px 60px;
         }
 
-        #registratie form {
+        .registratie form {
             height: calc(100% - 75px);
             margin: 0 10% 0 10%;
             width: 80%;
         }
+
     </style>
     <style namespace="vergeten">
         /*--------Vergeten / succ-*/
@@ -308,6 +310,7 @@
         #vergeten_succes .submit_button {
             margin-top: 40px;
         }
+
     </style>
     <style namespace="login">
         /*--------portaal basis-----------
@@ -385,6 +388,7 @@
             overflow-y: auto;
 
         }
+
     </style>
     <style namespace="kennis_vragen_beheren">
         .main_most_content {
@@ -904,6 +908,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+
     </style>
     <style namespace="kunst_object_video_toevoegen">
         /* toplaag */
@@ -1110,6 +1115,7 @@
             border-right: 1px solid white;
             width: 10%;
         }
+
     </style>
     <style namespace="statistieken">
         #statistieken #statistieken_top {
@@ -1144,6 +1150,7 @@
                     #0ac 0 calc(3.6deg * var(--segment4, 100)),
                     #f7b 0);
         }
+
     </style>
     <style namespace="kennis_antwoorden_beheren">
         #kennis_antwoorden_beheren .main {
@@ -1322,6 +1329,7 @@
             height: 30%;
             flex: 1;
         }
+
     </style>
     <style namespace="beheer_gebruikers">
         #beheer_gebruikers .main {}
@@ -1509,6 +1517,7 @@
         #beheer_gebruikers_middle input[type=submit]:nth-child(2):hover {
             background-color: #2e2ea6;
         }
+
     </style>
     <style namespace="beheer_kennistest">
         #beheer_kennistest .antwoorden_top input:nth-child(2) {
@@ -1599,6 +1608,7 @@
             background-color: white;
             margin-right: 5px;
         }
+
     </style>
     <style namespace="kennistest_detail">
         .kennistest_detail_top {
@@ -1830,6 +1840,7 @@
         .dd-menu div {
             padding: 10px 10px;
         }
+
     </style>
     <style namespace="doe_de_kennistest">
         #doe_kennistest .main {
@@ -1974,6 +1985,7 @@
                 width: 25%;
             }
         }
+
     </style>
     <style namespace="beheer_panoramas">
         #beheer_panoramas .main {
@@ -2030,6 +2042,7 @@
             width: 90%;
             margin: 5% 5px;
         }
+
     </style>
     <style namespace="beheer_tour_hotspots">
         #beheer_tour_hotspots .main {
@@ -2037,24 +2050,27 @@
             overflow-y: auto;
         }
 
-        #hotspots_left{
+        #hotspots_left {
             width: 20%;
             margin-left: 10%;
             margin-top: 50px;
 
         }
-        #hotspots_middle{
+
+        #hotspots_middle {
             width: 35%;
             margin: 50px 2.5%;
 
         }
-        #hotspots_middle>div:nth-child(3){
+
+        #hotspots_middle>div:nth-child(3) {
             width: 100%;
             padding-top: 100%;
             background-color: white;
             border: 1px solid grey;
         }
-        #hotspots_middle>div:nth-child(1){
+
+        #hotspots_middle>div:nth-child(1) {
             width: 40%;
             min-width: 150px;
             height: 35px;
@@ -2066,42 +2082,100 @@
             line-height: 35px;
             text-align: center;
         }
-        #hotspots_right{
+
+        #hotspots_right {
             width: 20%;
             margin-right: 10%;
             margin-top: 50px;
         }
 
-        #hotspots_left table tr.active_pano{
+        #hotspots_left table tr.active_pano {
             background-color: red;
             color: white;
         }
 
-        #pano_buttons{
+        #pano_buttons {
             width: 80px;
             position: relative;
             float: right;
             top: 20px;
         }
 
-        #pano_buttons button{
+        #pano_buttons button {
             vertical-align: top;
             margin: 10;
             width: 25px;
             height: 25px;
             font-weight: bold;
         }
+
         @media only screen and (max-width: 1023px) {
-          #beheer_tour_hotspots .main {
+            #beheer_tour_hotspots .main {
                 display: flex;
                 flex-direction: column;
             }
+
             #hotspots_left,
             #hotspots_middle,
-            #hotspots_right{
+            #hotspots_right {
                 width: 80%;
                 margin: 10px 10%;
             }
+        }
+
+    </style>
+    <style namespace="mijn_museum_school">
+        .mijn_museum_school{
+            margin-top: 50px;
+        }
+    </style>
+    <style namespace="mijn_musea">
+        #mijn_musea .main{
+            overflow-y: auto;
+        }
+        .musea_hordiv{
+            display: flex;
+            margin: 50px 50px 0 50px;
+            padding-bottom: 50px;
+            height: calc(50% - 100px);
+            min-height: 250px;
+            border-bottom: 2px dashed grey;
+        }
+        #mijn_musea img{
+            width: calc(80% - 50px);
+            height: 100%;
+            object-fit: cover;
+            flex: 1;
+        }
+        .musea_hordiv h3{
+            width:1px;
+            word-wrap: break-word;
+           font-family: monospace;
+            font-size: 20px;
+           margin: 0 24px;
+        }
+        .musea_hordiv div{
+            width: calc(20% - 50px);
+            flex: 0;
+        }
+
+        .musea_hordiv:hover h3{
+            text-shadow:  #72309d 1px 0 10px;
+        }
+
+        .musea_hordiv div button{
+            margin: 5px;
+            height: calc(25% - 8px);
+        }
+        .musea_hordiv div button:nth-child(1){
+            margin-top: 0;
+        }
+        .musea_hordiv div button:nth-child(4){
+            margin-bottom: 0;
+        }
+
+        .musea_hordiv:nth-last-child(1){
+            border-bottom: 0;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -2122,9 +2196,8 @@
                 <a class="header_btn">Beheer Kennistest</a>
                 <a href="#beheer_gebruikers" class="header_btn">Beheer Gebruikers</a>
                 <a href="#statistieken" class="header_btn">Statistieken</a>
-                <a class="header_btn">Mijn Museum</a>
+                <a href="#mijn_museum" class="header_btn">Mijn Museum</a>
                 <a href="#login" class="header_btn">Sign out</a>
-                <a href="#beheer_tour_hotspots" class="header_btn">beheer_tour_hotspots</a>
             </div>
         </div>
         <div id="half_header_bottom" class="half_header">
@@ -3739,11 +3812,11 @@
                     </table>
                 </div>
                 <div id="hotspots_middle">
-                   <div>Ere gallerij</div>
-                   <div id="pano_buttons">
-                            <button>+</button>
-                            <button>-</button>
-                        </div>
+                    <div>Ere gallerij</div>
+                    <div id="pano_buttons">
+                        <button>+</button>
+                        <button>-</button>
+                    </div>
                     <div>
                     </div>
                 </div>
@@ -3806,6 +3879,100 @@
                 </div>
             </div>
         </div>
+        <div class="page" id="mijn_museum">
+            <div class="main  registratie">
+                <form action="#registratie_klaar" class="mijn_museum_school">
+                    <div class="container mijn_museum_school" id="middle_cont">
+                        <input type="text" placeholder="Voornaam Hoofd Educatie" name="voornaam" required>
+                        <input type="text" placeholder="Achternaam Hoofd Educatie" name="achternaam" required>
+                        <div class="geslacht">
+                            <label>Geslacht:</label>
+                            <div class="geslacht_check"><input type="checkbox" name="man"> Man </div>
+                            <div class="geslacht_check"><input type="checkbox" name="vrouw"> vrouw </div>
+                            <div class="geslacht_check"><input type="checkbox" name="anders"> anders </div>
+                        </div>
+                        <input type="number" placeholder="Mobiel Nummer Hoofd Educatie" name="mobiel_nummer">
+                        <input type="email" placeholder="Email Hoofd Educatie" name="email">
+                        <input type="text" placeholder="Naam museum" name="museum_naam" required>
+                        <input type="number" placeholder="Telefoon Nummer Museum" name="telfoon_nummer">
+                        <input type="email" placeholder="Email Museum" name="email">
+                        <select name="slct_land">
+                            <option selected disabled>Kies land</option>
+                            <option value="NL" selected>Nederland</option>
+                        </select>
+                        <input type="text" placeholder="Adres" name="adres" required>
+                        <input type="text" placeholder="Postcode" name="postcode" required>
+                        <input type="text" placeholder="Plaats" name="plaats" required>
+                        <textarea name="biografie" cols="40" rows="3" placeholder="Biografie"></textarea>
+                        <input type="submit" value="Opslaan">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="page" id="mijn_school">
+            <div class="main  registratie">
+                <form action="#registratie_klaar" class="mijn_museum_school">
+                    <div class="container mijn_museum_school" id="middle_cont">
+                        <input type="text" placeholder="Voornaam ICCer" name="voornaam" required>
+                        <input type="text" placeholder="Achternaam ICCer" name="achternaam" required>
+                        <div class="geslacht">
+                            <label>Geslacht:</label>
+                            <div class="geslacht_check"><input type="checkbox" name="man"> Man </div>
+                            <div class="geslacht_check"><input type="checkbox" name="vrouw"> vrouw </div>
+                            <div class="geslacht_check"><input type="checkbox" name="anders"> anders </div>
+                        </div>
+                        <input type="number" placeholder="Mobiel Nummer ICCer" name="mobiel_nummer">
+                        <input type="email" placeholder="Email ICCer" name="email">
+                        <input type="text" placeholder="Naam school" name="school_naam" required>
+                        <input type="number" placeholder="Telefoon school" name="telfoon_nummer">
+                        <input type="email" placeholder="Email school" name="email">
+                        <select name="slct_land">
+                            <option selected disabled>Kies land</option>
+                            <option value="NL" selected>Nederland</option>
+                        </select>
+                        <input type="text" placeholder="Adres" name="adres" required>
+                        <input type="text" placeholder="Postcode" name="postcode" required>
+                        <input type="text" placeholder="Plaats" name="plaats" required>
+                        <textarea name="biografie" cols="40" rows="3" placeholder="Biografie"></textarea>
+                        <input type="submit" value="Opslaan">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="page" id="mijn_musea">
+            <div class="main">
+               <div class="musea_hordiv">
+                   <h3>Rijsmuseum</h3>
+                    <img src="images/rijks.png" alt="">
+                    <div>
+                        <button>Doe de kennis test</button>
+                        <button>Bekijk de kunst collectie</button>
+                        <button>Doe de virtual tour</button>
+                        <button>Mijn resultaten</button>
+                    </div>
+                </div>
+                <div class="musea_hordiv">
+                   <h3>Van Gogh</h3>
+                    <img src="images/van_gogh.png" alt="">
+                    <div>
+                        <button>Doe de kennis test</button>
+                        <button>Bekijk de kunst collectie</button>
+                        <button>Doe de virtual tour</button>
+                        <button>Mijn resultaten</button>
+                    </div>
+                </div>
+                <div class="musea_hordiv">
+                   <h3>Louvre</h3>
+                    <img src="images/LOUVRE_OUVERTURE_OK.jpg" alt="">
+                    <div>
+                        <button>Doe de kennis test</button>
+                        <button>Bekijk de kunst collectie</button>
+                        <button>Doe de virtual tour</button>
+                        <button>Mijn resultaten</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Login e.d. -->
         <div class="page" id="vergeten">
             <div class="main">
@@ -3836,7 +4003,7 @@
             </div>
         </div>
         <div class="page" id="registratie">
-            <div class="main">
+            <div class="main registratie">
                 <h2 id="title">Registreren</h2>
                 <form action="#registratie_klaar">
                     <div class="container" id="middle_cont">
@@ -3850,7 +4017,7 @@
                         </select>
                         <input type="text" placeholder="Voornaam" name="voornaam" required>
                         <input type="text" placeholder="Achternaam" name="achternaam" required>
-                        <div id="geslacht">
+                        <div class="geslacht">
                             <label>Geslacht:</label>
                             <div class="geslacht_check"><input type="checkbox" name="man"> Man </div>
                             <div class="geslacht_check"><input type="checkbox" name="vrouw"> vrouw </div>
@@ -3934,4 +4101,6 @@
         <a href="default.asp" target="_blank" class="ftr_btns">voorwaarden</a> |
         <a href="default.asp" target="_blank" class="ftr_btns">contact</a>
     </div>
-</body></html>
+</body>
+
+</html>
