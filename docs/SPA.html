@@ -1201,7 +1201,8 @@
             width: 100%;
         }
 
-        #antwoorden_midden_1 table {
+        #antwoorden_midden_1 table,
+        #rollen_beheer table{
             width: 100%;
             margin: 0;
             border-bottom: 1px solid black;
@@ -1216,23 +1217,28 @@
             color: white
         }
 
-        #antwoorden_midden_1 input[type=submit]:nth-child(1) {
+        #antwoorden_midden_1 input[type=submit]:nth-child(1),
+        #rollen_beheer input[type=submit]:nth-child(1){
             background-color: #a6797b;
         }
 
-        #antwoorden_midden_1 input[type=submit]:nth-child(1):hover {
+        #antwoorden_midden_1 input[type=submit]:nth-child(1):hover,
+        #rollen_beheer input[type=submit]:nth-child(1):hover {
             background-color: #a62e34;
         }
 
-        #antwoorden_midden_1 input[type=submit]:nth-child(2) {
+        #antwoorden_midden_1 input[type=submit]:nth-child(2),
+        #rollen_beheer input[type=submit]:nth-child(2) {
             background-color: #797ea6;
         }
 
-        #antwoorden_midden_1 input[type=submit]:nth-child(2):hover {
+        #antwoorden_midden_1 input[type=submit]:nth-child(2):hover,
+        #rollen_beheer input[type=submit]:nth-child(2):hover {
             background-color: #2e2ea6;
         }
 
-        #antwoorden_midden_1 thead th {
+        #antwoorden_midden_1 thead th,
+        #rollen_beheer th {
             color: white;
             background-color: black;
             border-top: 1px solid white;
@@ -1240,13 +1246,16 @@
             border-left: 1px solid white;
         }
 
-        #antwoorden_midden_1 tbody td {
+        #antwoorden_midden_1 tbody td,
+        #rollen_beheer tbody td {
             border-top: 1px solid black;
             border-left: 1px solid black;
         }
 
         #antwoorden_midden_1 tbody td,
-        #antwoorden_midden_1 thead th {
+        #antwoorden_midden_1 thead th,
+        #rollen_beheer tbody td,
+        #rollen_beheer thead th{
             height: 25px;
             white-space: nowrap;
             overflow: hidden;
@@ -1728,8 +1737,14 @@
         }
 
         #publiceer{
-            right: 120px;
-            background-color: green;
+            top: initial;
+            bottom: 20px !important ;
+            right: 120px !important ;
+            background-color: green !important;
+        }
+
+        #publiceer:hover{
+            background-color: darkgreen !important;
         }
 
         .modal-container #modal-toggle:checked ~ .modal-backdrop .modal-content .modal-close.button:hover {
@@ -2314,6 +2329,79 @@
         #contact .main div{
             padding: 50px;
         }
+    </style>
+    <style namespace="rollen_beheer">
+        #rollen_beheer_top {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        #rollen_beheer_top_header,
+        #rollen_beheer_top_input_form {
+            display: flex;
+            width: 100%;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        #rollen_beheer_top_header p{
+            flex: 1;
+            margin-right: 27px;
+        }
+
+        #rollen_beheer_top_header p:nth-child(1){
+            margin-right: 0;
+        }
+
+        #rollen_beheer_top_input_form input{
+            height: 25px;
+            text-align: center;
+        }
+        #rollen_beheer_top_input_form input[type=submit]{
+            margin-top: 8px;
+            margin-left: 5px;
+            height: 26px;
+            width: 26px;
+        }
+
+        #rollen_beheer table input[type=submit] {
+            width: 48%;
+            margin: 0 1px;
+            height: 25px;
+            border: 0;
+            color: white
+        }
+
+        #rollen_beheer_midden{
+            overflow-y: auto;
+            height: calc(100% - 100px);
+            width: 100%;
+        }
+        #rollen_beheer tbody td:nth-child(1),
+        #rollen_beheer thead th:nth-child(1) {
+            width: 15%;
+        }
+
+        #rollen_beheer tbody td:nth-child(2),
+        #rollen_beheer thead th:nth-child(2) {
+            width: 40%;
+        }
+
+        #rollen_beheer tbody td:nth-child(3),
+        #rollen_beheer thead th:nth-child(3) {
+            width: 40%;
+        }
+
+        #rollen_beheer tbody td:nth-child(4) {
+            border-right: 1px solid black;
+            width: 5%;
+        }
+
+        #rollen_beheer thead th:nth-child(4) {
+            border-right: 1px solid white;
+            width: 5%;
+        }
+
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--<link href="csslinegraph/csslinegraph.css" rel="stylesheet" type="text/css" media="screen" />-->
@@ -3470,6 +3558,90 @@
                 </div>
             </div>
         </div>
+        <div class="page" id="rollen_beheer">
+            <div class="main">
+                <div id="rollen_beheer_top">
+                    <div id="rollen_beheer_top_header">
+                        <p>Rol</p>
+                        <p>Beschrijving</p>
+                    </div>
+                    <form id="rollen_beheer_top_input_form">
+                        <input type="text" placeholder="Rol" required>
+                        <input type="text" placeholder="Beschrijving" required>
+                        <input type="submit" value="+">
+                    </form>
+                </div>
+                <div id="rollen_beheer_midden">
+                   <div id="table_wrapper">
+                        <table cellspacing=0>
+                            <thead>
+                                <th>Rol</th>
+                                <th>Beschrijving</th>
+                                <th>Actie</th>
+                                <th>Id</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Admin</td>
+                                    <td>De rol van de admin</td>
+                                    <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>Admin</td>
+                                    <td>De rol van de admin</td>
+                                    <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>Admin</td>
+                                    <td>De rol van de admin</td>
+                                    <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>Admin</td>
+                                    <td>De rol van de admin</td>
+                                    <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>Admin</td>
+                                    <td>De rol van de admin</td>
+                                    <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>Admin</td>
+                                    <td>De rol van de admin</td>
+                                    <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>Admin</td>
+                                    <td>De rol van de admin</td>
+                                    <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>Admin</td>
+                                    <td>De rol van de admin</td>
+                                    <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>Admin</td>
+                                    <td>De rol van de admin</td>
+                                    <td><input type="submit" value="verwijder"><input type="submit" value="bewerk"></td>
+                                    <td>1</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="page" id="beheer_kennistest">
             <div class="main">
                 <form action="" class="antwoorden_top">
@@ -4124,10 +4296,6 @@
             </div>
         </div>
         <div class="page" id="musea_beheer">
-            <div class="main">
-            </div>
-        </div>
-        <div class="page" id="rollen_beheer">
             <div class="main">
             </div>
         </div>
