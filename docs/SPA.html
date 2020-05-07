@@ -1991,6 +1991,10 @@
             overflow-y: auto;
         }
 
+        .vraag{
+            margin-bottom: 20px;
+        }
+
         #doe_kennistest_middle {
             display: flex;
             flex-direction: row;
@@ -3984,47 +3988,95 @@
         </div>
         <div class="page" id="doe_kennistest">
             <div class="main">
-                <div class="kennistest_detail_top">
-                    <div>
-                        <label for="id">Id</label>
-                        <label for="title">Toets voor groep $</label>
+                   <div class="vraag">
+                    <div class="kennistest_detail_top">
+                        <div>
+                            <label for="id">Id</label>
+                            <label for="title">Toets voor groep $</label>
+                        </div>
+                    </div>
+                    <div id="doe_kennistest_middle">
+                        <div id="doe_kennistest_left">
+                            <p>Vraag: 2 van 12</p>
+                            <h2>Wat is de nachtwacht?</h2>
+                            <div class="doe_kennistest_checkboxes">
+                                <div><input type="checkbox"><label for="">Vraag 1</label></div>
+                                <div><input type="checkbox"><label for="">Vraag 2</label></div>
+                                <div><input type="checkbox"><label for="">Vraag 3</label></div>
+                                <div><input type="checkbox"><label for="">Vraag 4</label></div>
+                                <div><input type="checkbox"><label for="">Vraag 5</label></div>
+                                <div><input type="checkbox"><label for="">Vraag 6</label></div>
+                            </div>
+                            <div><input type="checkbox"><label for="">Na controle goed bevonden</label></div>
+                            <button>start de toets vanaf het begin</button>
+                        </div>
+                        <div id="doe_kennistest_right">
+                            <img src="images/nachtwacht.jpg" alt="de nachtwacht">
+                            <div class="niveau_checkboxes">
+                                <input type="checkbox" class="all_box" name="alle_groepen" value="1"><label for="alle_groepen"> Alle groepen</label>
+                                <div class="all_unchecked">
+                                    <div><input type="checkbox" name="groep_4_5_6" value="1"><label for="groep_4_5_6"> Groep 4 / 5 / 6 </label></div>
+                                    <div><input type="checkbox" name="groep_7_8" value="1"><label for="groep_7_8"> Groep 7 / 8 </label></div>
+                                    <div><input type="checkbox" name="middelbaar" value="1"><label for="middelbaar"> Middelbaar onderwijs </label></div>
+                                    <div><input type="checkbox" name="voortgezet" value="1"><label for="voortgezet"> Voortgezet onderwijs </label></div>
+                                </div>
+                                <div class="all_checked">
+                                    <div><input type="checkbox" checked disabled> Groep 4 / 5 / 6 </div>
+                                    <div><input type="checkbox" checked disabled> Groep 7 / 8 </div>
+                                    <div><input type="checkbox" checked disabled> Middelbaar onderwijs</div>
+                                    <div><input type="checkbox" checked disabled> Voortgezet onderwijs</div>
+                                </div>
+                            </div>
+                            <div id="doe_kennistest_buttons">
+                                <button>Vorige</button>
+                                <button>Volgende</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="doe_kennistest_middle">
-                    <div id="doe_kennistest_left">
-                        <p>Vraag: 2 van 12</p>
-                        <h2>Wat is de nachtwacht?</h2>
-                        <div class="doe_kennistest_checkboxes">
-                            <div><input type="checkbox"><label for="">Vraag 1</label></div>
-                            <div><input type="checkbox"><label for="">Vraag 2</label></div>
-                            <div><input type="checkbox"><label for="">Vraag 3</label></div>
-                            <div><input type="checkbox"><label for="">Vraag 4</label></div>
-                            <div><input type="checkbox"><label for="">Vraag 5</label></div>
-                            <div><input type="checkbox"><label for="">Vraag 6</label></div>
+                <div class="vraag">
+                    <div class="kennistest_detail_top">
+                        <div>
+                            <label for="id">Id</label>
+                            <label for="title">Toets voor groep $</label>
                         </div>
-                        <div><input type="checkbox"><label for="">Na controle goed bevonden</label></div>
-                        <button>start de toets vanaf het begin</button>
                     </div>
-                    <div id="doe_kennistest_right">
-                        <img src="images/nachtwacht.jpg" alt="de nachtwacht">
-                        <div class="niveau_checkboxes">
-                            <input type="checkbox" class="all_box" name="alle_groepen" value="1"><label for="alle_groepen"> Alle groepen</label>
-                            <div class="all_unchecked">
-                                <div><input type="checkbox" name="groep_4_5_6" value="1"><label for="groep_4_5_6"> Groep 4 / 5 / 6 </label></div>
-                                <div><input type="checkbox" name="groep_7_8" value="1"><label for="groep_7_8"> Groep 7 / 8 </label></div>
-                                <div><input type="checkbox" name="middelbaar" value="1"><label for="middelbaar"> Middelbaar onderwijs </label></div>
-                                <div><input type="checkbox" name="voortgezet" value="1"><label for="voortgezet"> Voortgezet onderwijs </label></div>
+                    <div id="doe_kennistest_middle">
+                        <div id="doe_kennistest_left">
+                            <p>Vraag: 2 van 12</p>
+                            <h2>Wat is de nachtwacht?</h2>
+                            <div class="doe_kennistest_checkboxes">
+                                <div><input type="checkbox"><label for="">Vraag 1</label></div>
+                                <div><input type="checkbox"><label for="">Vraag 2</label></div>
+                                <div><input type="checkbox"><label for="">Vraag 3</label></div>
+                                <div><input type="checkbox"><label for="">Vraag 4</label></div>
+                                <div><input type="checkbox"><label for="">Vraag 5</label></div>
+                                <div><input type="checkbox"><label for="">Vraag 6</label></div>
                             </div>
-                            <div class="all_checked">
-                                <div><input type="checkbox" checked disabled> Groep 4 / 5 / 6 </div>
-                                <div><input type="checkbox" checked disabled> Groep 7 / 8 </div>
-                                <div><input type="checkbox" checked disabled> Middelbaar onderwijs</div>
-                                <div><input type="checkbox" checked disabled> Voortgezet onderwijs</div>
-                            </div>
+                            <div><input type="checkbox"><label for="">Na controle goed bevonden</label></div>
+                            <button>start de toets vanaf het begin</button>
                         </div>
-                        <div id="doe_kennistest_buttons">
-                            <button>Vorige</button>
-                            <button>Volgende</button>
+                        <div id="doe_kennistest_right">
+                            <img src="images/nachtwacht.jpg" alt="de nachtwacht">
+                            <div class="niveau_checkboxes">
+                                <input type="checkbox" class="all_box" name="alle_groepen" value="1"><label for="alle_groepen"> Alle groepen</label>
+                                <div class="all_unchecked">
+                                    <div><input type="checkbox" name="groep_4_5_6" value="1"><label for="groep_4_5_6"> Groep 4 / 5 / 6 </label></div>
+                                    <div><input type="checkbox" name="groep_7_8" value="1"><label for="groep_7_8"> Groep 7 / 8 </label></div>
+                                    <div><input type="checkbox" name="middelbaar" value="1"><label for="middelbaar"> Middelbaar onderwijs </label></div>
+                                    <div><input type="checkbox" name="voortgezet" value="1"><label for="voortgezet"> Voortgezet onderwijs </label></div>
+                                </div>
+                                <div class="all_checked">
+                                    <div><input type="checkbox" checked disabled> Groep 4 / 5 / 6 </div>
+                                    <div><input type="checkbox" checked disabled> Groep 7 / 8 </div>
+                                    <div><input type="checkbox" checked disabled> Middelbaar onderwijs</div>
+                                    <div><input type="checkbox" checked disabled> Voortgezet onderwijs</div>
+                                </div>
+                            </div>
+                            <div id="doe_kennistest_buttons">
+                                <button>Vorige</button>
+                                <button>Volgende</button>
+                            </div>
                         </div>
                     </div>
                 </div>
